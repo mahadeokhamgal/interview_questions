@@ -115,7 +115,6 @@ How does the Collectors.toMap() method work?
 
 Explain the concept of a Spliterator.
 
-Constructor Injection vs Field Injection(Not recommended).
 
 
 ** Spring Boot (30 Questions) **
@@ -180,6 +179,8 @@ What is the ModelAndView object used for?
 How does the @RequestBody annotation work?
 
 Explain the use of DevTools in Spring Boot.
+
+Constructor Injection vs Field Injection(Not recommended).
 
 
 
