@@ -133,8 +133,6 @@ How can you optimize the performance of an Angular application?
 
 Explain the purpose and usage of the Angular CLI.
 
-Let me know if you'd like explanations for any of these or want to dive deeper into specific topics!
-
 
 ** RxJS Questions **
 ----------------------------------------------------------------------------------
