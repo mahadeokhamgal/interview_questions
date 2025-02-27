@@ -1,0 +1,10 @@
+1. Jwt
+2. Validating data at serverside.
+3. Authorization methods.
+4. Doing get api to create record in db.
+5. Api packages.
+6. How to make APIs on server end.
+7. How to connect to databases on express.
+8. Middlewares at express.
+9. Http interceptor in angular
+10. How to apply a midldeware only to one route handler.
