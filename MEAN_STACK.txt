@@ -4,10 +4,18 @@
 4. Is it advisable to add indexing to all columns of table.
 5. What are ways to update of an event from one Microservice to other Microservice.
 6. Difference between AngularJs and Angular.
-7. Angular 16 Features.
+7. Angular 16 Features. - Standalone, Signal, 
 8. When will you recommend using NodeJS server and when will you not recommend it?
 9. What is JWT.
 10. What information does a JWT token has.
 11. How to create a JWT and How to validate a JWT.
 12. Where should Client store JWT.
-13. How to make routes/components protected in angular
+13. How to make routes/components protected in angular.
+14. Alternative methods to JWT.
+15. Ways to pass data between unrelated components in angular.
+16. What is change detection angular.
+17. How change detection works in angular.
+18. Lazy loading.
+19. Passing data between related components.
+20. Content projection.
+21. List change detection strategies.
