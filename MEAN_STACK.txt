@@ -19,6 +19,11 @@
 - When will you recommend using NodeJS server and when will you not recommend it?
 - What information does a JWT token has.
 - How to create a JWT and How to validate a JWT.
+- How to make my nodejs handle increased traffic.
+- How to configure my nodejs app against DDOS attack.
+- What is event loop in Nodejs.
+- How make cookies as secure as possible.
+
 
 # SQL
 - What is indexing.
