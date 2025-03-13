@@ -13,6 +13,10 @@
 - What is Lazy loading.
 - What is Content projection.
 - List change detection strategies.
+- What is Inject keyword?
+- What is keyvalue pipe, and it's optional arguments, on what type of inputs it can be used.
+- What are custom elements in angular.
+- How are custom elements different in terms of Standalone and non-standalone component.
 
 # NodeJS
 - What are ways to update of an event from one Microservice to other Microservice.
