@@ -1,7 +1,7 @@
 # Angular - 
-- SwitchMap vs Formkjoin.
-- What is Debauncing and Racing.
-- Difference between AngularJs and Angular.
+- Switch Map vs Fork join.
+- What is Debouncing and Racing.
+- Difference between AngularJS and Angular.
 - Angular 16 Features. - Standalone, Signal, 
 - What is JWT.
 - Where should Client store JWT.
@@ -9,7 +9,7 @@
 - Alternative methods to JWT.
 - Ways to pass data between unrelated components in angular.
 - Ways to passing data between related components.
-- What is change detection in angularand How change detection works in angular.
+- What is change detection in Angular and How it works.
 - What is Lazy loading.
 - What is Content projection.
 - List change detection strategies.
@@ -17,18 +17,43 @@
 - What is keyvalue pipe, and it's optional arguments, on what type of inputs it can be used.
 - What are custom elements in angular.
 - How are custom elements different in terms of Standalone and non-standalone component.
+- Are JS components possible in angular.
+- What is decorator
+
+#HTML
+1. semantic elements, Feature provided by semantics.
+2. how to make password show and hide.
+3. How to make my div resize and adjust to dynamic elements coming in.
+4. How to create responsive web pages.
+5. What does Less/sass provide over css.
+6 What is em and rem.
+7. What are all relative units in css.
 
 # NodeJS
 - What are ways to update of an event from one Microservice to other Microservice.
 - When will you recommend using NodeJS server and when will you not recommend it?
 - What information does a JWT token has.
 - How to create a JWT and How to validate a JWT.
-- How to make my nodejs handle increased traffic.
-- How to configure my nodejs app against DDOS attack.
+- How to make my NodeJS handle increased traffic.
+- How to configure my NodeJS app against DDOS attack.
 - What is event loop in Nodejs.
 - How make cookies as secure as possible.
+- What is Event loop.
+- Microtasks and Macrotasks in Event loop.
+
 
 
 # SQL
 - What is indexing.
 - Is it advisable to add indexing to all columns of table.
+
+# Cloud
+- What is EC2 server.
+
+# System design
+- What is Vertical and horizontal scaling?
+- Why is horizontal scaling needed if vertical scaling is available.
+- What is Leader/(Master)-Follower architecture?
+- What is Sharding and partitioning.
+- Can two partitions have identical data. Why?
+- When to use sharding and when not to?
