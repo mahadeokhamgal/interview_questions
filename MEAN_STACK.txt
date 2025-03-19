@@ -24,6 +24,13 @@
 - What is PWA
 - What is Angular Universal
 - What is Service worker in angular.
+- What is Renderer2 in angular.
+- beforeEach vs beforeAll in angular.
+- When should one use MockServices and when to use Actual services.
+- How to perform integration testing in angular.
+- inject vs @Inject vs TestBed.inject vs constructor injection in angular.
+- what is tick in angular.
+- what is fakeAsync in angular.
 
 #HTML
 1. semantic elements, Feature provided by semantics.
