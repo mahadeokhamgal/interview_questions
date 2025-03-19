@@ -19,6 +19,11 @@
 - How are custom elements different in terms of Standalone and non-standalone component.
 - Are JS components possible in angular.
 - What is decorator
+- Apply and bind in JS/TS.
+- What is SSO
+- What is PWA
+- What is Angular Universal
+- What is Service worker in angular.
 
 #HTML
 1. semantic elements, Feature provided by semantics.
@@ -40,8 +45,8 @@
 - How make cookies as secure as possible.
 - What is Event loop.
 - Microtasks and Macrotasks in Event loop.
-
-
+- What is worker thread in NodeJS.
+- Is Multithreading possible in NodeJS.
 
 # SQL
 - What is indexing.
