@@ -93,6 +93,8 @@
 38. How does React handle component updates and reconciliation?
 39. What are React Hooks, and how are they different from class components?
 40. What is the difference between `React.memo` and `PureComponent`?
+41. What is Prop Drilling
+42. How to set cookies in each outgoing API call in reactJS.
 
 ---
 
@@ -119,6 +121,7 @@
 18. What is the `Comparable` interface in Java?
 19. What are design patterns in Java? Explain some common ones.
 20. What is a Java `HashMap`, and how does it work?
+21. What is LRU Cache in java.
 
 ### Advanced Java (Spring Boot):
 21. What is Spring Boot, and how is it different from the traditional Spring Framework?
@@ -141,6 +144,7 @@
 38. What is Spring Boot’s auto-configuration?
 39. What are Spring Boot’s application properties?
 40. How do you handle file uploads in Spring Boot?
+41. How to enable and allow cors on spring boot application.
 
 ---
 
