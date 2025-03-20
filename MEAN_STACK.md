@@ -34,6 +34,7 @@
 - **`inject` vs `@Inject` vs `TestBed.inject` vs constructor injection in Angular.**
 - **What is `tick` in Angular?**
 - **What is `fakeAsync` in Angular?**
+- **Is multithreading possible in Angular?**
 
 ---
 
