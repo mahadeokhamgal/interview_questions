@@ -1,4 +1,23 @@
+### Advanced Java (Spring Boot):
+21. What is Spring Boot, and how is it different from the traditional Spring Framework?
+22. What is the purpose of `@SpringBootApplication` annotation in Spring Boot?
+    1. `@Configuration`+ `@EnableAutoConfiguration`+ `@ComponentScan`
+
+23. How do you create a RESTful web service in Spring Boot?
+24. What are Spring Boot starters, and why are they useful?
+    1. spring-boot-starter-web:
+
+25. Explain dependency injection in Spring.
+    def - **Accessing the global class instance from IOC**
+    1. @Autowired.
+    2. Constructor injection.
+    3. Setter Injection:
+
 26. What is Spring Data JPA, and how does it work?
+    1. Repositories - `JpaRepository`, `CrudRepository`, or `PagingAndSortingRepository`.
+    2. `@Entity`, `@Table`.
+    3. JPQL (Java Persistence Query Language):
+
 27. How do you configure a Spring Boot application?
 
 28. What are Spring Boot profiles, and how do they help in environment configuration?

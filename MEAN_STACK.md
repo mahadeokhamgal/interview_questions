@@ -7,12 +7,14 @@
   - Standalone
   - Signal
 - **What is JWT?**
+- **Is it needed to use jwt on socket**
 - **Where should Client store JWT?**
 - **How to make routes/components protected in Angular?**
 - **Alternative methods to JWT.**
 - **Ways to pass data between unrelated components in Angular.**
 - **Ways to pass data between related components.**
 - **What is change detection in Angular and how it works?**
+- **Change detection strategies**
 - **What is Lazy loading?**
 - **What is Content projection?**
 - **List change detection strategies.**
