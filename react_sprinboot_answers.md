@@ -1,5 +1,145 @@
+### Advanced ReactJS:
+21. What is React Redux? How does it manage application state?
+22. What is the `useContext` hook in React?
+23. What is React Suspense and lazy loading in React?
+23. Fragment in react.
+
+24. Explain the concept of component reusability in React.
+    - Props.
+    - Children as a Prop (Content projection in angular).
+    - Composition Over Inheritance.
+    - Custom Hooks for Logic Reusability.
+    - Higher-Order Components **HOCs**
+
+25. How do you optimize React performance?
+    - Memoization with React.memo
+    - useMemo Hook
+    - useCallback Hook
+    - Avoid Anonymous Functions in JSX
+    - For class components, use `React.PureComponent` instead of `React.Component`.
+    - Lazy Loading with React.lazy and Suspense
+    - Throttling and Debouncing
+    - image compressions.
+
+26. What is server-side rendering in React?
+    - Manual via express js.
+    - Use Next js. create-next-app
+
+27. What is the purpose of `shouldComponentUpdate` in React?
+    - It is used to optimize performance by preventing unnecessary re-renders
+    - `shouldComponentUpdate(nextProps, nextState) {}`
+
+27. PureComponent vs. shouldComponentUpdate.
+28. What is React Router and how do you use it?
+29. How does React handle conditional rendering using `&&` or ternary operators?
+
+30. What is Context API in React, and when should you use it over props?
+    - way to share global state across a tree of components.
+    - Best alternative to prop drilling.
+    - When Data Needs to Be Shared Globally.
+    - When Components Are Too Far Apart in the Component Tree.
+
+31. What are the best practices for managing forms in React?
+    - Use Controlled Components.
+    - const `[inputValue, setInputValue] = useState('');`.
+    - Keep Form State Simple.
+
+32. Explain code splitting in React.
+    - React.lazy();
+    - Suspense
+    - import('./SomeLargeComponent')
+
+33. What is the `useReducer` hook in React?
+    - const [state, dispatch] = useReducer(reducer, initialState);
+    - State logic is complex, like when the state depends on the previous state or when there are multiple sub-values.
+
+34. How do you test React components?
+    - Jest, react-test-runner
+35. What is the virtual DOM, and how does it optimize performance?
+36. How do you handle error boundaries in React?
+    - `static getDerivedStateFromError(error) {}` - when error is thrown.
+    - `componentDidCatch(error, errorInfo) {}` - when error is caught.
+
+37. What are React Portals, and how do they work?
+    - React Portals provide a way to render children into a DOM node that exists outside the hierarchy of the parent component.
+    - ReactDOM.createPortal(child, container)
+
+
+38. How does React handle component updates and reconciliation?
+    - Virtual DOM (VDOM)
+    - Reconciliation - `diffing algorithm`
+    - Keys in Lists: (Like trackby in angular).
+
+39. What are React Hooks, and how are they different from class components?
+    - useState
+    - useEffect
+    - useContext
+    - useRef
+    - useReducer
+    - useMemo and useCallback
+
+40. What is the difference between `React.memo` and `PureComponent`?
+    - rerenders only when any prop has been changed.
+    - `React.memo` - React.memo Higher order component that wraps a functional component - Performs shallow comparison of props only.
+    - `PureComponent` React.PureComponent - class based component. - Performs shallow comparison of props and state.
+
+41. What is Prop Drilling.
+    - Needing to send data though component heirarchy where intermediate components don't need the data.
+    **Solution**
+        - React Context API. `createContext()`.
+        - State Management Libraries (Redux, MobX, etc.)
+    - 
+
+42. How to set cookies in each outgoing API call in reactJS.
+    - axios `{withCredentials: true}`, fetch `{credentials: 'include'}`
+    - express.js `{credentials: true}`
+
+---
+
+## Java Core Interview Questions
+
+### Core Java:
+1. What is the difference between `String`, `StringBuilder`, and `StringBuffer` in Java?
+2. What is the purpose of `final`, `finally`, and `finalize` in Java?
+3. What is the difference between `ArrayList` and `LinkedList` in Java?
+4. What are the access modifiers in Java, and how do they work?
+5. What is the difference between `Array` and `ArrayList` in Java?
+6. What is polymorphism in Java? Provide examples.
+7. What is inheritance in Java? How is it implemented?
+8. What is encapsulation in Java, and why is it important?
+9. What is abstraction in Java?
+10. What is a constructor in Java?
+11. What is the difference between `==` and `.equals()` in Java?
+12. What are static variables and methods in Java?
+13. What are the different types of exceptions in Java?
+14. What is multithreading in Java, and how does it work?
+15. What is synchronization in Java?
+16. What is the difference between `Runnable` and `Thread` in Java?
+17. How does garbage collection work in Java?
+18. What is the `Comparable` interface in Java?
+19. What are design patterns in Java? Explain some common ones.
+    - Creational Patterns
+    - Structural Patterns
+    - Behavioral Patterns
+
+20. What is a Java `HashMap`, and how does it work?
+21. What is LRU Cache in java.
+22. Functional interfaces in Java.
+    - Interface that has exactly one abstract method.
+    - Can have static and default methods.
+    - introduced in java8.
+    - `@FunctionalInterface`
+    - `@Runnable`, `@Callable`, `@Comparator`
+
 ### Advanced Java (Spring Boot):
 21. What is Spring Boot, and how is it different from the traditional Spring Framework?
+    1. configuration setup.
+    2. dependancies.
+    3. Embedded servers.
+    4. Main Application Class
+    5. Development Time and Complexity
+    6. Microservices Support.
+
 22. What is the purpose of `@SpringBootApplication` annotation in Spring Boot?
     1. `@Configuration`+ `@EnableAutoConfiguration`+ `@ComponentScan`
 
@@ -177,5 +317,6 @@
     6. Add indexes on SQL tables.
     7. Use Leader/(Master)-Follower architecture archetecture for separate read write servers.
     8. Use sharding and Partitioning.
+    9. React.memo and PureComponent in react.JS
 
 
