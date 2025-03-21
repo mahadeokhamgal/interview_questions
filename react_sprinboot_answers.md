@@ -1,3 +1,60 @@
+26. What is Spring Data JPA, and how does it work?
+27. How do you configure a Spring Boot application?
+
+28. What are Spring Boot profiles, and how do they help in environment configuration?
+    1. Define Profiles in application.properties, `application-prod.properties`.
+    2. Activate Profiles in application.properties `spring.profiles.active=prod`
+    3. Activate Profiles via Command-Line Arguments `java -jar myapp.jar --spring.profiles.active=prod`
+    4. Activate Profiles via Environment Variables
+    5. Using @Profile Annotation for Conditional Beans
+
+29. How do you handle validation in Spring Boot?
+    - spring-boot-starter-validation
+    - Use Validation Annotations on model class.
+    - public ResponseEntity<String> createUser(@Valid @RequestBody User user) {}
+
+30. What is the purpose of `@Autowired` annotation in Spring Boot?
+    1. Automatic Dependency Injection:
+    2. Promote Loose Coupling:
+    3. Simplify Bean Wiring:
+    4. Injecting Services, Repositories, and Other Components:
+
+31. What is Spring Security, and how do you implement it in a Spring Boot application?
+    1. `spring-boo-starter-security`.
+    2. `@EnableWebSecurity` and `WebSecurityConfigurerAdapter` interface.
+    2. set application properties to apply security to routes.
+    
+
+32. What is the purpose of `@Entity` and `@Table` annotations in Spring Boot?
+    1. The `@Entity` annotation is used to mark a Java class as a JPA entity. When a class is annotated with @Entity, it is
+     mapped to a database table, and instances of that class represent rows in that table.
+    2. The `@Table` annotation is used to specify the details of the table that the entity will be mapped to in the database.
+      It’s optional, but if you want to specify the table name, schema, or other properties, you use this annotation.
+
+33. How do you manage database transactions in Spring Boot?
+    - Declarative Transaction Management (Using @Transactional Annotation)
+    - Create @Entity class.
+    - Create JPA class.
+    - 
+34. What is a Spring Boot actuator, and how do you use it?
+    - spring-boot-starter-actuator.
+    - management.endpoints.web.exposure.include=health,metrics,info **application properties**.
+    - Accessing Actuator Endpoints.
+    - Customize the /actuator/info and /actuator/health.
+
+35. How do you handle exceptions in Spring Boot?
+    - Using `@ControllerAdvice`(on class) and `@ExceptionHandler`(on method).
+    - Custom Exception Classes
+    - Global Exception Handling - `@RestControllerAdvice`
+    - Using ResponseEntity for Custom Responses - `@ResponseStatus`
+
+    - try catch, catch named exceptions.
+    - handled and unhandled exceptions.
+
+36. What is Spring Boot’s `@RestController` annotation?
+    - `@RestController` = `@Controller` + `@ResponseBody`
+    - Applied on class to mark it as rest controller, which will have route handlers(`Mappings`).
+
 37. What is the `@Configuration` annotation in Spring?
 38. What is Spring Boot’s auto-configuration?
 39. What are Spring Boot’s application properties?
