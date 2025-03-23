@@ -37,6 +37,7 @@
 - **What is `tick` in Angular?**
 - **What is `fakeAsync` in Angular?**
 - **Is multithreading possible in Angular?**
+- **What are types of lazy loading in angular**
 
 ---
 
