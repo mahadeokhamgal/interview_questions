@@ -3,6 +3,7 @@
 22. What is the `useContext` hook in React?
 23. What is React Suspense and lazy loading in React?
 23. Fragment in react.
+    - `<></>` (Similar to `ng-container` in angular)
 
 24. Explain the concept of component reusability in React.
     - Props.
