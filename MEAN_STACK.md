@@ -1,7 +1,7 @@
 # Angular
 
 - **Switch Map vs Fork Join.**
-- **What is Debouncing and Racing?**
+- **What is Debouncing and Throttling?**
 - **Difference between AngularJS and Angular.**
 - **Angular 16 Features:**
   - Standalone
@@ -9,6 +9,8 @@
 - **What is JWT?**
 - **Is it needed to use jwt on socket**
 - **Where should Client store JWT?**
+- **What all information a JWT token has?**
+- **What is Profiling in Angular**
 - **How to make routes/components protected in Angular?**
 - **Alternative methods to JWT.**
 - **Ways to pass data between unrelated components in Angular.**
