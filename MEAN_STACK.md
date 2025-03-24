@@ -1,6 +1,7 @@
 # Angular
 
-- **Switch Map vs Fork Join.**
+- **MergeMap(Parallel Execution) vs Fork Join.**
+- **ConcatMap(Serial Execution), SwitchMap(debauncing), exhaustMap(throttling)**
 - **What is Debouncing and Throttling?**
 - **Difference between AngularJS and Angular.**
 - **Angular 16 Features:**
