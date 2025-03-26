@@ -19,8 +19,11 @@
 - **What is change detection in Angular and how it works?**
 - **Change detection strategies**
 - **What is Lazy loading?**
+- **When to use forChild in angular.**
+- **What are types of lazy loading in angular**
 - **What is Content projection?**
 - **List change detection strategies.**
+- **What is role of Zone in angular**
 - **What is the `Inject` keyword?**
 - **What is `keyvalue` pipe, and its optional arguments? On what type of inputs can it be used?**
 - **What are custom elements in Angular?**
@@ -40,7 +43,6 @@
 - **What is `tick` in Angular?**
 - **What is `fakeAsync` in Angular?**
 - **Is multithreading possible in Angular?**
-- **What are types of lazy loading in angular**
 
 ---
 

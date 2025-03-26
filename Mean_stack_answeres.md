@@ -34,7 +34,10 @@
 - 
 - **Angular 16 Features:**
   - Standalone
-  - Signal
+  - Angular Signals.
+  - Enhanced Hydration.
+  - Faster Builds with esbuild.
+  - Experimental Jest Support.
 
 - **What is JWT?**
     - Stands for json-web-token, used to provide security via token based session.
@@ -78,14 +81,70 @@
     - Basic Auth.
 
 - **Ways to pass data between unrelated components in Angular.**
-    
+    - Shared services.
+    - Subjects/behaviorSubjects.
+    - ngrx store.
+
 - **Ways to pass data between related components.**
+    - Input and Output Properties (Parent to Child and Child to Parent Communication).
+    - ViewChild and ContentChild (Accessing Child Components).
+    - Router (Passing Data with Route Parameters or Query Parameters).
+
 - **What is change detection in Angular and how it works?**
+    - core concept in Angular that allows the framework to update the user interface (UI) automatically when the data in the application changes.
+    - change detection refers to the process of checking the components' data model and comparing it with the view.
+    - change detection ensures that the view (HTML) is always in sync with the model.
+    **How it works**
+        - Component and Its Template:
+        - Change Detection Cycle.
+            - On Component Initialization.
+            - When Data Changes: - Any time a data property bound to the template changes.
+
 - **Change detection strategies**
+    1. Default Change Detection Strategy (`ChangeDetectionStrategy.Default`).
+        - Angular checks the entire component tree for changes(every component is checked on change detection is triggered.)
+        - Inefficient in large applications.
+    2. OnPush Change Detection Strategy (`ChangeDetectionStrategy.OnPush`).
+        - Updates if
+            1. The component’s input properties change (i.e., new reference is passed).
+            2. An event (e.g., click, input, etc.) is fired inside the component.
+            3. Manually triggering change detection (via ChangeDetectorRef).
+        - More efficient for complex applications.
+        - Can be bad if mutable data is used as change detection won't trigger for mutable data update as referance don't update if only some value in it updated.
+        - to manuallu trigger change detection.
+            `constructor(private cdr: ChangeDetectorRef) {} this.cdr.detectChanges();`
+
+- **What is role of Zone in angular**
+    - Angular uses Zones to detect changes in the application.
+    - When Async operations complete, the zone informs Angular to run change detection.
+
 - **What is Lazy loading?**
+    - Design pattern used in angular that delays loading of resources to improve intial load time.
+    - It also prevents unecessory modules loading if not needed and loads only when needed.
+    - **Benefits**
+        - Faster initial load time.
+        - Reduced memory consumption.
+        - Improved user experience
+        - Asynchronous Module Loading.
+
+- **What are types of lazy loading in angular**
+    - Module-based Lazy Loading (Standard Lazy Loading)
+    - Preloading Strategy (Combined with Lazy Loading).
+    - Lazy Loading with Route Guards
+    - Nested Lazy Loading.
+
 - **What is Content projection?**
+    - content projection is done using the <ng-content></ng-content> element
+    - Default Content Projection.
+    - Multiple Slots for Content Projection (Named Slots).
+    - Conditional Content Projection
+
 - **List change detection strategies.**
+    - Default.
+    - OnPush.
+
 - **What is the `Inject` keyword?**
+
 - **What is `keyvalue` pipe, and its optional arguments? On what type of inputs can it be used?**
 - **What are custom elements in Angular?**
 - **How are custom elements different in terms of Standalone and non-standalone components?**
@@ -104,7 +163,6 @@
 - **What is `tick` in Angular?**
 - **What is `fakeAsync` in Angular?**
 - **Is multithreading possible in Angular?**
-- **What are types of lazy loading in angular**
 
 ---
 
