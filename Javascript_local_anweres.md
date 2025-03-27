@@ -158,6 +158,12 @@
     `5`  
     **Output:**  
     `5`
+    function nThFibo(num) {
+       if(num<=1){
+           return num;
+       }
+       return nThFibo(num-1)+nThFibo(num-2);
+}   
 
 16. **Write a function that checks if a number is a perfect square.**  
     **Input:**  
@@ -236,12 +242,30 @@
     `[1, null, 0, 'hello', NaN, false, 3]`  
     **Output:**  
     `[1, 'hello', 3]`
+    function removeFalsy(arr) {
+        return arr.filter(e => e)
+    }
 
 29. **Write a function that finds the intersection of multiple arrays.**  
     **Input:**  
     `[[1, 2, 3], [2, 3, 4], [3, 4, 5]]`  
     **Output:**  
     `[3]`
+    function interSectionOf(arr) {
+        if(arr.length == 1) return arr[0];
+        let set = new Set(arr[0]);
+        for(let i = 1; i < arr.length; i++) {
+            currArr = arr[i];
+            tempSet = new Set();
+            for(let el of currArr) {
+                if(set.has(el)){
+                    tempSet.add(el);
+                }
+            }
+            set = tempSet;
+        }
+        return [...set];
+    }
 
 30. **Write a function that checks if a number is even or odd.**  
     **Input:**  
@@ -260,6 +284,14 @@
     `24, 36`  
     **Output:**  
     `12`
+    function gcd(a, b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+
+        if(b == 0) return a;
+
+        return gcd(b, a%b);
+    }
 
 33. **Write a function that counts the number of occurrences of a specific character in a string.**  
     **Input:**  
@@ -272,6 +304,9 @@
     `'hello'`  
     **Output:**  
     `'hheelllloo'`
+    function makeDouble(str) {
+        return str.replace(/([\w])/g, "$1_");
+    }
 
 35. **Write a function that sorts an array of numbers in ascending order.**  
     **Input:**  
