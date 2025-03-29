@@ -17,13 +17,21 @@
     console.log(childFun());
 
 2. Explain the difference between `var`, `let`, and `const`.
-    `var` - both redeclaration and reassignment is possible. before ES6. Doesn't enter TDZ.
-    `let` - no redeclaration possible, reassignment is possible. Introduced in ES6. Enters TDZ.
-    `const` - no redeclaration or reassignment possible. Introduced in ES6. Enters TDZ.
+    `var` - 1. both redeclaration and reassignment is possible. 2.before ES6. 3. Doesn't enter TDZ. 4. function scope.
+    `let` - 1. no redeclaration possible, reassignment is possible.2.  Introduced in ES6. 3. Enters TDZ. 4. Block scope.
+    `const` - 1. no redeclaration or reassignment possible. 2. Introduced in ES6. 3. Enters TDZ. 4. Block scope.
 
 3. What is the event loop in JavaScript?
+    `Event loop is a fundamental part of JavaScript’s concurrency model, It checks for call stack and if it's empty, if it's empty it moves tasks from Task Queues(Macro and Micro) into call stack`
+    - **Micro** - Promise callbacks, queueMicrotask.
+    - **Macro** - I/O tasks, timers (setTimeout, setInterval), and events.
+
 4. What is a promise in JavaScript, and how do you use it?
+    `Introduced in ES6, are a better way of handling async operations which help overcoming callback hell issue in callback async programming, Promise is an object that provides eventual resolution or rejection to async task. Promise has 3 states named - Pending, resolved, Rejected`
+    - Promises are handled using .then and .catch syntax.
+
 5. What is a callback function, and how does it work in JavaScript?
+    - 
 6. What is the difference between `==` and `===` in JavaScript?
 7. What is hoisting in JavaScript?
 8. What is the difference between synchronous and asynchronous execution?
