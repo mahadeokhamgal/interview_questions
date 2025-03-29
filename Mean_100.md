@@ -31,20 +31,116 @@
     - Promises are handled using .then and .catch syntax.
 
 5. What is a callback function, and how does it work in JavaScript?
-    - 
+    `Way of asynchronous programing in Javascript before Promises etc, this leverages feature of higher order functions in JS, executes a function asynchronously though callee fucntion after some block of code has been executed to emulate async nature.`
+    - Callback hell is a challenge with callback functions which has been resolved in Promises.
+
 6. What is the difference between `==` and `===` in JavaScript?
+    **==** is loose comparison operator vs **===** is strong comparison operator,
+    checks only values and not data type vs checks type as well.
+    Performs coersion to compare vs no coersion.
+    no recommended to use as much vs recommended as it's faster and safe as doesn't perform coersion.
+    e.g.
+        console.log(5 == "5");  // true (type coercion occurs)
+        console.log(5 === "5"); // false (different types)
+
+
 7. What is hoisting in JavaScript?
+    `While compilation all variable, function declarions float to top of the scope(const and let are in TDZ till actual declaration), this phenomeon is called hoisting`, This means they can be referenced before they are declared in the code.
+    e.g.
+    1.  console.log(a); // undefined
+        var a = 10;
+    2.  console.log(hello()); // "Hello, world!"
+        function hello() {
+          return "Hello, world!";
+        }
+
 8. What is the difference between synchronous and asynchronous execution?
+    **Synchronous** - Code executes line by line and next line waits till current line is executed.
+    **Asynchronous** - if current line takes time to execute then it moves out of call stack to Event loop or background and next line is taken for execution in call stack allowing main thread not to be blocked.
+
 9. Explain how `this` works in JavaScript, and it's difference in terms of an arrow and normal function in terms of object.
+    `this refers to calling context/scope(class, function)`.
+    normal functions have their own scope, whereas Arrow functions inherit lexographical scope.
+    - normal functions rely on the caller for **this**.
+    -  arrow functions are tied to the scope they were defined in.
+
+    e.g.
+    const object = {
+      who: 'World',
+      greet() {
+        return `Hello, ${this.who}!`;
+      },
+      farewell: () => {
+        return `Goodbye, ${this.who}!`;
+      }
+    };
+
+console.log(object.greet()); // What is logged?
+console.log(object.farewell()); // What is logged?
+
+
 10. What are JavaScript modules, and how do you import/export them?
+    `JavaScript modules are a way to organize and reuse code in smaller, independent files.     They enable developers to break their application into separate files, each with a  specific functionality, and share or import functionality across those files. This leads     to better maintainability and cleaner code architecture.`
+
 11. What are arrow functions, and how are they different from regular functions?
+    `An arrow function in JavaScript is a concise way to write functions using the => syntax. Arrow functions have a shorter syntax compared to traditional functions and behave differently in terms of how they handle the this keyword.`
+    Diff - 
+    1. Named vs Anonymous.
+    2. Return manatory vs not mandatory.
+    3. have their own scope vs inherit lexographical scope.
+
+
 12. Explain the concept of prototype in JavaScript.
+    `In JavaScript, prototypes are a fundamental concept that allows objects to inherit properties and methods from other objects. Every JavaScript object has an internal property called [[Prototype]] (often referred to as __proto__ in older code), which points to another object. This forms a chain known as the prototype chain, enabling inheritance.`
+    1. Prototype Chain.
+    2. Prototype and Constructor.
+    e.g.
+    function Animal(name) {
+      this.name = name;
+    }
+
+    Animal.prototype.sayHello = function() {
+      console.log(`${this.name} says hello!`);
+    };
+
+    const dog = new Animal('Buddy');
+    dog.sayHello();  ` Output: Buddy says hello!`
+
 13. What is event delegation in JavaScript?
+    `Event delegation is a technique in JavaScript where a single event listener is attached to a parent element rather than individual child elements. The event listener takes advantage of event bubbling to catch events from child elements, allowing the parent to handle events for multiple children dynamically.`
+    - This is to ensure that elements dying off page or coming to life later handle the event.
+    e.g.
+    list.addEventListener('click', function(event) {
+      // Check if the clicked element is a list item (li)
+      if (event.target.tagName === 'LI') {
+        console.log(`You clicked on ${event.target.textContent}`);
+      }
+    })
+
 14. What is the difference between `null` and `undefined`?
-15. Explain the concept of closures in JavaScript with an example.
+    `Null` is intentional absence of value whereas `undefined` is non initialised variable/referance.
+    Null is explicitly assigned value.
+    Undefined is variable declared but not initialised or function that doesn't return any value.
+    - typeof null returns "object".
+    - typeof undefined returns "undefined".
+
 16. What is the `bind()` method in JavaScript?
+    `returns a new instance of function that has "this" variable pointed to the  object passed in .bind(objName)`;
+    - **this** variable remains intact for original function.
+    - syntax - function.bind(thisArg, arg1, arg2, ...);
+
+    function printSomething() {
+        console.log(`this is ${this.name}`);
+    }
+    let obj = { name: "John" }
+    let boundInstance = printSomething.bind(obj);
+    boundInstance();
+
 17. Explain how the `apply()` and `call()` methods differ in JavaScript.
 18. What are the different data types in JavaScript?
+    Primitive
+    Non Pprimitive
+
 19. How does garbage collection work in JavaScript?
 20. What is the `setTimeout()` function in JavaScript?
 
