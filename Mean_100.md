@@ -43,7 +43,6 @@
         console.log(5 == "5");  // true (type coercion occurs)
         console.log(5 === "5"); // false (different types)
 
-
 7. What is hoisting in JavaScript?
     `While compilation all variable, function declarions float to top of the scope(const and let are in TDZ till actual declaration), this phenomeon is called hoisting`, This means they can be referenced before they are declared in the code.
     e.g.
@@ -77,7 +76,6 @@
 
 console.log(object.greet()); // What is logged?
 console.log(object.farewell()); // What is logged?
-
 
 10. What are JavaScript modules, and how do you import/export them?
     `JavaScript modules are a way to organize and reuse code in smaller, independent files.     They enable developers to break their application into separate files, each with a  specific functionality, and share or import functionality across those files. This leads     to better maintainability and cleaner code architecture.`
@@ -137,19 +135,70 @@ console.log(object.farewell()); // What is logged?
     boundInstance();
 
 17. Explain how the `apply()` and `call()` methods differ in JavaScript.
+    - call resembles .bind in sence that it dosen't return new function rather executes function with passed context directly.
+    - apply acceps fucntion parameter in form of array after first object to bind.
+    - call - Person.sayName.call(objToContext, arg1, arg2)
+    - apply - Person.sayName.call(objToContext, [arg1, arg2]).
+
 18. What are the different data types in JavaScript?
-    Primitive
-    Non Pprimitive
+    JavaScript has the following data types:
+
+    1. **Primitive Types**:
+       - **Number**: Used for all numeric values (both integers and floating-point numbers).
+       - **String**: Represents a sequence of characters (text).
+       - **Boolean**: Represents `true` or `false` values.
+       - **Undefined**: A variable that has been declared but not assigned a value has the value `undefined`.
+       - **Null**: Represents the intentional absence of a value or object.
+       - **Symbol**: A unique and immutable data type often used as keys in objects.
+       - **BigInt**: Represents large integers beyond the limit of the `Number` type.
+
+    2. **Objects**:
+       - **Object**: The base data type for key-value pairs and used to store more complex data structures.
+       - **Array**: A special type of object used for ordered collections of values.
+       - **Function**: Functions are also considered objects in JavaScript and can be assigned to variables.
 
 19. How does garbage collection work in JavaScript?
+    `Garbage collection (GC) in JavaScript is the automatic process of reclaiming memory that is no longer in use, helping to prevent memory leaks.`
+    1. Reachability Analysis.
+    2. Mark-and-Sweep Algorithm.
+    3. Generational Garbage Collection.
+
 20. What is the `setTimeout()` function in JavaScript?
+    `inbuilt function that takes callback and number/time in milliseconds as parameters and executes the callback function after number time is comepleted.`
+    - it returns an id, which can be used to cancel the timeout later.
 
 ## TypeScript (15 Questions)
 
 1. What are the advantages of using TypeScript over JavaScript?
+    - IntelliSense and Enhanced IDE Support.
+    - Compile-time Error Handling.
+    - Enums and Interfaces for More Modular Code.
+    - Type Safety.
+    - Tooling and Ecosystem.
+
 2. What is the difference between `interface` and `type` in TypeScript?
+    **Interfaces**
+    - Can be extended using the extends keyword.
+    - can be merged(`When you declare an interface with the same name multiple times, TypeScript automatically merges them together`).
+    **type**
+    - Cannot be merged.
+    - can extend other types using the & operator (intersection types).
+
+    e.g.
+    type Person = {
+      name: string;
+    };
+
+    type Employee = Person & {
+      jobTitle: string;
+    };
+
 3. Explain the concept of "Generics" in TypeScript.
+    
 4. What are "enums" in TypeScript?
+    `Feature in modular programming that provides options for a type e.g. Options to Country-code`.
+    - this helps with uniformity and needs minimal changes to update an option value everywhere in application.
+    
 5. How does TypeScript handle type checking and inference?
 6. What are "tuples" in TypeScript, and how are they used?
 7. How do you define optional parameters in TypeScript functions?
