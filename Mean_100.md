@@ -313,12 +313,51 @@ console.log(object.farewell()); // What is logged?
     - Type Narrowing.
 
 14. How do you handle modules in TypeScript?
+    `In TypeScript, modules are a way to organize and structure your code by splitting it into separate files. Modules help in encapsulating functionality and keeping your codebase clean and manageable.`
+    1. Exporting and Importing in TypeScript.
+    - Named Exports.
+    - Default Export.
+    - Importing Named Exports.
+    - Importing Default Export.
+    - Importing Everything as an Object
+    2. Module Resolution in TypeScript.
+    - Relative Import.
+    - Non-relative Import. (from node_modules.)
+    3. Handling Third-party Modules.
+    - Install the library.
+    - Import the library.
+    - Install Type Definitions.
+    4. Using tsconfig.json for Module Configuration.
+
+
 15. What are "decorators" in TypeScript?
+    `decorators are a special kind of declaration that can be attached to classes, methods, properties, or parameters. They are used to modify or enhance the behavior of the element they are applied to.`
+    - Class Decorators.
+    - Method Decorators.
+    - Property Decorators.
+    - Parameter Decorators.
 
 ## Node.js (20 Questions)
 
 1. What is Node.js, and how is it different from traditional server-side technologies?
+    `Node.js is a runtime environment that allows you to run JavaScript code outside of a web browser, typically on the server side. It is built on Google Chrome's V8 JavaScript engine and enables developers to build scalable and high-performance applications using JavaScript on both the client-side and server-side.`
+    Features.
+    - Event-driven, Non-blocking I/O.
+    - Single threaded.
+    - Built on chrome v8 engine.
+    - JavaScript.
+    - npm (Node Package Manager).
+    - Cross-platform.
+    How Node.js Differs from Traditional Server-side Technologies.
+    - Concurrency Model.
+    - Blocking vs Non-blocking I/O.
+    - Single vs Multi-threaded.
+    - Scalability.
+    - Real-time Applications.
+
+
 2. What is the event-driven architecture in Node.js?
+
 3. What is the role of the `package.json` file in a Node.js project?
 4. Explain the concept of callbacks in Node.js.
 5. What is the `require()` function in Node.js?
@@ -341,11 +380,60 @@ console.log(object.farewell()); // What is logged?
 ## Angular (20 Questions)
 
 1. What is Angular, and how does it differ from other JavaScript frameworks like React or Vue?
+    `Angular is a platform and framework for building single-page applications (SPAs) using TypeScript and JavaScript. Developed and maintained by Google, Angular is a full-featured framework for building web applications.`
+    - Component-based architecture.
+    - Two-way data binding.
+    - Dependency Injection.
+    - Directives.
+    - Routing.
+    - RxJS.
+    - Angular is often considered a **complete solution** for building complex, large-scale web applications, offering a lot of built-in functionality and structure.
+    **How Angular Differs from Other JavaScript Frameworks Like React and Vue**
+    Angular - Full Framework, Two-way binding, Opinionated, MVC/MVVM, Good with optimizations, Large, enterprise-focused
+    React -	Library for UI, One-way binding, Unopinionated, Component-based, Very good (Virtual DOM), Largest, very active
+    Vue - Progressive Framework, Two-way binding, Flexible, Component-based, Very good (Virtual DOM), Growing, developer-friendly
+
 2. What are components in Angular?
+    `In Angular, components are the fundamental building blocks of an application. A component is a self-contained unit that controls a part of the UI (User Interface).`
+    - Template.
+    - Class.
+    - Styles.
+    metadata.
+    - Selector.
+    - Template.
+    - Class.
+    - Styles.
+    **Why Are Components Important in Angular?**
+    - Modularity.
+    - Separation of Concerns.
+    - Reusability.
+    - Testability.
+    - Maintainability.
+
 3. How does two-way data binding work in Angular?
+    `Two-way data binding in Angular enables synchronization between the model (component class) and the view (UI). This means that any changes made in the input field on the UI are automatically reflected in the component's data, and any changes made to the data in the component are instantly updated in the input field on the UI.`
+    - done usign ngModel directive.
+    - view to model to view.
+    e.g. <input [(ngModel)]="username" />.
+
 4. What is dependency injection in Angular?
+    `Dependency Injection (DI) in Angular is a design pattern used to implement inversion of control (IoC). It allows Angular to manage the creation and injection of dependencies (such as services) into components, directives, or other services`
+    How it works.
+    - Service Creation and Provision.
+    - Constructor Injection.
+    Benefits.
+    - Loose Coupling.
+    - Reusability.
+    - Easier Testing.
+    - Singleton Pattern.
+
 5. What are Angular services, and how do you create one?
+    `Angular services are typescript classes decorated with @injectable decorator, they contain buisness logic and shared functionality needed for components.`
+    - to create use -> ng generate service
+    - 
+
 6. What is the purpose of the `ngOnInit` lifecycle hook in Angular?
+
 7. What is the purpose of the `ngFor` directive in Angular?
 8. How does routing work in Angular?
 9. What are pipes in Angular, and how do you create one?
