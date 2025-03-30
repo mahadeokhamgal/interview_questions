@@ -194,20 +194,124 @@ console.log(object.farewell()); // What is logged?
     };
 
 3. Explain the concept of "Generics" in TypeScript.
+    `Generics in TypeScript are a way to create reusable components (functions, classes, or interfaces) that can work with a variety of types rather than being restricted to a single one. By using generics, you can define a placeholder for the type that will be used, making your code more flexible and type-safe.`
+    Why use generics.
+    - Code Reusability.
+    - Type Safety.
+    - Improved Readability.
+    e.g.
+    function getFirstElement<T>(arr: T[]): T {
+        return arr[0];
+    }
+
+    let numberArray = [1, 2, 3];
+    let firstNumber = getFirstElement(numberArray);  // T is inferred as number
+
+    let stringArray = ['apple', 'banana', 'cherry'];
+    let firstString = getFirstElement(stringArray);  // T is inferred as string
     
+
 4. What are "enums" in TypeScript?
-    `Feature in modular programming that provides options for a type e.g. Options to Country-code`.
+    `Enums in TypeScript are a special type that allows you to define a set of named constants. These constants can be strings, numbers, or other values. Enums provide a way to handle a collection of related values with clear names, making code more readable and maintainabl.`
     - this helps with uniformity and needs minimal changes to update an option value everywhere in application.
-    
+    e.g.
+    enum CountryCode {
+        US = 'US',
+        CA = 'CA',
+        MX = 'MX'
+    }
+
 5. How does TypeScript handle type checking and inference?
+    `TypeScript handles type checking and inference through a combination of explicit type annotations and automatic type inference. This system ensures that your code is type-safe while allowing for flexibility and reducing the need for explicit type annotations in many cases.`
+    1. Type Checking.
+    2. Type Inference.
+    3. Explicit Type Annotations.
+    4. Type Inference in Functions.
+    5. Contextual Typing.
+    6. Type Assertions.
+    7. Union and Intersection Types.
+
 6. What are "tuples" in TypeScript, and how are they used?
+    `A tuple is a special type of array in TypeScript that allows you to store a fixed number of elements of different types. Unlike regular arrays, where all elements are typically of the same type, tuples allow for a more flexible structure with mixed types. Tuples maintain their specific type order, which means each element in the tuple can be of a different type, and TypeScript keeps track of the types and their positions.`
+    - Fixed Length.
+    - Element Types.
+    - Preserved Order.
+    e.g. 
+    let person: [string, number, boolean] = ['Alice', 30, true];
+
 7. How do you define optional parameters in TypeScript functions?
+    `In TypeScript, you can define optional parameters in functions by appending a ? to the parameter name. This tells TypeScript that the parameter is not required when calling the function. If the parameter is not provided, it will be undefined by default.`
+    - Optional parameters must be placed after required parameters.
+    - Can also combine optional parameters with default values.
+    - Optional Parameters with Rest Parameters.
+
 8. What is the `any` type in TypeScript, and when should it be used?
+    `Type that allows any type, compiler ignores the errors in its case and errors will be caught at runtime.`
+    - TypeScript essentially disables type checking for that variable.
+    When to use?
+    1. When Migrating to TypeScript.
+    2. Working with Dynamic Data.
+    3. Handling Unknown or Uncertain Types.
+    4. Dynamic Object Structures.
+
 9. What are `never` and `unknown` types in TypeScript?
+    **never**
+    `The never type represents values that never occur. It is used in situations where a function or expression cannot possibly return a value or complete its execution. Essentially, never is used to represent unreachable code or functions that never return (e.g., functions that always throw errors or enter infinite loops).`
+    - Common use cases for never
+    - Functions that throw errors: A function that always throws an error will never return a value.
+    - Functions with infinite loops.
+    - Exhaustive checking in switch statements.
+    **unknown**
+    `The unknown type is similar to any in that it can hold any value. However, the key difference between unknown and any is that you cannot perform operations on an unknown value directly without first checking its type. This makes unknown a safer alternative to any because it forces you to perform type checks before interacting with the value.`
+    - More restrictive than any.
+    - Unknown API responses.
+
 10. What is the purpose of `readonly` in TypeScript?
+    `In TypeScript, the readonly modifier is used to define properties or variables that cannot be modified after initialization. It enforces **immutability** by making sure that once a value is assigned to a readonly variable or property, it cannot be changed throughout the lifecycle of that variable or object.`
+    e.g.
+    interface Person {
+        readonly name: string;
+        readonly age: number;
+    }
+
+    const person: Person = { name: 'Alice', age: 25 };
+
+    // person.name = 'Bob';  // Error: Cannot assign to 'name' because it is a read-only property.
+    **Common Use Cases:**
+        1. Prevent modification of object properties.
+        2. Prevent modification of arrays and tuples.
+        3. Enforce immutability in class properties.
+
+    **Key Benefits:**
+        1. Ensures data integrity and prevents unintended changes.
+        2. Helps achieve immutability in data structures.
+        3. Enhances type safety by preventing mutations.
+
 11. What is type assertion in TypeScript?
+    `Type assertion is a way to tell TypeScript the type of a value when TypeScript is unable to infer it correctly, but you, as the developer, are confident about the type. It allows you to override the inferred type of a value.`
+    - Angle Bracket (<type>) Syntax (This syntax is typically used in TypeScript files with .ts extension).
+    let value: any = "Hello, World!";
+    let length: number = (<string>value).length;
+    - as Syntax (This is the recommended syntax, especially in JSX/React code, where angle brackets can interfere with JSX syntax)
+    let value: any = "Hello, World!";
+    let length: number = (value as string).length;
+
 12. How do you define a class in TypeScript?
+    - Class Declaration.
+    - Properties.
+    - Constructor.
+    - Method.
+    -- Creating an Instance of a Class.
+    -- Adding Access Modifiers.
+    -- Class Inheritance.
+    -- Static Members.
+    -- Readonly Properties.
+
 13. What is the purpose of the `as` keyword in TypeScript?
+    `In TypeScript, the as keyword is primarily used for type assertion, which is a way to tell the TypeScript compiler the specific type of a variable, especially when TypeScript's type inference doesn't have enough information to determine it.`
+    - Type Assertion.
+    - Type Narrowing.
+
 14. How do you handle modules in TypeScript?
 15. What are "decorators" in TypeScript?
 
