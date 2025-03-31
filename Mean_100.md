@@ -433,12 +433,64 @@ console.log(object.farewell()); // What is logged?
     - 
 
 6. What is the purpose of the `ngOnInit` lifecycle hook in Angular?
+    `Hook that gets called called after Angular has initialized all data-bound properties of a component or directive.`
+    Used to.
+    - Initialization of Component Data.
+    - Access to Input Properties.
+    - Avoiding Logic in Constructors.
 
 7. What is the purpose of the `ngFor` directive in Angular?
+    `A structural directive, it changes structure of dom by repeating elements for each element in an array`.
+    - Used to create dynamic repeated elements on UI side based on Array like data.
+    - Dynamic List of elements in html is ideal situation to use ngFor.
+    e.g.
+    
+    <ul>
+      <li *ngFor="let user of users; trackBy: trackByUserId">{{ user.name }}</li>
+    </ul>
+
+    trackByUserId(index: number, user: any): number {
+      return user.id; // Use the unique 'id' of the user to track changes
+    }
+
 8. How does routing work in Angular?
+    `Routing in Angular refers to the mechanism that allows navigation between different views or components within a single-page application (SPA). It enables you to control the flow of the application based on URL changes without reloading the entire page, allowing for a seamless user experience.`
+    - routes are defined in an array, which decides which route renders which component.
+    - The active route is rendered within a router-outlet directive in the template, which acts as a placeholder for the matched component.
+    - routes are registered in a module as RouterModule.forRoot(routes)
+    - Can manually route in component using route.navigate(), where route is instance of Router.
+    - If you're dealing with lazy-loaded modules, you would use RouterModule.forChild(routes).
+
 9. What are pipes in Angular, and how do you create one?
+    `Pipes are used to transform data on template before it is rendered, they are similar to filter in angularJS. typically used to format data, e.g. dates, numbers or texts.`
+    Built-in pipes -
+    1. DatePipe
+    2. CurrencyPipe
+    - To create use -> ng generate pipe <pipe-name> -> then Implement the Pipe in transform method in ts file.
+    - register pipe in declarations.
+
 10. What are directives in Angular, and how are they different from components?
+    `Directives are classes in Angular decorated with @Directive() that are used to manipulate the DOM. They can either change the appearance, behavior, or structure of DOM elements. Directives don’t have their own templates but instead work by modifying existing DOM elements, such as adding event listeners or changing CSS styles.`
+    How are they different from component.
+    - Component vs Directive.
+    - By definition components are special type of directives which have their view vs where directives don't have their own view but they update behavior of existing DOM element.
+    - @Component vs @Directive
+    - have template metadata vs doens't have template metadata.
+
 11. What is RxJS, and how is it used in Angular?
+    `RxJS is a library for reactive programming using observables, It allows you to compose asynchronous and event-based programs with operators such as map, filter, merge, and more. RxJS makes it easier to work with data streams, such as user inputs, HTTP requests, or WebSocket messages, by treating them as streams that can be transformed, combined, and manipulated over time.`
+    - Observable - An Observable is like a stream of values that can be observed (subscribed to).
+    - Observer - An object that subscribes to an Observable.
+    - Operators - Functions that allow you to transform, combine, or filter values from an Observable(map, filter).
+    - Subscription - The act of observing an Observable.
+    How RxJS is used in angular?
+    - HTTP Requests.
+    - Reactive Forms.
+    - Event Handling.
+    - Pipes and Async Pipe.
+    e.g.
+    - debaunceTime comes from rxjs that is used to implement debauncing.
+
 12. How do you handle forms in Angular?
 13. What is an observable, and how do you subscribe to it in Angular?
 14. How do you create a custom directive in Angular?
