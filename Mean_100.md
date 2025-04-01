@@ -376,13 +376,58 @@ console.log(object.farewell()); // What is logged?
     - this file is accompanied by **package-lock.json**, which locks the exact versions of every package and its dependencies. This ensures consistency across environments, meaning the exact same versions of dependencies are installed each time, which helps prevent potential issues caused by version mismatches.
 
 4. Explain the concept of callbacks in Node.js.
+    `Callbacks are functions that allow asynchronous execution in JavaScript. This is achieved through JavaScript's "higher-order function" feature, where a function is passed as an argument to another function. The callee function then calls the callback function when the task is completed, effectively simulating asynchronous behavior.`
+    - this is used in case code is supposed to be executed in order, especially when dealing with I/O operations like reading files.
+
 
 5. What is the `require()` function in Node.js?
+    `The require() function in Node.js is a built-in function used to import modules into a Node.js application. It is essential for modularizing your code and including various libraries, packages, or built-in Node.js modules.`
+    Key Points about require() in Node.js :-
+    1. Importing Modules.
+    2. Importing Custom Modules.
+    3. Caching.
+    4. Module Resolution.
+    5. JSON Files. -const data = require('./data.json');
+
 6. How does Node.js handle asynchronous operations?
+    `NodeJS handles asynchronous operations though Event driven architecture, this includes Event loop, Event Emitters, callbacks, etc.`
+    **Event Loop**: The event loop is at the core of Node.js's ability to handle asynchronous operations. It allows Node.js to process multiple requests concurrently on a single thread by constantly checking the event queue and executing callbacks when the associated tasks are completed.
+
+    **Event Emitters**: Node.js uses the EventEmitter class to allow objects to emit events and have listeners react to them. This is useful for managing asynchronous events like HTTP requests, file reading, or user input.
+
+    **Callbacks**: In asynchronous operations, Node.js often uses callbacks. When an asynchronous task (like reading a file or querying a database) completes, a callback function is called to process the result. This prevents blocking the main thread while waiting for I/O tasks to finish.
+    **Worker Threads:**
+    For CPU-bound tasks that could block the event loop, Node.js introduced Worker Threads(available in `Node.js 10.x` and later). These allow parallel processing of heavy computational tasks while keeping the event loop free, ensuring responsiveness in the application.
+
 7. What are streams in Node.js, and how are they useful?
+    `Stream is powerfull concept in nodejs used to handle data that is transferred in chunks rather than single whole block, Streams allow data to be read or written in a continuous, efficient, and non-blocking manner. They provide an efficient way to process large amounts of data that may not fit into memory all at once, such as reading from files, receiving data over the network, or interacting with databases.`
+    Types of Streams in Node.js.
+    1. Readable Streams.
+    2. Writable Streams.
+    3. Duplex Streams.
+    4. Transform Streams.
+
 8. What are the different types of streams in Node.js?
+    Types of Streams in Node.js.
+    1. Readable Streams.
+    2. Writable Streams.
+    3. Duplex Streams.
+    4. Transform Streams.
 9. Explain the concept of middleware in Express.js.
+    `middleware is a function that has access to req, res, and next object, it can modify req, res object and can decide when and if to pass the control to next handler.`
+    - middleware get's executed based on where they are put in code(before which route handlers it is put).
+    - middleware can be put on specific route handler to make it specific to that handler only.
+    - error handling middlewares get called if any unhandler error is thown and there is an error handling middleware attched after the route where error was thown, this middleware has access to err, req, res, next object.
+
 10. What is the `process` object in Node.js, and how do you use it?
+    `The process object in Node.js is a global object that provides information and control over the current Node.js process. It is a part of Node.js's built-in APIs and is accessible from anywhere in the application without requiring the use of require()`
+    1. process.argv
+    2. process.env
+    3. process.exit([code])
+    4. process.stdout
+    5. process.stdin
+    6. process.pid
+    
 11. How do you create a simple HTTP server in Node.js?
 12. What is the `eventEmitter` class in Node.js?
 13. What is the purpose of the `fs` module in Node.js?
@@ -393,6 +438,7 @@ console.log(object.farewell()); // What is logged?
 18. What is clustering in Node.js, and how does it work?
 19. Explain the concept of "callback hell" in Node.js and how to avoid it.
 20. What is the `Buffer` class in Node.js?
+21. How do you upload large sized file from Angular to NodeJS to MongoDB, give me design for this.
 
 ## Angular (20 Questions)
 
