@@ -543,3 +543,26 @@ Write a function that checks if two arrays are equal (contain the same elements 
 
 ### 40. **Find Missing Number in Range:**
 Write a function that finds the missing number in an array where all numbers are between `1` and `n` except for one missing number.
+
+41. **Write a function that takes a string as input, capitalizes the first letter of each word, and then returns the string with a "#" symbol prepended to it.**
+    **input**
+    `"hello world"`
+    **output**
+    `"#HelloWorld"`
+    function generateHash(str) {
+        return "#" + str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("");
+    }
+
+42. **Write a javascript function that returns count of given character from given string(it should count both lowercase and uppercaqse characters)**.
+    **input**
+    `"MissIssippi", 'i'`
+    **output**
+    `4`.
+    function countChar(str, char) {
+        return str.toUpperCase().split('').reduce((acc, c) => {
+            if(c == char.toUpperCase()) acc += 1;
+            return acc;
+        }, 0)
+    }
+
+    

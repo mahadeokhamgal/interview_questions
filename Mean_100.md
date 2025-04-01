@@ -357,9 +357,26 @@ console.log(object.farewell()); // What is logged?
 
 
 2. What is the event-driven architecture in Node.js?
+    `Event-driven architecture (EDA) in Node.js is a design pattern where the flow of the program is determined by events or    messages. In this architecture, an application reacts to different types of events (like user input, system updates, or external service responses) rather than following a strict sequence of commands.`
+
+    Key Concepts of Event-Driven Architecture in Node.js:
+    **Event Loop:**
+    **Event Emitter:**
+    **Callbacks**
+    **Non-Blocking I/O:**
+    **Asynchronous Programming:**
+
+    Advantages of Event-Driven Architecture in Node.js:
+    **Scalability**
+    **Performance**
+    **Real-time Applications**
 
 3. What is the role of the `package.json` file in a Node.js project?
+    - The **package.json** file holds important metadata and configuration for a Node.js project when using `npm` as the package manager. It includes project details such as the name, version, scripts, dependencies, and devDependencies. When you run npm install, npm reads the dependencies from package.json and installs the required packages.
+    - this file is accompanied by **package-lock.json**, which locks the exact versions of every package and its dependencies. This ensures consistency across environments, meaning the exact same versions of dependencies are installed each time, which helps prevent potential issues caused by version mismatches.
+
 4. Explain the concept of callbacks in Node.js.
+
 5. What is the `require()` function in Node.js?
 6. How does Node.js handle asynchronous operations?
 7. What are streams in Node.js, and how are they useful?
@@ -492,6 +509,7 @@ console.log(object.farewell()); // What is logged?
     - debaunceTime comes from rxjs that is used to implement debauncing.
 
 12. How do you handle forms in Angular?
+
 13. What is an observable, and how do you subscribe to it in Angular?
 14. How do you create a custom directive in Angular?
 15. What is Angular CLI, and how do you use it?

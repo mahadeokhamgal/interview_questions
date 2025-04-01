@@ -239,6 +239,17 @@
     `20, 4`  
     **Output:**  
     `true`
+41. **Write a function that takes a string as input, capitalizes the first letter of each word, and then returns the string with a "#" symbol prepended to it.**
+    **input**
+    `"hello world"`
+    **output**
+    `"#HelloWorld"`
+
+42. **Write a javascript function that returns count of given character from given string(it should count both lowercase and uppercaqse characters)**.
+    **input**
+    `"MissIssippi", 'i'`
+    **output**
+    `4`.
 
 # 40 JavaScript Logic-Based Questions
 
