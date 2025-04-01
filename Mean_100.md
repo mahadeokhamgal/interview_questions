@@ -427,7 +427,7 @@ console.log(object.farewell()); // What is logged?
     4. process.stdout
     5. process.stdin
     6. process.pid
-    
+
 11. How do you create a simple HTTP server in Node.js?
 12. What is the `eventEmitter` class in Node.js?
 13. What is the purpose of the `fs` module in Node.js?
@@ -555,9 +555,47 @@ console.log(object.farewell()); // What is logged?
     - debaunceTime comes from rxjs that is used to implement debauncing.
 
 12. How do you handle forms in Angular?
+    - Angular provides two approaches for handling forms: Template-driven forms and Reactive forms.
+    1. Template-Driven Forms (Simpler Approach).
+    - This is ideal for simpler use cases and relies on Angular's directives to manage forms.
+    - Uses `FormsModule` which enables directives like ngModel for two-way data binding.
+    e.g.
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+      <input type="text" name="username" [(ngModel)]="user.username" required>
+      <button type="submit">Submit</button>
+    </form>
+    2. Reactive Forms (More Scalable Approach).
+    - Reactive forms are more robust, structured, and provide better control over form validation and updates.
+    - Uses `FromControl`, `FormFroup`, `FormBuilder`, `ReactiveFormsModule`.
 
 13. What is an observable, and how do you subscribe to it in Angular?
+    `An Observable in Angular is a powerful way to handle asynchronous programming, allowing you to work with a continuous stream of data rather than a single value.`
+    - to subsribe you use, <observable>.subsribe((data) => {}) syntax.
+    - angular HttpModule also uses observables internally to provide response to apis.
+    - rxjs provides lots of operators to manipulate data from observables, e.g. map, filter, debaunceTime, etc.
+    - obervables provide means to avaoid memory leakage, via unsubscribe method whereas promise cannot be cancelled.
+
 14. How do you create a custom directive in Angular?
+    ng generate directive <directivename>
+    
+    `import { Directive, OnChanges, Input, ElementRef, Renderer2, SimpleChanges } from '@angular/core';`
+
+    `@Directive({`
+    `	selector: "[bgColor]"`
+    `})`
+    `export class bgColor implements OnChanges {`
+    `	@Input color: string;`
+    ``
+    `	constructor(private el: ElementRef, private renderer: Renderer2) {`
+    `    `
+    `	}`
+    `	ngOnChanges(changes: SimpleChanges): void {`
+    `		if(changes['color']) {`
+    `			this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', this.color);`
+    `		}`
+    `	}`
+    `}`
+
 15. What is Angular CLI, and how do you use it?
 16. What are Angular modules, and why are they important?
 17. What is lazy loading in Angular?
