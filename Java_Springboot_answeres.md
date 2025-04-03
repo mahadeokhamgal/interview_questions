@@ -87,8 +87,61 @@
     `A method in the Object class that is called by the garbage collector before an object is garbage collected. It was intended for resource cleanup, but it's deprecated and should not be used in modern Java. It is not thread-safe.`
 
 - **How does the HashMap work internally in Java?**
+    `A HashMap in Java is a key-value data structure that uses a hashing mechanism to store and retrieve data efficiently. When you add an entry (key-value pair), the key is hashed to generate a hash code, which determines the index in an internal array (called the bucket array).`
+    **Hashing**: The hashCode() method of the key is called to generate a hash code. The hash code is then used to compute an index in the array where the entry should be placed.
+    **Handling Collisions**: If two keys generate the same hash code (a collision), the HashMap handles it using a technique called separate chaining. In this case, a linked list or a balanced tree (starting from Java 8) is used to store multiple key-value pairs at the same index in the array.
+        *From Java 8 onwards*: If the number of elements in a bucket (due to collisions) exceeds a certain threshold (typically 8), the HashMap switches from a linked list to a balanced tree (Red-Black Tree) to ensure that the lookup time remains O(log n) instead of O(n) in the worst case.
+    **Load Factor & Resizing**: 0.75
+    **Null Keys/Values**: A HashMap allows one null key and any number of null values, which is important for certain use cases.
+
 - **What is the difference between ArrayList and LinkedList?**
+    *ArrayList*
+    1. Arraylist is resizable array like data structure.
+    2. Contegious memory locations.
+    3. Element access is constant time.
+    4. Element update constant time.
+    5. deleting fist element is linear time.
+    6. ideal when frequent element update is needed.
+
+    *LinkedList*
+    1. Linkedlist is data structure where nodes are connected by pointers.
+    2. Non contagios memory location.
+    3. Element access is linear time.
+    4. Element update is linear time.
+    5. deleting first element is constant time.
+    6. Ideal when parse/spread around memory allocation is required.
+
 - **Explain the concept of multithreading and the Thread lifecycle.**
+    - How to create threads.
+    *Extend thread way.*
+    1. create class B that represents a thread.
+    2. extend Thread class on it as `B extends Thread`.
+    3. override run method in it, add what to execute in parallel thread in run method.
+    4. create instance of B in main thread can be main method, and call start method of B's instance to start the parallel thread.
+    
+    *implements Runnable way.*
+    1. create class B that represents a thread.
+    2. extend Thread class on it as `B implements Runnable`.
+    3. override run method in it, add what to execute in parallel thread in run method.
+    4. create instance of B in main thread can be main method.
+    5. create new thread using Thread t1 = new Thread(b's instance);
+    6. call t1.start(); to start the alternative thread.
+
+    *Using labda expression*
+        Runnable task = () -> System.out.println("Lambda thread is running");
+        Thread thread = new Thread(task);
+        thread.start(); // starts the thread
+        `Pros`: Very concise and clean. `Cons`: Only works for Runnable tasks (not Thread directly).
+    *Using the ExecutorService (Thread Pool)*
+    *Using ForkJoinPool*
+
+    Lifecycle - 
+    1. New.
+    2. Runnable.
+    3. Running.
+    4. Blocked/Waiting.
+    5. Terminated.
+
 - **What is a functional interface? Give an example.**
 - **What is the significance of the `static` keyword?**
 - **How are exceptions handled in Java?**
@@ -118,6 +171,11 @@
 1. **What is multithreading in Java?**
 2. **What is the difference between a process and a thread?**
 3. **What is the life cycle of a thread in Java?**
+- How to pause current thread for specific amount of time ?
+- How to make my main thread wait for thread p1 to get completed ?
+- When does thread instance/object get eligible for garbage collection ?
+- When will you suggest Thread class and when will you suggest to use Runnable Interface?.
+
 4. **How can you create a thread in Java?**
 5. **What is the purpose of the `join()` method in Java?**
 6. **What is thread synchronization in Java? Why is it important?**
@@ -133,6 +191,7 @@
 
 - **What are the new features introduced in Java 8?**
 - **Explain the concept of lambda expressions.**
+- What are ways to handle unhandled exceptions.
 - **What is the purpose of the `Optional` class?**
 - **How do streams work in Java?**
 - **What is the difference between intermediate and terminal stream operations?**
