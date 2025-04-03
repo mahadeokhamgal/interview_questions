@@ -61,8 +61,27 @@
     - Runtime polymorphism.
 
 - **How does garbage collection work in Java?**
+    `Garbage collection in Java is an automatic memory management mechanism that removes objects that are no longer in use or referenced by the program. This helps to ensure efficient memory usage by reclaiming unused memory, preventing memory leaks.`
+
 - **What are String, StringBuilder, and StringBuffer?**
+    *String*
+    - `String is one of the primitive data types in Java, that represents series of characters.`
+    - String is immutable, meaning everytime you want to update something in string, a new memory will be created.
+
+    *StringBuilder*
+    - `StringBuilders are good way to manipulate strings as it is mutable in nature, provides lot of methods to process string. Stringbuilders are not thread safe in case of multithreading.`
+
+    *StringBuffer*
+    - `StringBuffer are an similar to stringbuiler and are thread safe as compared to stringbuilder. These are good to use in case multithreading is needed to be used.`
+
 - **Explain the difference between `final`, `finally`, and `finalize()`.**
+    *final*
+    - Final is used to make the variables final that is once initialised it cannot be modified, final methods cannot be overriden.
+    *finally*
+    - Finally is used in exception handling in Java, finally block is executed after try and catch are executed, finally will always be called irrespective of try/catch execution, so finally serves purpose of closing connections/cleaning purposes.
+    *finalize()*
+    - finalise is used to make function thread safe.
+
 - **How does the HashMap work internally in Java?**
 - **What is the difference between ArrayList and LinkedList?**
 - **Explain the concept of multithreading and the Thread lifecycle.**
@@ -90,6 +109,21 @@
 - **What are annotations, and how are they used in Java?**
 
 ---
+# 12 Multithreading Interview Questions in Java
+
+1. **What is multithreading in Java?**
+2. **What is the difference between a process and a thread?**
+3. **What is the life cycle of a thread in Java?**
+4. **How can you create a thread in Java?**
+5. **What is the purpose of the `join()` method in Java?**
+6. **What is thread synchronization in Java? Why is it important?**
+7. **What are the different types of thread synchronization in Java?**
+8. **What is the `volatile` keyword in Java? How does it relate to multithreading?**
+9. **What is the difference between `wait()` and `sleep()` methods in Java?**
+10. **What are thread pools, and why should you use them?**
+11. **Explain the concept of deadlock in Java. How can you avoid it?**
+12. **What are the differences between `CountDownLatch` and `CyclicBarrier` in Java?**
+
 
 # Advanced Java (Java 8+) (25 Questions)
 

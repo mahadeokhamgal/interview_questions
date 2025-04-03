@@ -602,6 +602,7 @@ console.log(object.farewell()); // What is logged?
 18. What are Angular guards, and how are they used in routing?
 19. What is the role of `ngModel` in Angular?
 20. What is change detection in Angular?
+21. visiblity: hidden; vs display:none:
 
 ## Express.js (15 Questions)
 
