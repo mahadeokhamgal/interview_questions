@@ -76,11 +76,15 @@
 
 - **Explain the difference between `final`, `finally`, and `finalize()`.**
     *final*
-    - Final is used to make the variables final that is once initialised it cannot be modified, final methods cannot be overriden.
+        - Variables: When a variable is declared final, it can be assigned a value only once. After that, its value cannot be changed (i.e., it's immutable).
+        - Methods: When a method is declared final, it cannot be overridden by any subclass.
+        - Classes: When a class is declared final, it cannot be subclassed.
+    
     *finally*
-    - Finally is used in exception handling in Java, finally block is executed after try and catch are executed, finally will always be called irrespective of try/catch execution, so finally serves purpose of closing connections/cleaning purposes.
+    `Used in exception handling to define a block of code that will always execute after the try and catch blocks, even if an exception occurs. It's commonly used for cleanup, such as closing files or releasing resources.`
+    
     *finalize()*
-    - finalise is used to make function thread safe.
+    `A method in the Object class that is called by the garbage collector before an object is garbage collected. It was intended for resource cleanup, but it's deprecated and should not be used in modern Java. It is not thread-safe.`
 
 - **How does the HashMap work internally in Java?**
 - **What is the difference between ArrayList and LinkedList?**
