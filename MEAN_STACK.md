@@ -96,3 +96,25 @@
 - **What is Sharding and Partitioning?**
 - **Can two partitions have identical data? Why?**
 - **When to use sharding and when not to?**
+
+**Addition**
+1. Difference between deepCopy and ShallowCopy.
+2. What is flex-box.
+3. What re properties of flex-box.
+4. Difference between forkJoin vs combineLatest.
+5. What is standalone component?
+6. What is difference between Promise and Observable.
+7. List few ES6 features.
+8. What is chage detection in Angular.
+9. When to use UpgradeModule and DownGrademodule in angular.
+10. Difference between MergeMap and SwitchMap.
+11. How to create simulteneus/parallel API calls?
+12. Create a custom pipe.
+13. write function to convert below input to output format.
+-input - {'id': 123, 'name': 'John', 'email': 'john@email.com'}
+output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
+14. Write a reactive form(component side only) as below.
+- 3 input fields.
+  1. name.
+  2. date of birth.
+  3. phone number.
