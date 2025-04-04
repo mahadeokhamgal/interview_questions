@@ -162,17 +162,117 @@
 
 - **How are exceptions handled in Java?**
 - **What are unhandled exceptions in java and how to handle them?**
-- **WHy strings are immutale in java ?**
+    Handled (Checked) Exceptions:
+    - Checked exceptions are exceptions that the compiler forces you to handle. If these exceptions are not handled, a    compilation error occurs.
+    - These exceptions are typically related to issues that are outside the control of the programmer (e.g., I/O errors,  database issues).
+    - They can be handled using try-catch-finally blocks.
+    - Example: IOException, SQLException
+    - It is recommended to handle specific exceptions instead of catching a generic Exception, as it provides more meaningful     error handling and debugging information.
+    - You can also propagate them to the caller using the throws keyword if you choose not to handle them within the method itself.
+
+    *Unhandled(Unchecked) exceptions*
+    - Unchecked exceptions (also known as runtime exceptions) are not checked by the compiler at compile-time. These exceptions   can occur during the program’s execution, but you are not forced to handle them.
+    - These exceptions often represent programming errors, such as null pointer access, array index out of bounds, or     arithmetic errors (e.g., division by zero).
+    - Example: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException
+    - Since unchecked exceptions are not subject to the throws clause requirement, they don’t need to be explicitly handled using try-catch blocks. However, they can still be caught in the same way as checked exceptions.
+    - Best Practice: Handle unchecked exceptions only when there is a real need to recover from them or log them meaningfully, but avoid catching them blindly unless necessary.
+
+    `try`: Code that may throw an exception is placed inside the try block.
+    `catch`: This block catches and handles specific exceptions thrown in the try block.
+    `finally`: This block is executed whether or not an exception occurs, useful for cleanup code like closing files or       releasing resources.
+
+- **Why strings are immutale in java ?**
+    1. Security.
+    2. Efficiency in String Pooling.
+    3. Thread Safety.
+    4. Hashcode Caching.
+
+- **How to overcome/alternative for strings immutable behavior**
+    - StringBuilder.
+    - StrinBuffer.(Thread safe)
+
 - **What is the purpose of the `super` keyword?**
+    `Super is keyword, similar to this, whereas this refers to current object/class, whereas super refers to super class`
+    - keyword used to refer to immediate parent context.
+    - can call parent class contructor using super()
+    - can user super.<fieldName> to access super class properties.
+    - can call parent/supe class methods using super.methodName(), especially if the child class has overridden that method.
+
 - **How does `synchronized` work in Java?**
+    `synchronized keyword is used to make blocks/functions/properties thread safe`
+    - Synchronized Methods: When a method is marked as synchronized, it locks the object (for instance methods) or the class (for static methods) before executing the code inside it. Only one thread can hold the lock at any given time, and other threads will have to wait until the lock is released.
+    - Synchronized Blocks: If you don't want to synchronize an entire method, you can use synchronized blocks inside methods to lock only a portion of the code, which can improve performance.
+    - **DeadLock**: situation when two or more threads are waiting for each other to release, leading to standstill.
+
 - **Explain `equals()` and `hashCode()` methods.**
+    equals() -
+    - used to compare two objects for equality.
+    Purpose: To determine if two objects are logically equivalent.
+    Contract:
+    `Reflexive`: An object must be equal to itself.
+    `Symmetric`: If a.equals(b) is true, then b.equals(a) should also be true.
+    `Transitive`: If a.equals(b) and b.equals(c) are true, then a.equals(c) must be true.
+    `Consistent`: If a.equals(b) is true, then it should remain true as long as the objects are not modified.
+    `Null comparison`: Any object should not be equal to null (a.equals(null) should return false).
+    
+    hashCode() -
+    The hashCode() method returns an integer that is used by hash-based collections (like HashMap, HashSet, and Hashtable) to determine the bucket where an object should be stored.
+    Purpose: To return a hash code that represents the "identity" of an object for use in hash-based collections.
+    Contract:
+    `Consistent`: If the object is not modified, multiple invocations of hashCode() should return the same result.
+    `Equality`: If two objects are equal according to equals(), they must return the same hash code.
+    `Non-equality`: If two objects are not equal according to equals(), they do not have to return different hash codes, but  it's generally good practice to minimize hash collisions.
+    
+    `Override both equals() and hashCode() together when you need logical equality based on object data.`
+
 - **What are wrapper classes in Java?**
+    `Object Representation of Primitives`: A wrapper class wraps a primitive value into an object. For example, int is wrapped into an Integer object.
+   ` Autoboxing and Unboxing`:
+    Autoboxing: Java automatically converts primitive types to their corresponding wrapper class when needed.
+    Unboxing: Java automatically converts wrapper objects back to their corresponding primitive type when needed.
+
+    Use Cases for Wrapper Classes:
+    `Collections`: Java collections (like ArrayList, HashMap, etc.) can only store objects. If you need to store primitive data types in these collections, you must use the corresponding wrapper classes.
+    `Methods that require objects`: Some methods, especially in APIs or libraries, may require objects instead of primitives. Wrapper classes provide the object representation of primitive types in such cases.
+    `Null Representation`: Wrapper classes can be assigned null, which allows you to represent the absence of a value. For example, Integer can be null, while int cannot.
+
 - **How does Java ensure platform independence?**
+    - Java bytecode(.class) is platform independant, i.e. can be executed on any system.
+    - Java JVM's are used to execute the bytecode on where the JVM is installed and it uses JIT to compile code to machine specific code.
+
 - **What is the difference between `==` and `.equals()`?**
+    ==
+    - Used on objects to compare for referance.
+    - Cannot alter behavior of == operator.
+    `For Primitives`: When used with primitive types (e.g., int, char, boolean), == compares their values directly.
+    `For Objects`: When used with objects, == compares whether the two references point to the same memory location. In other words, it checks if both references point to the same object in memory.
+
+    .equals()
+    - Used on objects to compare for equality.
+    - Can override .equals method.
+
 - **What is a volatile variable in Java?**
+    - In Java, the volatile keyword is used to indicate that a variable's value may be modified by multiple threads. When a variable is declared as volatile, it ensures that.
+    1. Visibility of changes.
+    2. No Caching.
+    3. Atomicity.
+
 - **What is the use of the `transient` keyword?**
+    - The transient keyword is used in Java to prevent serialization of specific fields in an object. When a field is marked as transient, it will not be serialized when the object is serialized. Serialization is the process of converting an object into a byte stream so it can be saved to a file, sent over a network, or stored in a database. The transient keyword is particularly useful when you want to exclude sensitive or unnecessary data from the serialization process.
+
 - **Explain the concept of the default method in interfaces (Java 8+).**
+    - default methods in interfaces introduced in java8.
+    - default methods provide default implementations to methods allowing interfaces to have non abstract methods.
+    - the default methods can be overriden in child class or can directly inherit them using implements.
+    Benefits of Default Methods:
+    1. Backward Compatibility: adding new default method doesn't need to add implementation for it like abstract methods.
+    2. Multiple Inheritance of Behavior.
+
+
 - **How does the Java memory model work?**
+    `The Java Memory Model (JMM) is an essential part of Java's concurrency model that defines how threads interact through memory and what behaviors are allowed in a multithreaded environment. The primary goal of the JMM is to ensure that Java programs behave correctly when running on multiple threads, especially regarding shared variables and their visibility.`
+    1. Shared Memory and Threads.
+
 - **What are design patterns in Java? Name a few common ones.**
 - **What is the difference between checked and unchecked exceptions?**
 - **Explain how `try-with-resources` works in Java.**
@@ -255,7 +355,7 @@
 - **What is the purpose of the `@Entity` annotation in JPA?**
 - **How does Spring Boot handle REST APIs?**
 - **Explain the difference between GET, POST, PUT, and DELETE in REST APIs.**
-- **How is `@PathVariable` different from `@RequestParam`?**
+- **How is `@` different from `@RequestParam`?**
 - **What is the purpose of the `@Transactional` annotation?**
 - **How do you implement pagination in Spring Boot?**
 - **What are Hibernate and JPA? How are they related?**
