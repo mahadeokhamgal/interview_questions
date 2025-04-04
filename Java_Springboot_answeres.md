@@ -143,8 +143,26 @@
     5. Terminated.
 
 - **What is a functional interface? Give an example.**
+    `Functional interface a special type of interface in java, that has exactly one abstract method, These interfaces are primarily intended to be used with lambda expressions`.
+    - In Java, a functional interface can be created using the @FunctionalInterface annotation.
+    Example - Runnable, Comparator.
+
 - **What is the significance of the `static` keyword?**
+    1. Static Variables (Class-level Variables)
+    - static variables are bound to class itself rather than it's instances, these have only one instance, these are accessed by classname.<variablename>.
+    2. Static Methods (Class-level methods)
+    - Static methods are called by Classname than instance name, generally used for utility methods which don't need to rely on instance.
+    3. Static Blocks (Initialization block) -
+    `used to initialise static variables or any class level setup when class is loaded.`
+    4. Static Classes (Static Nested Classes)
+    `A static nested class is a class defined within another class, but it does not require an instance of the enclosing class to be instantiated.`
+    5. Static Imports.
+    `Allows to call static members(methods /variables) from class directly using method() or variable syntax.`
+    6. Global Constants.
+
 - **How are exceptions handled in Java?**
+- **What are unhandled exceptions in java and how to handle them?**
+- **WHy strings are immutale in java ?**
 - **What is the purpose of the `super` keyword?**
 - **How does `synchronized` work in Java?**
 - **Explain `equals()` and `hashCode()` methods.**
