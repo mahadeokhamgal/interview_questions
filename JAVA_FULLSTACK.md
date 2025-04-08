@@ -148,11 +148,55 @@
     - 8080
 
 - Can we disable the default web server in the Spring Boot application?
-    
-- How do you disable a specific auto-configuration class?
-- Can we create a non-web application in Spring Boot?
-- Describe the flow of HTTPS requests through the Spring Boot application.
+    1. Disabling the Web Server via application.properties or application.yml
+    - server.port=-1
+    2. Disabling the Web Server Programmatically
+    3. Using @SpringBootApplication with a Specific Profile
+    4. Use of Spring Boot’s @EnableAutoConfiguration with exclude Option
+    - @EnableAutoConfiguration(exclude = {WebServerFactoryAutoConfiguration.class})
+    *Use Cases for Disabling the Web Server*
+    Command-line applications: If you want to build a Spring Boot application that runs as a console-based application or a batch job.
+    `Non-web services`: If you want to use Spring Boot for backend services that don’t require a web server (e.g., integration with databases, messaging queues, etc.).
+    `Microservices with no web interface`: Some microservices may not need a web interface and might just act as background processors.
 
+- How do you disable a specific auto-configuration class?
+    1. Using @EnableAutoConfiguration with the exclude Attribute.
+    - @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
+    2. Using application.properties or application.yml (Excluding Auto-Configuration Classes).
+    - spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    3. Using the @SpringBootApplication Annotation.
+    - @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+
+
+- Can we create a non-web application in Spring Boot?
+    - Yes we can create non web app in spring boot.
+    1. Disabling the Web Server via application.properties or application.yml
+    - server.port=-1
+    2. Disabling the Web Server Programmatically
+    3. Using @SpringBootApplication with a Specific Profile
+    4. Use of Spring Boot’s @EnableAutoConfiguration with exclude Option
+    - @EnableAutoConfiguration(exclude = {WebServerFactoryAutoConfiguration.class})
+    *Use Cases for Disabling the Web Server*
+    Command-line applications: If you want to build a Spring Boot application that runs as a console-based application or a batch job.
+    `Non-web services`: If you want to use Spring Boot for backend services that don’t require a web server (e.g., integration with databases, messaging queues, etc.).
+    `Microservices with no web interface`: Some microservices may not need a web interface and might just act as background processors.
+
+- Describe the flow of HTTPS requests through the Spring Boot application.
+    1. Client Sends an HTTPS Request.
+    2. SSL/TLS Handshake (Server-Side).
+        - The server (Spring Boot app) sends its SSL certificate to the client.
+        - The client validates the certificate to ensure the server is authentic.
+        - A shared secret (session key) is generated during this process for encrypting/decrypting the data.
+        - If the handshake is successful, a secure connection is established, and the communication can proceed over HTTPS.
+    3. Request Routing by Embedded Web Server.
+    4. Spring Boot Application Receives the Request
+    5. Security Filters.
+    6. Controller Handling.
+    7. Controller Logic.
+    8. Response generation.
+    9. Response Sent Back Through the Embedded Web Server.
+    10. Client Receives the Response.
+    
 Practical.
 
 1. Write java code to find elements that occur only once in array.

@@ -162,6 +162,7 @@
 
 - **How are exceptions handled in Java?**
 - **What are unhandled exceptions in java and how to handle them?**
+- **What is the difference between checked and unchecked exceptions?**
     Handled (Checked) Exceptions:
     - Checked exceptions are exceptions that the compiler forces you to handle. If these exceptions are not handled, a    compilation error occurs.
     - These exceptions are typically related to issues that are outside the control of the programmer (e.g., I/O errors,  database issues).
@@ -274,10 +275,37 @@
     1. Shared Memory and Threads.
 
 - **What are design patterns in Java? Name a few common ones.**
-- **What is the difference between checked and unchecked exceptions?**
 - **Explain how `try-with-resources` works in Java.**
+    - try-with-resources is a newer way of working with resources, be it db connection.
+    - previously connections were created in try and closed in finally block, which had it's pitfalls.
+    - the newer method makes sure that no matter of finally or anything the resource will be released avoiding any performance and memory leak issues.
+    - The resources used in a try-with-resources block must implement the `AutoCloseable` interface (or java.io.Closeable), which guarantees that the close() method is automatically called on the resource when it is no longer needed.
+    - try(Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+     Statement stmt = connection.createStatement()) {
+
+    } catch(SQLException e){}
+
 - **How are generics used in Java?**
+    `Generics in Java are a powerful feature that allows you to write more flexible and reusable code by enabling types (classes, interfaces, methods) to operate on objects of various types while providing compile-time type safety.`
+    - Type Parameters: class Box<T> {}
+    - Generic Classes:
+    - Generic Methods:
+    - Bounded Type Parameters: class NumberBox<T extends Number> {}
+    - Wildcards (?):
+    Benefits of Using Generics:
+    1. Type Safety:
+    2. Elimination of Casts:
+    3. Code Reusability:
+
+
 - **What is the Collections framework?**
+    `It is utility classes, methods, properties, interfaces, Algorithms provided to make it easier to work with data, be it ArrayList, HashMap, etc`
+    - e.g. ArrayList, HashMap.
+    Benefits of collections.
+    - `Flexibility`: You can choose the right data structure based on your needs (e.g., use HashMap for fast key-based lookups, or TreeSet for a sorted set).
+    - `Performance`: The framework provides high-performance, well-tested implementations for common data structures.
+    - `Type Safety`: With the introduction of generics in Java 5, the framework ensures type safety, preventing runtime errors due to type mismatches.
+
 - **How does the `Comparator` interface work?**
 - **Explain the purpose of `enum` in Java.**
 - **How does reflection work in Java?**
@@ -350,10 +378,47 @@
 - **How do you implement exception handling in Spring Boot?**
 - **What is the purpose of the `@RequestMapping` annotation?**
 - **Explain how Spring Boot manages application properties.**
+
 - **What is the `@Autowired` annotation used for?**
+    `@Autowired annotation is use to inject dependancies from IOC container, DI, if used no need to manualy create instance of bean.`
+
 - **How do you configure a data source in Spring Boot?**
+    `Configuring a data source in Spring Boot involves setting up the database connection so that your application can interact with the database. Spring Boot simplifies the process by automatically configuring most of the necessary components based on the properties you provide in the configuration file (typically application.properties or application.yml).`
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    2. consifure application properties.
+    # JDBC URL, username, password
+    spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+    spring.datasource.username=root
+    spring.datasource.password=rootpassword
+
+    # JDBC Driver Class Name
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    3. Define the Entity Classes.
+    4. Repository Interface. using Entity class created.
+
 - **What is the purpose of the `@Entity` annotation in JPA?**
+    `The @Entity annotation in Java Persistence API (JPA) is used to mark a class as an entity. An entity is a Java class that is mapped to a database table (or document, for NoSQL databases). This annotation indicates that the class should be managed by the JPA provider (such as Hibernate) and that its instances represent rows in a table.`
+    1. Mapping to a Database Table.
+    2. Required @Id Annotation.
+    3. Persistence Context.
+    4. No Logic in the Entity Class.
+    5. Mapping to Tables or Documents.
+    6. Optional Features.
+
 - **How does Spring Boot handle REST APIs?**
+    `Spring Boot makes it incredibly easy to handle REST APIs (Representational State Transfer) by leveraging its built-in Spring Web support, which is based on Spring MVC.`
+    1. Spring Boot Starters -> spring-boot-starter-web.
+    2. Controller Classes with @RestController.
+    3. Request Mapping with HTTP Methods.
+
 - **Explain the difference between GET, POST, PUT, and DELETE in REST APIs.**
 - **How is `@` different from `@RequestParam`?**
 - **What is the purpose of the `@Transactional` annotation?**

@@ -440,6 +440,61 @@ console.log(object.farewell()); // What is logged?
 20. What is the `Buffer` class in Node.js?
 21. How do you upload large sized file from Angular to NodeJS to MongoDB, give me design for this.
 
+22. What is Scope in JavaScript
+- In JavaScript, scope refers to the context in which variables and functions are accessible or defined. It determines the visibility and lifespan of variables, functions, and objects in your code.
+    1. Global Scope
+    2. Local Scope (Function Scope)
+    3. Block Scope
+    4. lexical scope
+
+23. What is NodeJS
+`Node.js is a runtime environment that allows you to run JavaScript code outside of a browser. It is built on Chrome's V8 JavaScript engine, which is also used by Google Chrome to execute JavaScript code. Node.js enables you to build server-side applications with JavaScript, making it possible to use the same language for both front-end and back-end development`
+    Key aspects.
+    1. Event-Driven and Asynchronous.
+    2. Single-Threaded
+    3. Package Management with npm
+    4. Uses JavaScript for Backend
+    5. Real-Time Applications
+    6. Cross-Platform
+
+24. What is REPL in NodeJS?
+`Read-Eval-Print Loop, In Node.js, the REPL is an interactive environment where you can write and execute JavaScript code in real time. It allows you to test out snippets of code, explore the Node.js API, or quickly check how certain expressions or functions work.`
+    Key features
+    1. Evaluate JavaScript code interactively
+    2. Access to Node.js Built-In Module
+    3. Multi-line Support
+    4. History and Auto-Completion
+    5. Exit the REPL
+
+25. Explain Xss attack in Web oage.
+26. Describe WeakSet and WeakMap in Javascript.
+27. Explain the Node.js Event Emitter.
+28. What is arguments keyword in Javascript ?
+29. what is cluster,fork, process spawn in NodeJS ?
+30. Why are NodeJS callbacks error first ?
+    `Node.js callbacks are error-first to make error handling more consistent and manageable in asynchronous programming. This pattern was introduced to avoid the common pitfalls of callbacks, especially when dealing with complex code that could potentially fail or throw errors at any point`
+    why error-first callbacks are useful -
+    1. Consistency.
+    2. Error Propagation.
+    3. Avoiding Callbacks within Callbacks (Callback Hell).
+    4. Clear Intent.
+31. What is libuv in nodejs.
+    `libuv is a core library in Node.js that provides an event-driven, non-blocking I/O model. It is an abstraction layer that handles low-level operations such as networking, file system operations, and asynchronous I/O tasks in a cross-platform way. Essentially, libuv enables Node.js to perform high-performance asynchronous operations without blocking the main thread.`
+    Key features.
+    1. Event Loop.
+    2. Non-blocking I/O.
+    3. Cross-platform Support.
+    4. Thread Pool.
+    5. Timers and Signal Handling.
+32. Difference between null undefined undeclared.
+33. What is prototyping.
+    How Prototyping Works Internally:
+    When you access a property or method on an object, JavaScript looks through the prototype chain in this order:
+    Check if the property exists on the object itself.
+    If not, check the prototype object (i.e., Object.getPrototypeOf(object)).
+    If not found, check the prototype of the prototype, and so on.
+    This continues until it reaches null, which is the end of the prototype chain.
+    
 ## Angular (20 Questions)
 
 1. What is Angular, and how does it differ from other JavaScript frameworks like React or Vue?
@@ -621,14 +676,60 @@ console.log(object.farewell()); // What is logged?
 13. What is CORS, and how do you handle it in Express.js?
 14. How do you validate request data in Express.js?
 15. How do you implement authentication in Express.js?
+16. How to make my express server only accept requests from specific server/host ?
 
 ## MongoDB (10 Questions)
 
 1. What is MongoDB, and how does it differ from relational databases?
+    `MongoDB is non-relational database that offers no schema database and flexible json format data, it stores data in documents and collections format.`
+    - Collections and documents vs Tables and rows.
+    - Flexible schema vs Fixed schema.
+    - No relations between collections vs Relations between tables.
+    - Ideal for Horizontal scaling vs Ideal for vertical scaling.
+
 2. What are collections and documents in MongoDB?
+    - A collection in MongoDB is a group of related documents. It can be thought of as analogous to a table in a relational database (RDBMS). However, unlike tables, collections do not enforce a schema on the documents within them, meaning that the documents can have different structures and fields.
+    - A document is an individual data entry within a collection. It is stored in BSON (Binary JSON) format, which is a binary-encoded format of JSON. BSON allows MongoDB to store data types such as dates, binary data, and other complex types that JSON doesn’t directly support.
+
 3. How do you connect to a MongoDB database using Node.js?
+    `one of the way to connect nodejs app to mongodb is using mongoose package.`
+    ```js
+    const mongoose = require('mongoose');
+    mongoose.connect('mongodb://localhost:27017/user', {})
+    .then(() => {
+        console.log("DB connected");
+    })
+    .catch((err) => {
+        console.log("Error connecting to db", err);
+    })
+
+    const userSchema = new mongoose.Schema({
+        email: {
+            type: email,
+            required: true,
+            unique: true
+        },
+        date: {
+            type: Date,
+            default: Date.now
+        }
+    })
+    const userModel = new mongoose.Model('user', userSchema);
+
+    userModel.findOne({email : 'email@email.com'})
+    .then(doc => {
+
+    })
+    ```
 4. What is a MongoDB query, and how do you use it?
+    `A MongoDB query is a request made to a MongoDB database to retrieve, insert, update, or delete data. MongoDB is a NoSQL database, and its queries are based on the MongoDB Query Language (MQL), which is a simple and flexible way to interact with data in collections (the equivalent of tables in relational databases).`
+    - **Find** - Used to retrieve documents from a collection. - db.users.find({ age: { $gt: 20 } })
+    - **Insert** - Adds new documents to a collection. - db.collection.insertOne(document)
+    - **Update** - Modifies existing documents. - db.collection.updateOne(filter, update, options)
+    - **Delete** - Removes documents from a collection. - db.users.deleteOne({ name: "Alice" })
+
 5. What are indexes in MongoDB, and why are they important?
+
 6. How do you perform CRUD operations in MongoDB?
 7. What is the aggregation framework in MongoDB?
 8. How does MongoDB handle schema design and validation?
@@ -636,5 +737,3 @@ console.log(object.farewell()); // What is logged?
 10. What is the purpose of sharding in MongoDB?
 
 ---
-
-I hope this helps! Let me know if you'd like to make any adjustments to the list. Would you like me to save it as a file for you?

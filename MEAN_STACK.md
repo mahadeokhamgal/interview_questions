@@ -58,6 +58,11 @@
 
 ---
 
+---
+# CSS
+1. what is difference between flex-grow: 1; and flex: 1;
+---
+
 # NodeJS
 
 - **What are ways to update an event from one Microservice to another Microservice?**
@@ -118,3 +123,25 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
   1. name.
   2. date of birth.
   3. phone number.
+
+- what are types of indexex in mongodb.
+- how to use pagination in mongodb
+- What should be order of queries in aggregation pipeline for optimised performance in mongodb.
+- 
+- What are streams in nodejs.
+- How to handle file uploads in nodejs.
+- Closure.
+- Hoisting.
+- How to perform global error handling in nodejs.
+- what is deep copy vs shallow copy.
+- What is cors.
+- 
+- What is content projection in angular.
+- what is order of execution in process.nextTick and setimmediate.
+- 
+- What is purpose of ngOnChanges.
+- What is purpose of viewchild.
+- What does it mean b y bootstrapping in angular.
+- How many type guards are there.
+- What is pure and impure pipe
+- patch vs put.
