@@ -66,10 +66,39 @@
 # NodeJS
 
 - **What are ways to update an event from one Microservice to another Microservice?**
+  - 1. Direct Apis to microservices are one of the ways.
+  - 2. Can use Message broker like Kafka to make it more robust to handle messages.
+
 - **When will you recommend using NodeJS server, and when will you not recommend it?**
+  - 1. CPU-Intensive Tasks.
+  - 2. High-Precision Financial Systems.
+  - 3. Monolithic Enterprise Apps with Heavy Business Logic.
+  - 4. Multi-threaded Background Processing.
+
 - **What information does a JWT token have?**
+  - Headers, payload, Signature.
+  - Headers - type of token and algorithm used to sign it.
+  - payload - iss, sub, aud, exp, nbf, exp, iat, jti + custom claims.
+  - Signature - HMACSHA256(..., secret).
+
 - **How to create a JWT and how to validate a JWT?**
+  - create using jwt.sign(obj, key) #(import jwt from 'jsonwebtoken';)
+  - validate using jwt.validate(token, key)
+
 - **How to make my NodeJS handle increased traffic?**
+  1. Optimize Your Node.js App First (Code Level)
+    a. Avoid Blocking Operations
+    b. Use Asynchronous Code Properly
+    c. Limit Payload Size
+  2. Use Clustering (Multi-core Support)
+  3. Use a Reverse Proxy (e.g., NGINX or HAProxy)
+  4. Horizontal Scaling (Multiple Machines/Containers)
+  5. Use Caching Strategically
+  - a. In-memory cache (per instance).
+  - b. Distributed cache (shared between instances).
+  6. Use a Database That Scales
+  
+
 - **How to configure my NodeJS app against DDOS attacks?**
 - **What is the event loop in NodeJS?**
 - **How to make cookies as secure as possible?**

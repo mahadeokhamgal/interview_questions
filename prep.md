@@ -123,3 +123,77 @@ const User = mongoose.model('User', userSchema);
 20) what is feature of angular 16
 21) what is standalone components
 22) life cycle hooks of angular
+
+**Create a component in angular**
+```ts
+import { Component, SimpleChanges } from '@angulae/core';
+
+@Component({
+    selector: 'app-navbar',
+    templateUrl: 'app-navbar.component.html',
+    styleUrl: ['app-navbar.component.css']
+})
+export class NavBarComponent {
+    constructor() {}
+
+    ngOnChanges(changesObj: SimpleChanges){}
+    ngOnInit(){}
+    ngDoCheck(){}
+    ngAfterContentInit(){}
+    ngAfterContentChecked(){}
+    ngAfterViewInit(){}
+    ngAfterViewChecked(){}
+    ngOnDestroy(){}
+}
+```
+
+**Create a custom directive in angular**
+```ts
+import { Directive, Input, ElementRef, HostListener } from '@angular/core';
+
+@Directive({
+    name: '[appHighlight]'
+})
+export class HighlightDirective {
+    @Input() color: string;
+
+    constructor(private element: ElementRef) {}
+
+    @HostListener('mouseenter')
+    onMouseEnter() {
+        this.element.nativeElement.style.backgroundColor = this.color;
+    }
+
+    @HostListener('mouseleave')
+    onMouseEnter() {
+        this.element.nativeElement.style.backgroundColor = 'transperant';
+    }
+}
+```
+
+**create a custom pipe in angular**
+```ts
+import { Pipe, PipeTransform,  } from '@angular/core';
+
+@Pipe({
+    name: 'upperCase'
+})
+export class UpperCasePipe implements PipeTransform {
+    
+    transform(inputVal: string): string {
+        return inputVal.toUpperCase()
+    }
+}
+```
+
+**Create a service in angular**
+```ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class ApiService {
+    contructor(private http: HttpClient) {}
+}
+```
