@@ -139,7 +139,7 @@
 5. What is standalone component?
 6. What is difference between Promise and Observable.
 7. List few ES6 features.
-8. What is chage detection in Angular.
+8. What is change detection in Angular.
 9. When to use UpgradeModule and DownGrademodule in angular.
 10. Difference between MergeMap and SwitchMap.
 11. How to create simulteneus/parallel API calls?
@@ -177,3 +177,21 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 - How many type guards are there.
 - What is pure and impure pipe
 - patch vs put.
+
+
+----------------------------------------------------------------------
+- What are inline and block elements.
+- How do you design your pages, mobile in mind or desktop screen in mind ?
+- What are decorators Decorators.
+- What will you choose between customised package and readymade package from npm.
+- How is angular better than other frameworks ?
+- Challenges migrating angularjs to angular.
+- Routing in angular?
+- How is Lazy loading better? / When will you recommend lazy loading ?
+- How angular application starts?
+- Bootstrap vs Angular material.
+- What is Storages in browser.
+- What are disadvantages of cookies.
+- Which code review procedure do you follow.
+- What is Your way of managing your respositories.
+----------------------------------------------------------------------
