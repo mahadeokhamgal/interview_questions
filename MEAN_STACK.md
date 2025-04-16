@@ -164,6 +164,8 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 - How to perform global error handling in nodejs.
 - what is deep copy vs shallow copy.
 - What is cors.
+**How to create api documentation using swagger.js in express.js?
+
 - 
 - What is content projection in angular.
 - what is order of execution in process.nextTick and setimmediate.
@@ -171,6 +173,7 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 - What is purpose of ngOnChanges.
 - What is purpose of viewchild.
 - What does it mean b y bootstrapping in angular.
+- What is view encapsulation in angular.
 - How many type guards are there.
 - What is pure and impure pipe
 - patch vs put.
