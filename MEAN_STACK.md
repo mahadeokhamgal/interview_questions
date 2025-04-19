@@ -200,3 +200,56 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 3. How will you implement test framework in your project if there was not any testing being done before.
 4. How to implement multistep angular form.
 ----------------------------------------------------------------------
+
+1. Name me all sorting algorithms you know.
+2. What is a closure?
+3. Why is Angular an SPA?
+4. What are micro-frontends in Angular?
+5. What is SSR?
+6. What is the event loop?
+7. What is an auth guard?
+8. How does lazy loading work in Angular?
+9. What are types of streams in Node.js?
+10. How many types of streams are there in Node.js?
+11. What is cluster in nodejs.
+12. How many event loops are in one process.
+13. if I used cluster to fork all remaining cores of octa core cpu, how many event loops and processes will be there.
+14. Write code for:
+    ```
+    Input:  India is my country
+    Output: India Is My Country
+    ```
+15. Guess the output of the following:
+    ```js
+    console.log("Start");
+
+    setTimeout(() => {
+        console.log("setTimeout 1");
+    }, 0);
+
+    Promise.resolve().then(() => {
+        console.log("Promise 1");
+    });
+
+    process.nextTick(() => {
+        console.log("nextTick 1");
+    });
+
+    setTimeout(() => {
+        console.log("setTimeout 2");
+    }, 0);
+
+    Promise.resolve().then(() => {
+        console.log("Promise 2");
+    });
+
+    process.nextTick(() => {
+        console.log("nextTick 2");
+    });
+
+    console.log("End");
+    ```
+
+16. What if I had `setImmediate` in the above code? Can the order switch with `setTimeout(…, 0)`?
+
+-----------------------------------------------------------
