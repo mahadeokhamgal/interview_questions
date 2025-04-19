@@ -195,3 +195,8 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 - Which code review procedure do you follow.
 - What is Your way of managing your respositories.
 ----------------------------------------------------------------------
+1. How to optimise grid like data in angular.
+2. How to optimise performance of API's only from frontend side.
+3. How will you implement test framework in your project if there was not any testing being done before.
+4. How to implement multistep angular form.
+----------------------------------------------------------------------
