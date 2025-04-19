@@ -211,12 +211,15 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 8. How does lazy loading work in Angular?
 9. What are types of streams in Node.js?
 10. How many types of streams are there in Node.js?
-11. Write code for:
+11. What is cluster in nodejs.
+12. How many event loops are in one process.
+13. if I used cluster to fork all remaining cores of octa core cpu, how many event loops and processes will be there.
+14. Write code for:
     ```
     Input:  India is my country
     Output: India Is My Country
     ```
-12. Guess the output of the following:
+15. Guess the output of the following:
     ```js
     console.log("Start");
 
@@ -247,6 +250,6 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
     console.log("End");
     ```
 
-13. What if I had `setImmediate` in the above code? Can the order switch with `setTimeout(…, 0)`?
+16. What if I had `setImmediate` in the above code? Can the order switch with `setTimeout(…, 0)`?
 
 -----------------------------------------------------------
