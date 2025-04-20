@@ -1,3 +1,6 @@
+from typing import List
+from collections import defaultdict
+
 def sort_zeros_n_ones(arr: list) -> list:
     left = 0
     right = len(arr) - 1
@@ -52,7 +55,33 @@ def minSubArray(nums: list, target: int) -> int:
     return best
     """
 
-print(minSubArray([1, 2, 3, 4, 5], 11))
-print(minSubArray([2, 10, 1, 1], 10))
-print(minSubArray([1, 1, 1, 1], 10))
-print(minSubArray([2, 1, 2, 1, 2], 8))
+# print(minSubArray([1, 2, 3, 4, 5], 11))
+
+def subarrayWithSum(nums: List[int], k: int) -> List[int]:
+    """Brute force
+    for i in range(len(nums)-1):
+        currSum = nums[i]
+        for j in range(i+1, len(nums)):
+            currSum += nums[j]
+            if currSum == k:
+                return [i, j]
+    
+    return [-1, -1]
+    """
+    """Optimised"""
+    
+    prefixSum = 0
+    preFixSumMap = {0: -1}
+
+    for idx, num in enumerate(nums):
+        prefixSum += num
+
+        if (prefixSum - k) in preFixSumMap:
+            return [preFixSumMap[prefixSum-k]+1, idx]
+        if prefixSum not in preFixSumMap:
+            preFixSumMap[prefixSum] = idx
+            
+    return [-1, -1]
+
+print(subarrayWithSum([1,2,3,4], 7))
+    # IP - [1,2,3,4], 7, OP - [2, 3]
