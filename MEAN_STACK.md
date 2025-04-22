@@ -281,7 +281,18 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 25. What is Left Join in SQL?
 26. Is is possible to create join between two collections in mongoDB?
 27. Do you think that `TypeScript` supports all object-oriented principles?
-28. 
+28. Explain how the Centralized Workflow works.
+29. Explain the scenarios when you'll recommend not using Node.js.
+30. What is the usage of a buffer class in Node.js?
+31. What is REPL In Node.Js?
+32. Define Dependency Injection.
+33. Define Cross-site Scripting (XSS).
+34. What is a Grid System in CSS?
+35. Explain the main difference between REST and GraphQL.
+36. What is docker? 
+37. What is redis server?
+38. Explain me Redux toolkit.
+39. 
 
 **Guess the output**
 1. Guess the output for below block and if any error, name the error you'll get and then provide fix for the error.
@@ -353,6 +364,43 @@ let c = "1,2,3";
 console.log(a == c);
 console.log(b === c);
 console.log(a == b);
+```
+
+6. Guess the output for below block.
+```js
+let a = [1, 2, 3, 4, 5];
+a[10] = 10;
+console.log(a.length);
+```
+
+7. Guess the output for below block.
+```js
+async function async1() {
+  console.log('async1 start');
+  await async2();
+  console.log('async1 end');
+}
+new Promise(function(resolve) {
+  console.log('promise1');
+  return resolve();
+}).then(function() {
+  console.log('promise2');
+});
+async function async2() {
+  console.log('async2');
+}
+console.log('script start');
+setTimeout(function() {
+  console.log('setTimeout');
+}, 0);
+async1();
+new Promise(function(resolve) {
+  console.log('promise3');
+  return resolve();
+}).then(function() {
+  console.log('promise4');
+});
+console.log('script end');
 ```
 
 **Coding challenges**
