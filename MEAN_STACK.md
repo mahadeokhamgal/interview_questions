@@ -253,3 +253,113 @@ output - {123:'id', 'John': 'name', 'john@email.com': 'email'}
 16. What if I had `setImmediate` in the above code? Can the order switch with `setTimeout(…, 0)`?
 
 -----------------------------------------------------------
+
+1. What is Difference between sessions and cookie?
+2. What are disadvantages of cookie?
+3. What is indexing in mongodb?
+4. Can we do multiple indexing of same collection?
+5. What is a singleton component?
+6. What is View encapsulation in Angular?
+7. How to force you style to get applied in angular, irrespective of element heirarchy ? (What is ::ng-deep in angular?)
+8. What if component A is emulated, component B is ShadowDom and component C is None. How will styles react in this case?
+9. What is the return type of interceptor in angular?
+10. What are challenges with Closure?
+11. What is currying function in javascript?
+12. What is optional chaining in js?
+13. what is difference between `for of` and `for in`?
+14. What is difference between `map` vs `reduce`.
+15. Why are JS functions called `First-class Functions`?
+16. What is `Weak set` and `Weak map` in JS?
+17. what is fork method in JS?
+18. what is worker thread in JS?
+19. How many event loops are there if used Quad core CPU and forked all cores by Node.js?
+20. What is difference between `ng-content` vs `ng-container`?
+21. What is difference between `@ViewChild` and `@ContentChild`?
+22. How we can reduce Angular Build Size?
+23. What is difference between `worker threads` and `Clusters fork` in node?
+24. Explain life cycle of request process in Backend(Express.js).
+25. What is Left Join in SQL?
+26. Is is possible to create join between two collections in mongoDB?
+27. Do you think that `TypeScript` supports all object-oriented principles?
+28. 
+
+**Guess the output**
+1. Guess the output for below block and if any error, name the error you'll get and then provide fix for the error.
+```js
+{
+  let a = 10;
+  {
+    let a = 20;
+    {
+      console.log(a);
+      let a = 30;
+      console.log(a);
+    }
+    console.log(a);
+  }
+}
+```
+
+2. Guess the output for below block and if any error, name the error you'll get and then provide fix for the error.
+```js
+console.log("z");
+a();
+b();
+function a() {
+    console.log("a");
+}
+console.log("c");
+var b = () => {
+    console.log("b");
+}
+console.log("d");
+```
+
+3. Guess the output for below block.
+```js
+let printVal = (z) => {
+    setTimeout(() => {
+        console.log(z)
+    }, 0);
+}
+
+for (var x = 0; x <= 5; x++) {
+    printVal(x);
+}
+```
+
+4. Guess the output for below block.
+```js
+//1
+const arr=["name"]; 
+const obj={name:"hi"}; 
+obj.name="Hi"; 
+obj[arr]="how?"; 
+console.log(obj.name);
+
+//2
+const arr=["n", "a", "m", "e"]; 
+const obj={name:"hi"}; 
+obj.name="Hi"; 
+obj[arr]="how?"; 
+console.log(obj.name);
+```
+
+5. Guess the output for below block.
+```js
+let a = [1,2,3];
+let b = [1,2,3];
+let c = "1,2,3";
+console.log(a == c);
+console.log(b === c);
+console.log(a == b);
+```
+
+**Coding challenges**
+`Q1. Create Angular  component which will have a progress bar.`
+  1 It will initiate from 0% on page load.   
+  2. It will increment after 1 secs by 10%.
+  3. The progress bar will keep on incrementing till the width of the page is met.
+  4. Create reset button which will start the progress bar from 0 again.
+
+--------------------------------------------------------------------------------------------
