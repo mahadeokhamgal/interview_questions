@@ -1,3 +1,5 @@
+from typing import List
+
 class Node:
     def __init__(self, val, next):
         self.val = val
@@ -62,7 +64,22 @@ class LinkedList:
                 temp = temp.next
 
         return self.head
-    
+
+    def reverseInBlocks(self, arr: List[int]) -> Node:
+        dummy = Node(0, self.head)
+        prev = dummy
+        next = dummy.next
+
+        for el in arr:
+            moves = el
+            while moves > 0:
+                temp = next.next
+                next.next = prev                # here we'll keep reversing
+                moves -= 1
+
+        self.head = dummy.next
+        return self.head
+
 node: LinkedList = LinkedList()
 for el in [1, 2, 3, -4, 5, 6, -7, -8, -9, 10]:
     node.addLast(el)

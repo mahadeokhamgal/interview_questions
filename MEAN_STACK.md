@@ -411,3 +411,43 @@ console.log('script end');
   4. Create reset button which will start the progress bar from 0 again.
 
 --------------------------------------------------------------------------------------------
+
+`Q2. Write a JS function to Flatten the object.`
+`Given below is input and output format.`
+```js
+IP = const data = {
+  user: {
+    id: 101,
+    stats: {
+      age: "30",
+      score: 95
+    }
+  },
+  settings: [
+    {
+      volume: "100",
+      brightness: 70
+    },
+    {
+      contrast: "85",
+      sharpness: 90
+    }
+  ],
+  logs: [
+    { event1: "1", event2: "2" },
+    { event3: 3, event4: "4" }
+  ],
+  metrics: {
+    daily: [
+      { day1: 10, day2: "20" },
+      { day3: "30", day4: 40 }
+    ],
+    weekly: {
+      week1: { views: "100", clicks: 50 },
+      week2: { views: 200, clicks: "150" }
+    }
+  }
+};
+
+OP = [101, 30, 95, 100, 70, 85, 90, 1, 2, 3, 4, 10, 20, 30, 40, 100, 50, 200, 150];
+```

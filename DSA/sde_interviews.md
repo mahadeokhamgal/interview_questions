@@ -261,3 +261,28 @@ R1. Q2.
 Linked list: 1->2->3->4->5
 Array B: 3 3 5
 Output: 3->2->1->5->4
+**To do** this question solution.
+
+**Indo Web Agency Pvt. Ltd. SDE-1**
+**https://www.naukri.com/code360/interview-experiences/indo-web-agency-pvt-ltd/interview-experience-off-campus-feb-2025**
+`Round 1`
+Q.1 - Puzzle
+You have two eggs and a 100-story building. You need to figure out the highest floor from which you can drop an egg without it breaking. You are allowed to drop the eggs only once from each floor, and the eggs are identical.
+What is the minimum number of drops required to find the highest floor from which you can drop an egg without it breaking?
+`Ans - `
+**Wrong**
+- The answere is to use `Binary Search algorithm` to solve this.
+- call lowesr floor from which egg will not break = `Target floor`.
+- Start by finding the middle floor of the building i.e. e.g. 0 + (100-0)//2 = 50, and drop the egg and check if it breaks.
+- If the egg breaks that means that Target floor is in range(0, 49) (low, mid-1). else if egg did not break means target floor is in range 50 to 100 (mid to high).
+- This way we can get the number of minimum eggs needed by formula as log n (n is number of floors and log is base 2 as every operation halves the input).
+- so the ans is log(100) = 6.6438 = 7
+**Correct**
+- To solve the 2-egg, 100-floor egg drop puzzle optimally, binary search is not the best approach due to the constraint of only having two eggs.
+- Instead, we use a strategy that minimizes the worst-case number of drops. The idea is to drop the first egg from floors in decreasing intervals: first from floor 14, then 13 floors higher (floor 27), then 12 floors higher (floor 39), and so on. This way, in the worst-case scenario (the egg breaks late), you still only need 14 drops.
+
+Mathematically, we solve for the smallest integer x such that:
+```py
+    x(x+1)/2 ≥ 100
+```
+Solving this, x = 14. So, the minimum number of drops in the worst case is 14.
