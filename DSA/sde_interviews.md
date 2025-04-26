@@ -286,3 +286,50 @@ Mathematically, we solve for the smallest integer x such that:
     x(x+1)/2 ≥ 100
 ```
 Solving this, x = 14. So, the minimum number of drops in the worst case is 14.
+
+`Round - 2`
+Q.1 - Find the number of duplicate digits in the given integer which is taken as input.
+
+2376. Count Special Integers.
+```py
+def countSpecialNumbers(n: int) -> int:
+    digits = list(map(int, str(n)))
+    @cache
+    def dp(ptr, mask, is_tight, is_num):
+        if ptr == len(digits):
+            return int(is_num) # this will return 1 if is_num is true else 0.
+        
+        ans = 0
+        if not is_num:
+            ans += dp(ptr+1, mask, False, False)
+        lowerBound = 0 if is_num else 1
+        upperBound = digits[ptr] if is_tight else 9
+        for d in range(lowerBound, upperBound+1):
+            if not mask >> d & 1:
+                ans += dp(ptr + 1, mask | 1 << d, is_tight and (d == upperBound), True)
+        
+        return ans
+    return dp(0, 0, True, False)
+```
+
+1012. Numbers With Repeated Digits.
+```py
+def numDupDigitsAtMostN(N: int) -> int:
+    """Brute Force"""
+    def isRepeated(num: int) -> bool:
+        seen = [False] * 10
+        while num:
+            digit = num % 10
+            if seen[digit]:
+                return True
+            seen[digit] = True
+            num //= 10
+        return False
+    ans = 0
+    for i in range(1, N+1):
+        if isRepeated(i):
+            ans += 1
+    
+    return ans
+```
+    
