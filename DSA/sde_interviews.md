@@ -359,4 +359,75 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 **https://www.naukri.com/code360/interview-experiences/meesho/meesho-interview-experience-dec-2020-exp-0-2-years-2011**
 
 R1. 
-Q1. Weighted Job Scheduling.
+Q1. `Weighted Job Scheduling.`
+Leetcode #1235. Maximum Profit in Job Scheduling.
+
+You are given 'N' jobs with their start time 'Start', end time 'End' and profit 'Profit'. You need to tell the maximum profit you can obtain by performing these jobs such that no two jobs overlap.
+Note: The start time of one job can be equal to the end time of another.
+Eg. 1. OP - 140
+Start  = [1, 3, 6]
+End    = [3, 5, 9]
+Profit = [20, 20, 100]
+
+Eg. 2. OP - 120
+Start  = [1, 2, 3, 3]
+End    = [3, 4, 5, 6]
+Profit = [50, 10, 40, 70]
+
+```py
+def jobScheduling(startTime: List[int], endTime: List[int], profit: List[int]) -> int:
+    groupedIntervals = sorted(zip(startTime, endTime, profit))
+    
+    @cache
+    def backTrack(i):
+        if i == len(groupedIntervals):
+            return 0
+        #no take
+        res = backTrack(i+1)
+        #take
+        j = bisect.bisect(groupedIntervals, (groupedIntervals[i][1], -1, -1))
+        #this is to find first index which doesn't overlap with currnet interval
+        res = max(res, groupedIntervals[i][2] + backTrack(j))
+    
+        return res
+    
+    return backTrack(0)
+```
+
+Q2. `You are given an ‘M*N’ Matrix, You need to print all possible paths from its top left corner to the bottom right corner if given that you can either move right i.e from (i,j) to (i,j+1) or down i.e from (i, j) to (i+1, j).`
+For Example :
+IP = [[1 2 3],
+      [4 5 6]]
+
+For the above 2*3 matrix , possible paths are (1 2 3 6) , (1 2 5 6) , (1 4 5 6).
+- Ans
+```py
+def allPaths(arr):
+    ans = []
+    N = len(arr)
+    M = len(arr[0])
+    moves = [
+        (1, 0),
+        (0, 1)
+    ]
+    def backTrack(x, y, path):
+        if x == M-1 and y == N-1:
+            ans.append(path[::])
+        for dx, dy in moves:
+            nx = x + dx
+            ny = y + dy
+            if 0 <= nx < M and 0 <= ny < N:
+                path.append([nx, ny])
+                backTrack(nx, ny, path)
+                path.pop()
+    
+    backTrack(0, 0, [])
+    return ans
+```
+
+Q3. `Maximum sum of two non-overlapping subarrays of a given size.`
+You are given an array/list ARR of integers and a positive integer ‘K’. Your task is to find two non-overlapping subarrays (contiguous) each of length ‘K’ such that the total sum of these subarrays is maximum.
+IP - [2, 5, 1, 2, 7, 3, 0], k = 2
+OP - 17
+**Leetcode #1031: Maximum Sum of Two Non-Overlapping Subarrays.​**
+

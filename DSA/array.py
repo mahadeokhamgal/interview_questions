@@ -1,6 +1,30 @@
 from typing import List
 from collections import defaultdict
 
+def allPaths(arr):
+    ans = []
+    N = len(arr)
+    M = len(arr[0])
+    moves = [
+        (1, 0),
+        (0, 1)
+    ]
+    def backTrack(x, y, path):
+        if x == M-1 and y == N-1:
+            ans.append(path[::])
+        for dx, dy in moves:
+            nx = x + dx
+            ny = y + dy
+            if 0 <= nx < M and 0 <= ny < N:
+                path.append([nx, ny])
+                backTrack(nx, ny, path)
+                path.pop()
+    
+    backTrack(0, 0, [])
+    return ans
+
+print(allPaths([[1, 2, 3],[4, 5, 6]]))
+
 def sort_zeros_n_ones(arr: list) -> list:
     left = 0
     right = len(arr) - 1
@@ -83,5 +107,5 @@ def subarrayWithSum(nums: List[int], k: int) -> List[int]:
             
     return [-1, -1]
 
-print(subarrayWithSum([1,2,3,4], 7))
+# print(subarrayWithSum([1,2,3,4], 7))
     # IP - [1,2,3,4], 7, OP - [2, 3]
