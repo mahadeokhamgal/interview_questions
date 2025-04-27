@@ -332,4 +332,31 @@ def numDupDigitsAtMostN(N: int) -> int:
     
     return ans
 ```
-    
+
+Q2. Merge k sorted lists.
+- You are given an array of k sorted linked lists. Merge all the linked lists into one sorted linked list and return it.
+```py
+def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+    heap = []
+    for i, node in enumerate(lists):
+        if node:
+            heapq.heappush(heap, (node.val, i, node))
+
+    dummyNode = ListNode(0)
+    currNode = dummyNode
+    while heap:
+        val, i, node = heapq.heappop(heap)
+        currNode.next = node
+        currNode = currNode.next
+        
+        if node.next:
+            heapq.heappush(heap, (node.next.val, i, node.next))
+        
+    return dummyNode.next
+```
+
+**Meesho**
+**https://www.naukri.com/code360/interview-experiences/meesho/meesho-interview-experience-dec-2020-exp-0-2-years-2011**
+
+R1. 
+Q1. Weighted Job Scheduling.
