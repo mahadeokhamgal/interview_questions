@@ -314,8 +314,8 @@ def countSpecialNumbers(n: int) -> int:
 
 1012. Numbers With Repeated Digits.
 ```py
-def numDupDigitsAtMostN(N: int) -> int:
-    """Brute Force"""
+def numDupDigitsAtMostN(self, N: int) -> int:
+    """Brute Force
     def isRepeated(num: int) -> bool:
         seen = [False] * 10
         while num:
@@ -331,9 +331,28 @@ def numDupDigitsAtMostN(N: int) -> int:
             ans += 1
     
     return ans
+    """
+
+    def countSpecialNumbers(n: int) -> int:
+        digits = list(map(int, str(n)))
+        @cache
+        def dp(ptr, mask, is_tight, is_num):
+            if ptr == len(digits):
+                return int(is_num) # this will return 1 if is_num is true else 0.
+            ans = 0
+            if not is_num:
+                ans += dp(ptr+1, mask, False, False)
+            lowerBound = 0 if is_num else 1
+            upperBound = digits[ptr] if is_tight else 9
+            for d in range(lowerBound, upperBound+1):
+                if not mask >> d & 1:
+                    ans += dp(ptr + 1, mask | 1 << d, is_tight and (d == upperBound), True)
+            return ans
+        return dp(0, 0, True, False)
+    return N - countSpecialNumbers(N)
 ```
 
-Q2. Merge k sorted lists.
+Q2. `Merge k sorted lists.`
 - You are given an array of k sorted linked lists. Merge all the linked lists into one sorted linked list and return it.
 ```py
 def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
