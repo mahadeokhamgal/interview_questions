@@ -450,3 +450,75 @@ IP - [2, 5, 1, 2, 7, 3, 0], k = 2
 OP - 17
 **Leetcode #1031: Maximum Sum of Two Non-Overlapping Subarrays.​**
 
+```py
+def maxSumTwoNoOverlap(self, nums: List[int], firstLen: int, secondLen: int) -> int:
+    N = len(nums)
+    fs = collections.defaultdict(int)
+    prefixSum = sum(nums[:firstLen])
+    for idx in range(firstLen, N):
+        fs[idx] = prefixSum
+        prefixSum += nums[idx]
+        prefixSum -= nums[idx - firstLen]
+    fs[N] = prefixSum
+            
+    def getMaxOut(i, j):
+        best = 0
+        for key in fs.keys():
+            if not i <= key <= j:
+                best = max(best, fs[key])
+        
+        return best
+
+    prefixSum = sum(nums[:secondLen])
+    ans = 0
+    for j in range(secondLen, N):
+        ans = max(ans, prefixSum + getMaxOut(j-secondLen, j+firstLen-1))
+        prefixSum += nums[j]
+        prefixSum -= nums[j-secondLen]
+    
+    ans = max(ans, prefixSum + getMaxOut(N-secondLen, N+firstLen-1))
+    return ans
+```
+
+R2.
+Q.1 **Minimum Character Deletion**
+`You are given a string ‘STR’. You need to find and return the minimum number of characters to be deleted from ‘STR’ so that the frequency of each character in the string becomes unique.`
+**Leetcode 1647**
+```py
+def minDeletions(s: str) -> int:
+    seen = set()
+    deletions = 0
+
+    for freq in collections.Counter(s).values():
+        while freq > 0 and freq in seen:
+            freq -= 1
+            deletions += 1
+        seen.add(freq)
+
+    return deletions
+```
+
+Q.2 **Pair with Given Sum in a Balanced BST**
+`You are given the ‘root’ of a Balanced Binary Search Tree and an integer ‘target,’ you have to tell if there exists any pair of nodes such that the sum of their value is equal to the target.`
+`More formally check if there exist any two distinct nodes, whose sum is equal to ‘target.’`
+Leetcode # 653
+```py
+def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+    seen = set()
+
+    def recursion(node):
+        if not node:
+            return False
+        elif k - node.val in seen:
+            return True
+        else:
+            seen.add(node.val)
+            return recursion(node.left) or recursion(node.right)
+    
+    return recursion(root)
+```
+
+Q.3. **Minimum Number Of Taps To Water Garden**
+`The gardener wants to water the garden by opening the minimum number of taps. The garden is one-dimensional along the x-axis of length N i.e. the garden starts from point 0 and ends at point N. There are N + 1 tap located at points [0, 1, 2, …, N] in the garden.`
+`You are given an integer N, and an array named “ranges” of size N + 1(0-indexed). The ith tap, if opened, can water the gardener from point (i - ranges[i]) to (i + ranges[i]) including both. The task is to find the minimum number of taps that should be open to water the whole garden, return -1 if the garden can not be watered.`
+Leetcode # 1326
