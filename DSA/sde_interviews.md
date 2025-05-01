@@ -522,3 +522,31 @@ Q.3. **Minimum Number Of Taps To Water Garden**
 `The gardener wants to water the garden by opening the minimum number of taps. The garden is one-dimensional along the x-axis of length N i.e. the garden starts from point 0 and ends at point N. There are N + 1 tap located at points [0, 1, 2, …, N] in the garden.`
 `You are given an integer N, and an array named “ranges” of size N + 1(0-indexed). The ith tap, if opened, can water the gardener from point (i - ranges[i]) to (i + ranges[i]) including both. The task is to find the minimum number of taps that should be open to water the whole garden, return -1 if the garden can not be watered.`
 Leetcode # 1326
+```py
+def minTaps(n: int, ranges: List[int]) -> int:
+    maxReachFrom = [0] * (n + 1)
+    
+    for idx, currRange in enumerate(ranges):
+        left = max(0, idx - currRange) #make sure to keep left >= 0
+        right = min(n, idx + currRange) # to keep right <= n
+        maxReachFrom[left] = max(maxReachFrom[left], right) # we reach as farther as possible
+    
+    tapsUsed = 0
+    currEnd = 0
+    nextEnd = 0
+    
+    for i in range(n + 1):
+        if i > nextEnd:
+            return -1# no water zone.
+        if i > currEnd: # if we reach a point where previos tap dosn't reach then use new tap
+            tapsUsed += 1
+            currEnd = nextEnd
+        nextEnd = max(nextEnd, maxReachFrom[i])
+    return tapsUsed
+```
+
+**amazon SDE-1**
+**https://www.naukri.com/code360/interview-experiences/amazon/amazon-interview-experience-by-amrith-m-nair-on-campus-jan-2019-21?testVariant=0**
+1. Tiling Problem.
+`Given a “2 x n” board and tiles of size “2 x 1”, count the number of ways to tile the given board using the 2 x 1 tiles. A tile can either be placed horizontally i.e., as a 1 x 2 tile or vertically i.e., as 2 x 1 tile.`
+- 

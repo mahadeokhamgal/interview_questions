@@ -23,7 +23,7 @@ def allPaths(arr):
     backTrack(0, 0, [])
     return ans
 
-print(allPaths([[1, 2, 3],[4, 5, 6]]))
+# print(allPaths([[1, 2, 3],[4, 5, 6]]))
 
 def sort_zeros_n_ones(arr: list) -> list:
     left = 0
@@ -109,3 +109,25 @@ def subarrayWithSum(nums: List[int], k: int) -> List[int]:
 
 # print(subarrayWithSum([1,2,3,4], 7))
     # IP - [1,2,3,4], 7, OP - [2, 3]
+def minTaps(n: int, ranges: List[int]) -> int:
+    maxReachFrom = [0] * (n + 1)
+    
+    for idx, currRange in enumerate(ranges):
+        left = max(0, idx - currRange) #make sure to keep left >= 0
+        right = min(n, idx + currRange) # to keep right <= n
+        maxReachFrom[left] = max(maxReachFrom[left], right) # we reach as farther as possible
+    
+    tapsUsed = 0
+    currEnd = 0
+    nextEnd = 0
+    
+    for i in range(n + 1):
+        if i > nextEnd:
+            return -1# no water zone.
+        if i > currEnd: # if we reach a point where previos tap dosn't reach then use new tap
+            tapsUsed += 1
+            currEnd = nextEnd
+        nextEnd = max(nextEnd, maxReachFrom[i])
+    return tapsUsed
+
+print(minTaps(6, ranges = [0, 2, 0, 0, 1, 0, 2]))
