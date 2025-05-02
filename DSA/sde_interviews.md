@@ -549,4 +549,45 @@ def minTaps(n: int, ranges: List[int]) -> int:
 **https://www.naukri.com/code360/interview-experiences/amazon/amazon-interview-experience-by-amrith-m-nair-on-campus-jan-2019-21?testVariant=0**
 1. Tiling Problem.
 `Given a “2 x n” board and tiles of size “2 x 1”, count the number of ways to tile the given board using the 2 x 1 tiles. A tile can either be placed horizontally i.e., as a 1 x 2 tile or vertically i.e., as 2 x 1 tile.`
-- 
+- Input n = 3
+- Output: 3
+Explanation:
+We need 3 tiles to tile the board of size  2 x 3.  
+We can tile the board using following ways
+1) Place all 3 tiles vertically.  
+2) Place first tile vertically and remaining 2 tiles horizontally.
+3) Place first 2 tiles horizontally and remaining tiles vertically.
+GFG - **https://www.geeksforgeeks.org/tiling-problem/**
+
+```py
+def numberOfWays(n):
+    if n < 0: return 0
+    elif n == 0: return 1
+    else: return numberOfWays(n - 1) + numberOfWays(n - 2)
+```
+
+2. Find k’th character of decrypted string.
+`Given an encoded string where repetitions of substrings are represented as substring followed by count of substrings. For example, if encrypted string is “ab2cd2” and k=4 , so output will be ‘b’ because decrypted string is “ababcdcd” and 4th character is ‘b’.`
+`Note: Frequency of encrypted substring can be of more than one digit. For example, in “ab12c3”, ab is repeated 12 times. No leading 0 is present in frequency of substring.`
+Input: "a2b2c3", k = 5
+Output: c
+Decrypted string is "aabbccc"
+Leetcode # 880 **https://leetcode.com/problems/decoded-string-at-index/**
+```py
+def decodeAtIndex(self, s: str, k: int) -> str:
+    size = 0
+    for char in s:
+        if char.isdigit():
+            size *= int(char)
+        else:
+            size += 1
+
+    for char in reversed(s):
+        k %= size
+        if k == 0 and char.isalpha():
+            return char
+        if char.isdigit():
+            size //= int(char)
+        else:
+            size -= 1
+```

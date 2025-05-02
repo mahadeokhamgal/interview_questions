@@ -8,4 +8,11 @@ def getReverse(num: int) -> int:
 
     return ans
 
-print(getReverse(12345))
+# print(getReverse(12345))
+
+def numberOfWays(n):
+    if n < 0: return 0
+    elif n == 0: return 1
+    else: return numberOfWays(n - 1) + numberOfWays(n - 2)
+
+print(numberOfWays(4))
