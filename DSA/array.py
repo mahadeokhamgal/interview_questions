@@ -130,4 +130,18 @@ def minTaps(n: int, ranges: List[int]) -> int:
         nextEnd = max(nextEnd, maxReachFrom[i])
     return tapsUsed
 
-print(minTaps(6, ranges = [0, 2, 0, 0, 1, 0, 2]))
+# print(minTaps(6, ranges = [0, 2, 0, 0, 1, 0, 2]))
+
+def positiveNegativePairs(nums: List[int]):
+    seen = set()
+    done = set()
+    ans = []
+    for num in nums:
+        if abs(num) not in done and -num in seen:
+            ans.extend([-abs(num), abs(num)])
+            done.add(abs(num))
+        else:
+            seen.add(num)
+    return ans
+
+print(positiveNegativePairs([1,3,6,-2,-1,-3,2,7]))

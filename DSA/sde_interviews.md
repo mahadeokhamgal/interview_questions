@@ -591,3 +591,59 @@ def decodeAtIndex(self, s: str, k: int) -> str:
         else:
             size -= 1
 ```
+
+R.2
+Q.1 `Count Positive-Negative Pairs`
+Given an array of positive and negative integers, print x if +x and -x are present in the array.
+**https://www.geeksforgeeks.org/problems/positive-negative-pair5209/1**
+- returns a list of integers denoting the pairs. The pair that appears first(i.e. second element of the pair appears first) in A[] should appear first in the returning list and within the pair, the negative integer should appear before the positive integer. Return an empty integer list if no such pair exists.
+IP = [1,3,6,-2,-1,-3,2,7]
+Output: -1 1 -3 3 -2 2
+```py
+def positiveNegativePairs(nums: List[int]):
+    seen = set()
+    done = set()
+    ans = []
+    for num in nums:
+        if abs(num) not in done and -num in seen:
+            ans.extend([-abs(num), abs(num)])
+            done.add(abs(num))
+        else:
+            seen.add(num)
+
+    return ans
+```
+
+Q.2 Design the logic for minimising cash flow in an app like ‘Splitwise’.
+# I'm thinking of just calculation as for every transaction what does each person owes be it in -ve if he need to pay or +ve if he will receive that amount.
+# now show the overall.
+# if a person pays then he has to settle each person individually, in this case this will make -amount for person that received and +ve to person who paid.
+```py
+def minimize_cash_flow(balances: dict):
+    transactions = []
+
+    def get_max_creditor():
+        return max(balances, key=lambda x: balances[x])
+
+    def get_max_debtor():
+        return min(balances, key=lambda x: balances[x])
+
+    while True:
+        max_creditor = get_max_creditor()
+        max_debtor = get_max_debtor()
+
+        credit = balances[max_creditor]
+        debt = balances[max_debtor]
+
+        if abs(credit) < 1e-9 and abs(debt) < 1e-9:
+            break  # All settled
+
+        amount = min(credit, -debt)
+        balances[max_creditor] -= amount
+        balances[max_debtor] += amount
+
+        transactions.append(f"{max_debtor} pays {amount:.2f} to {max_creditor}")
+
+    return transactions
+
+```
