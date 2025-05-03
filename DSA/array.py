@@ -144,4 +144,37 @@ def positiveNegativePairs(nums: List[int]):
             seen.add(num)
     return ans
 
-print(positiveNegativePairs([1,3,6,-2,-1,-3,2,7]))
+# print(positiveNegativePairs([1,3,6,-2,-1,-3,2,7]))
+
+def minimize_cash_flow(balances: dict):
+    transactions = []
+
+    def getMaxReceiver():
+        return max(balances, key = lambda x: balances[x])
+
+    def getMaxDebt():
+        return min(balances, key = lambda x: balances[x])
+
+    while True:
+        maxReceiver = getMaxReceiver()
+        maxDebter = getMaxDebt()
+
+        amount = min(balances[maxReceiver], -balances[maxDebter])
+        if amount < 1e-9:
+            break
+        balances[maxReceiver] -= amount
+        balances[maxDebter] += amount
+
+        transactions.append(f"{maxDebter} pays amount {amount} to {maxReceiver}")
+
+    return transactions
+
+IP = {
+    "Alice": -70,
+    "Bob": 50,
+    "Charlie": -30,
+    "David": 60,
+    "Eve": -10
+}
+
+print(minimize_cash_flow(IP))

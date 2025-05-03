@@ -615,10 +615,42 @@ def positiveNegativePairs(nums: List[int]):
 ```
 
 Q.2 Design the logic for minimising cash flow in an app like ‘Splitwise’.
-# I'm thinking of just calculation as for every transaction what does each person owes be it in -ve if he need to pay or +ve if he will receive that amount.
-# now show the overall.
-# if a person pays then he has to settle each person individually, in this case this will make -amount for person that received and +ve to person who paid.
+RAW IP = expenses = [
+    {"payer": "Alice", "amount": 90, "participants": ["Alice", "Bob", "Charlie"]},
+    {"payer": "Bob", "amount": 60, "participants": ["Bob", "David", "Eve"]},
+    {"payer": "Charlie", "amount": 50, "participants": ["Alice", "Bob", "Charlie", "David", "Eve"]}
+]
+
+`IP` = {
+    "Alice": -70,
+    "Bob": 50,
+    "Charlie": -30,
+    "David": 60,
+    "Eve": -10
+}
+OP = `['Alice pays 60.00 to David', 'Charlie pays 30.00 to Bob', 'Alice pays 10.00 to Bob', 'Eve pays 10.00 to Bob']`
+
 ```py
+def build_balances(expenses):
+    balances = {}
+
+    for expense in expenses:
+        payer = expense['payer']
+        amount = expense['amount']
+        participants = expense['participants']
+
+        share = amount / len(participants)
+
+        # Initialize balances
+        for person in participants + [payer]:
+            balances.setdefault(person, 0)
+
+        for person in participants:
+            balances[person] -= share  # each participant owes their share
+        balances[payer] += amount     # payer gets full credit
+
+    return balances
+
 def minimize_cash_flow(balances: dict):
     transactions = []
 
@@ -645,5 +677,8 @@ def minimize_cash_flow(balances: dict):
         transactions.append(f"{max_debtor} pays {amount:.2f} to {max_creditor}")
 
     return transactions
-
 ```
+
+R3. 
+1. **Count Special Nodes in Generic Tree**
+`Given a generic tree, find the count of all special nodes. A node is a special node if there is a path from root to that node with all distinct elements. The input was not a pointer to a tree. He’d give me an adjacency list and an array of values where the value of ith node in the adjacency list is the ith element in the values array. He asked me not a create a tree out of the given information and rather do it with the adjacency list itself.`
