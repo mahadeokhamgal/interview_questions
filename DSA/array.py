@@ -177,4 +177,32 @@ IP = {
     "Eve": -10
 }
 
-print(minimize_cash_flow(IP))
+# print(minimize_cash_flow(IP))
+
+def count_special_nodes(adj: List[List[int]], values: List[int]) -> int:
+    # start create stack. push element 0, add it to ans += 1 as uniq. now go one by one dfs ysing stack as per below.
+    # use stack and traverse over each node using adjecency list, keep track of seen nodes, if already seen node then don't visit.
+    # keep track of path and if you're moving back/backtracking then pop that node/val from path.
+    # everytime you visit new node if path is uniq/non duplicate vals then ans += 1.
+    # Go till stack has elements.
+    stack = [(0, set())]  # Each item: (current_node, set of values seen so far)
+    ans = 0
+
+    while stack:
+        node, seen = stack.pop()
+        val = values[node]
+
+        if val in seen:
+            continue
+
+        new_seen = seen.copy()
+        new_seen.add(val)
+        ans += 1
+
+        for neighbor in adj[node]:
+            stack.append((neighbor, new_seen))
+
+    return ans
+
+print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 3, 4, 5]))  
+print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 1, 4, 2]))  

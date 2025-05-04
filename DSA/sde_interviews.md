@@ -682,3 +682,66 @@ def minimize_cash_flow(balances: dict):
 R3. 
 1. **Count Special Nodes in Generic Tree**
 `Given a generic tree, find the count of all special nodes. A node is a special node if there is a path from root to that node with all distinct elements. The input was not a pointer to a tree. He’d give me an adjacency list and an array of values where the value of ith node in the adjacency list is the ith element in the values array. He asked me not a create a tree out of the given information and rather do it with the adjacency list itself.`
+GFG - **https://www.geeksforgeeks.org/number-of-special-nodes-in-an-n-ary-tree**
+IP = count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 3, 4, 5])
+OP = 5(All nodes are special)
+
+        1 (0)
+       /     \
+   2 (1)     3 (2)
+   /   \
+4 (3) 5 (4)
+
+```py
+def count_special_nodes(adj: List[List[int]], values: List[int]) -> int:
+    # start create stack. push element 0, add it to ans += 1 as uniq. now go one by one dfs ysing stack as per below.
+    # use stack and traverse over each node using adjecency list, keep track of seen nodes, if already seen node then don't visit.
+    # keep track of path and if you're moving back/backtracking then pop that node/val from path.
+    # everytime you visit new node if path is uniq/non duplicate vals then ans += 1.
+    # Go till stack has elements.
+    stack = [(0, set())]  # Each item: (current_node, set of values seen so far)
+    ans = 0
+
+    while stack:
+        node, seen = stack.pop()
+        val = values[node]
+
+        if val in seen:
+            continue
+
+        new_seen = seen.copy()
+        new_seen.add(val)
+        ans += 1
+
+        for neighbor in adj[node]:
+            stack.append((neighbor, new_seen))
+
+    return ans
+
+print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 3, 4, 5]))  
+print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 1, 4, 2]))      
+```
+
+Q.2 **Common Digit Longest Subsequence**
+`Given an integer array, find the longest subsequence with adjacent numbers having a digit in common. Eg: 1 12 44 29 33 96 89 . The longest subsequence here is { 1 12 29 96 89} and the answer is 5.`
+GFG - **https://www.geeksforgeeks.org/longest-subsequence-such-that-adjacent-elements-have-at-least-one-common-digit**
+IP = [1, 12, 44, 29, 33, 96, 89]
+OP = [1, 12, 29, 96, 89].
+# - a subsequence is derived by deleting zero or multiple elementd without changing the order.
+```py
+"""
+Array: A collection of elements.
+Subarray: A contiguous portion of the array.
+Subsequence: A sequence that can be derived by removing elements without changing the order.
+Prefix: A subarray starting from the first element.
+Suffix: A subarray starting from any element but has to end at last element of array.
+Increasing Subsequence: A subsequence where elements are in strictly increasing order.
+Longest Increasing Subsequence (LIS): The longest strictly increasing subsequence.
+Longest Common Subsequence (LCS): The longest subsequence common to two arrays.
+Palindromic Subsequence: A subsequence that forms a palindrome.
+"""
+```
+```py
+# my approach is using dp, start from right and move to left, and try to maximise the subsequence from every idx in array.
+# now find which subsequence is the longest.
+```
