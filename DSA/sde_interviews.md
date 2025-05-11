@@ -886,3 +886,8 @@ def maxProfit(self, prices: List[int]) -> int:
                     
         return profit
 ```
+
+R.2 Q.1 Time to Burn Tree
+`You have a binary tree of 'N' unique nodes and a Start node from where the tree will start to burn. Given that the Start node will always exist in the tree, your task is to print the time (in minutes) that it will take to burn the whole tree.`
+`It is given that it takes 1 minute for the fire to travel from the burning node to its adjacent node and burn down the adjacent node.`
+# https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/
