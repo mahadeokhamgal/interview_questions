@@ -744,4 +744,145 @@ Palindromic Subsequence: A subsequence that forms a palindrome.
 ```py
 # my approach is using dp, start from right and move to left, and try to maximise the subsequence from every idx in array.
 # now find which subsequence is the longest.
+def commonDigitLongestSubsequence(nums: List[int]) -> int:
+    N = len(nums)
+    dp = [0] * N
+    dp[N-1] = 1
+    longestDict = collections.defaultdict(int)
+    ans = 0
+    
+    for i in range(N-1, -1, -1):
+        num = nums[i]
+        currMax = 1
+        while num:
+            digit = num % 10
+            currMax = max(currMax, longestDict[digit]+1)
+            num //= 10
+        
+        num = nums[i]
+        while num:
+            digit = num % 10
+            longestDict[digit] = currMax
+            num //= 10
+        
+        ans = max(ans, currMax)
+    
+    return ans
+```
+
+R.4. F2F
+Q.1 `Given a binary tree, modify the tree satisfying the following constrains :`
+`Value at root must be the sum of left child and right child (not subtrees). You can’t reduce the value at any node. You can only increase it. Value of root node must be minimum`
+
+To Do.
+
+Q.2 `Given an array A of size N containing 0s, 1s, and 2s; you need to sort the array in ascending order. You can scan the array only once.`
+**https://leetcode.com/problems/sort-colors/**
+```py
+def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        left = 0
+        idx = 0
+        right = len(nums) - 1
+
+        while idx <= right:
+            if nums[idx] == 0:
+                nums[idx], nums[left] = nums[left], nums[idx]
+                left += 1
+                idx += 1
+            elif nums[idx] == 2: 
+                nums[idx], nums[right] = nums[right], nums[idx]
+                right -= 1
+            else:
+                idx += 1
+```
+R.5
+Q.1 `Difference between threads and processes.`
+| Feature                 | **Process**                                                | **Thread**                                                             |
+| ----------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Definition**          | Independent unit of execution with its own memory          | Lightweight unit within a process that shares memory                   |
+| **Memory Space**        | Has its **own separate** memory space                      | Shares **common memory** with other threads in the same process        |
+| **Communication**       | Slower and complex (requires **IPC**)                      | Faster and easier (uses **shared memory**)                             |
+| **Creation Time**       | Slower to create and manage                                | Faster to create and switch between                                    |
+| **Context Switching**   | Expensive, involves switching memory contexts              | Lightweight and faster                                                 |
+| **Crash Impact**        | Crash is **isolated** to that process                      | Crash can **affect the entire process**                                |
+| **Security/Isolation**  | Highly **isolated** from other processes                   | **Not isolated**, shared state may lead to issues like race conditions |
+| **Use Cases**           | Used in **multitasking** (e.g., running multiple programs) | Used in **parallelism** within a single program (e.g., handling tasks) |
+| **Resource Usage**      | More resource-heavy (needs more memory and setup)          | Lightweight and less resource-intensive                                |
+| **Example in OS**       | Chrome runs each tab in a **separate process**             | A download manager uses **threads** for parallel file downloads        |
+| **Programming Example** | Python: `multiprocessing.Process`                          | Python: `threading.Thread`                                             |
+
+Q.2 `Deadlocks and its prevention.`
+# Four Necessory conditions for deadlock.
+| Condition            | Description                                                                        |
+| -------------------- | ---------------------------------------------------------------------------------- |
+| **Mutual Exclusion** | At least one resource is held in a non-shareable mode                              |
+| **Hold and Wait**    | A process is holding a resource and waiting for others                             |
+| **No Preemption**    | Resources cannot be forcibly taken away                                            |
+| **Circular Wait**    | A circular chain of processes exists, each waiting for a resource held by the next |
+
+# Deadlock prevention.(Use any one of below).
+| Strategy                       | How It Works                                                                                       |
+| ------------------------------ | -------------------------------------------------------------------------------------------------- |
+| **Eliminate Mutual Exclusion** | Make resources shareable (often impractical)                                                       |
+| **Avoid Hold and Wait**        | Require processes to request all resources upfront                                                 |
+| **Allow Preemption**           | If a resource is needed, forcibly take it from a lower-priority process                            |
+| **Break Circular Wait**        | Impose an ordering on resource acquisition (e.g., always request resources in increasing ID order) |
+
+Q.3 `Trie data structure.`
+**Implement a Trie data structure and write functions to insert and search for a few words in it.**
+```py
+import collections
+
+class TrieNode:
+    def __init__(self):
+        self.children = collections.defaultdict(TrieNode)
+        self.isEnd = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+
+    def addWord(self, word):
+        temp = self.root
+        for char in word:
+            temp = temp.children[char]
+        temp.isEnd = True
+    
+    def isWord(self, word):
+        temp = self.root
+        for char in word:
+            if char not in temp.children:
+                return False
+            temp = temp.children[char]
+        return temp.isEnd
+```
+
+Q.4. `Anagram Pairs.`
+`Given two strings a and b consisting of lowercase characters. The task is to check whether two given strings are anagram of each other or not. An anagram of a string is another string that contains same characters, only the order of characters can be different. For example, “act” and “tac” are anagram of each other.`
+# https://leetcode.com/problems/valid-anagram/description/
+```py
+def isAnagram(self, s: str, t: str) -> bool:
+    return Counter(s) == Counter(t)
+```
+
+# Microsoft - SDE-1
+**https://www.naukri.com/code360/interview-experiences/microsoft/microsoft-interview-experience-by-off-campus-feb-2021-1000?testVariant=0**
+
+R1. Q1. Buying And Selling Stock.
+`You have been given the prices of 'N' stocks in an array where each array element represents the stock price for that day. You need to find the maximum profit which you can make by buying and selling the stocks. You may make as many transactions as you want but can not have more than one transaction at a time i.e, if you have the stock, you need to sell it first, and then only you can buy it again.`
+# https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+```py
+def maxProfit(self, prices: List[int]) -> int:
+        N = len(prices)
+        profit = 0
+        buyPrice = float('inf')
+        for price in prices:
+            if price > buyPrice:
+                profit += price - buyPrice
+            buyPrice = price
+                    
+        return profit
 ```

@@ -1,5 +1,6 @@
 from typing import List
 from collections import defaultdict
+import collections
 
 def allPaths(arr):
     ans = []
@@ -204,5 +205,65 @@ def count_special_nodes(adj: List[List[int]], values: List[int]) -> int:
 
     return ans
 
-print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 3, 4, 5]))  
-print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 1, 4, 2]))  
+# print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 3, 4, 5]))  
+# print(count_special_nodes([[1, 2], [3, 4], [], [], []], [1, 2, 1, 4, 2]))  
+
+def longestSubsequence(arr): # GFG
+    dp = [0] * 10
+    maxLength = 0
+
+    for num in arr:
+        currentMax = 0
+        digitsOfCurrentElement = [False] * 10
+
+        temp = num
+        while temp > 0:
+            digit = temp % 10
+            digitsOfCurrentElement[digit] = True
+            currentMax = max(currentMax, dp[digit] + 1)
+            temp //= 10
+
+        for digit in range(10):
+            if digitsOfCurrentElement[digit]:
+                dp[digit] = currentMax
+
+        maxLength = max(maxLength, currentMax)
+
+    return maxLength
+
+def commonDigitLongestSubsequence(nums: List[int]) -> int: # Mine
+    N = len(nums)
+    dp = [0] * N
+    dp[N-1] = 1
+    longestDict = collections.defaultdict(int)
+    ans = 0
+    
+    for i in range(N-1, -1, -1):
+        num = nums[i]
+        currMax = 1
+        while num:
+            digit = num % 10
+            currMax = max(currMax, longestDict[digit]+1)
+            num //= 10
+        
+        num = nums[i]
+        while num:
+            digit = num % 10
+            longestDict[digit] = currMax
+            num //= 10
+        
+        ans = max(ans, currMax)
+    
+    return ans
+
+# print(longestSubsequence([12, 23, 34]))
+# print(commonDigitLongestSubsequence([12, 23, 34]))
+
+# print(longestSubsequence([30, 20, 10]))
+# print(commonDigitLongestSubsequence([30, 20, 10]))
+
+# print(longestSubsequence([65, 54, 43, 32, 21, 10]))
+# print(commonDigitLongestSubsequence([65, 54, 43, 32, 21, 10]))
+
+# print(longestSubsequence([91, 82, 73, 10]))
+# print(commonDigitLongestSubsequence([91, 82, 73, 10]))
