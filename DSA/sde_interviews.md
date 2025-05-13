@@ -931,4 +931,55 @@ R.3 Q. 1. Flatten Binary Tree.
 `Use these nodes only. Do not create extra nodes.`
 # Leetcode 114 https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
 ```py
+def flatten(self, root: Optional[TreeNode]) -> None:
+    """
+    Do not return anything, modify root in-place instead.
+    """
+    if not root:
+        return None
+    
+    leftTail = self.flatten(root.left)
+    rightTail = self.flatten(root.right)
+
+    if root.left:
+        leftTail.right = root.right
+        root.right = root.left
+        root.left = None
+    
+    return rightTail or leftTail or root
+```
+
+R.4 Q.1 Gray Code.
+`Given a number ‘grayNumber’. Find the gray code sequence.`
+Conditions for a gray code sequence :
+1. Gray code sequence contains numbers from 0 to 2^'grayNumber'-1 in bit/binary form.
+2. Two consecutive gray code sequence numbers only differ by 1 bit.
+3. Gray code sequence must start with 0.
+# https://leetcode.com/problems/gray-code/description/
+```py
+def grayCode(self, n: int) -> List[int]:
+    ans = [0]
+    seen = set([0])
+
+    for _ in range(1 << n):
+        for x in range(n):
+            newNum = (1 << x) ^ ans[-1]
+            if newNum not in seen:
+                ans.append(newNum)
+                seen.add(newNum)
+                break
+
+    return ans
+```
+
+SDE-1 Amazon
+# https://www.naukri.com/code360/interview-experiences/amazon/amazon-interview-experience-by-anonymous-sde-1-dec-2020-exp-0-2-years-261?testVariant=0
+
+R.1 Q.1 Maximum Subarray Sum.
+`You are given an array 'arr' of length 'n', consisting of integers.`
+`A subarray is a contiguous segment of an array. In other words, a subarray can be formed by removing 0 or more integers from the beginning and 0 or more integers from the end of an array.`
+`Find the sum of the subarray (including empty subarray) having maximum sum among all subarrays.`
+`The sum of an empty subarray is 0.`
+# https://leetcode.com/problems/maximum-subarray/description/
+```py
 ```
