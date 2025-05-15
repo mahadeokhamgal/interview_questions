@@ -1030,3 +1030,22 @@ def leftView(root: Optional[TreeNode]) -> List[int]:
 ```
 
 R.2 Q. 1. Triplets in Binary Tree.
+`You have been given a Binary Tree of integers and an integer 'X'. Find all the triplets in the tree whose sum is strictly greater than 'X'. The nodes in the triplet must hold the relationship of grandparent-parent-child.`
+```py
+def getTriplets(root: Optional[TreeNode], x) -> List[List[int]]:
+    ans = []
+    def preOrder(node: Optional[TreeNode], parent: Optional[TreeNode], gparent: Optional[TreeNode]) -> None:
+        if parent and gparent and node.val + parent.val + gparent.val > x:
+            ans.append([node.val, parent.val, gparent.val])
+        if node.left:
+            preOrder(node.left, node, parent)
+        if node.right:
+            preOrder(node.right, node, parent)
+    
+    preOrder(root, None, None)
+    return ans
+```
+
+Q.2 Loot Houses.
+`A thief wants to loot houses. He knows the amount of money in each house. He cannot loot two consecutive houses. Find the maximum amount of money he can loot.`
+# https://leetcode.com/problems/house-robber/description/
