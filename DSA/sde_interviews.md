@@ -1,3 +1,19 @@
+# Tech M - https://www.naukri.com/code360/interview-experiences/tech-mahindra/tech-mahindra-interview-experience-senior-software-engineer-sep-2021-exp-0-2-years-2098
+
+# ltimindtree - https://www.naukri.com/code360/interview-experiences/ltimindtree/interview-experience-by-priyanshu-agarwal-on-campus-feb-2025
+
+# Oracle - https://www.naukri.com/code360/interview-experiences/oracle/oracle-interview-experience-senior-software-engineer-mar-2022-exp-0-2-years
+
+# Indo Web Agency Pvt. Ltd. SDE-1 - https://www.naukri.com/code360/interview-experiences/indo-web-agency-pvt-ltd/interview-experience-off-campus-feb-2025
+
+# Meesho - https://www.naukri.com/code360/interview-experiences/meesho/meesho-interview-experience-dec-2020-exp-0-2-years-2011
+
+# amazon SDE-1 - https://www.naukri.com/code360/interview-experiences/amazon/amazon-interview-experience-by-amrith-m-nair-on-campus-jan-2019-21
+
+# Microsoft - SDE-1 - https://www.naukri.com/code360/interview-experiences/microsoft/microsoft-interview-experience-by-off-campus-feb-2021-1000
+
+# Amazon - SDE-1 - https://www.naukri.com/code360/interview-experiences/amazon/amazon-interview-experience-by-anonymous-sde-1-dec-2020-exp-0-2-years-261
+
 
 **Tech M interview - https://www.naukri.com/code360/interview-experiences/tech-mahindra/tech-mahindra-interview-experience-senior-software-engineer-sep-2021-exp-0-2-years-2098?cvId=c285d94fb9f24628ac418c8dcea08985&campaign=interview_exp_dashboard&medium=desktop&source=naukri**
 `R1 Q.1 You are given a Singly Linked List of integers which is sorted based on absolute value.`
@@ -1049,3 +1065,6 @@ def getTriplets(root: Optional[TreeNode], x) -> List[List[int]]:
 Q.2 Loot Houses.
 `A thief wants to loot houses. He knows the amount of money in each house. He cannot loot two consecutive houses. Find the maximum amount of money he can loot.`
 # https://leetcode.com/problems/house-robber/description/
+```py
+
+```
