@@ -14,7 +14,10 @@
 
 # Amazon - SDE-1 - https://www.naukri.com/code360/interview-experiences/amazon/amazon-interview-experience-by-anonymous-sde-1-dec-2020-exp-0-2-years-261
 
+# Samsung https://www.naukri.com/code360/interview-experiences/samsung/samsung-interview-experience-by-anubhav-jain-on-campus-dec-2019-16
 
+
+----------------------------------Solutions----------------------------------------------------------
 **Tech M interview - https://www.naukri.com/code360/interview-experiences/tech-mahindra/tech-mahindra-interview-experience-senior-software-engineer-sep-2021-exp-0-2-years-2098?cvId=c285d94fb9f24628ac418c8dcea08985&campaign=interview_exp_dashboard&medium=desktop&source=naukri**
 `R1 Q.1 You are given a Singly Linked List of integers which is sorted based on absolute value.`
 `You have to sort the Linked List based on actual values.`
@@ -1066,5 +1069,17 @@ Q.2 Loot Houses.
 `A thief wants to loot houses. He knows the amount of money in each house. He cannot loot two consecutive houses. Find the maximum amount of money he can loot.`
 # https://leetcode.com/problems/house-robber/description/
 ```py
-
+def rob(self, nums: List[int]) -> int:
+    N = len(nums)
+    dp = [0] * (N + 2)
+    for i in range(N-1, -1, -1):
+        dp[i] = max(dp[i+1], dp[i+2]+nums[i])
+    
+    return dp[0]
 ```
+
+# Samsung - https://www.naukri.com/code360/interview-experiences/samsung/samsung-interview-experience-by-anubhav-jain-on-campus-dec-2019-16
+
+R1. Q1. Colourful Knapsack.
+`You are given N stones, labeled from 1 to N. The i-th stone has the weight W[i]. There are M colors, labeled by integers from 1 to M. The i-th stone has the color C[i] (of course, an integer between 1 to M, inclusive). You want to fill a Knapsack with these stones. The Knapsack can hold a total weight of X. You want to select exactly M stones; one of each color. The sum of the weights of the stones must not exceed X. Since you paid a premium for a Knapsack with capacity X (as opposed to a Knapsack with a lower capacity), you want to fill the Knapsack as much as possible.`
+`Write a program that takes all the above values as input and calculates the best way to fill the Knapsack – that is, the way that minimizes the unused capacity. Output this unused capacity.`
