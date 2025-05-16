@@ -267,3 +267,23 @@ def commonDigitLongestSubsequence(nums: List[int]) -> int: # Mine
 
 # print(longestSubsequence([91, 82, 73, 10]))
 # print(commonDigitLongestSubsequence([91, 82, 73, 10]))
+
+def colourful_knapsack(m, x, weights, colours):
+    f = defaultdict(int)
+    for idx in range(len(weights)):
+        if f[colors[idx]] > 0:
+            f[colors[idx]] = min(f[colors[idx]], weights[idx])
+        else:
+            f[colors[idx]] = weights[idx]
+    
+    cost = 0
+    heap = [-w for w in f.values()]
+    heapq.heapify(heap)
+    while m > 0:
+        el = -heapq.heappop(heap)
+        cost += el
+        m -= 1
+    
+    return -1 if cost > x else x - cost
+
+print(colourful_knapsack(3, 10, [3, 4, 2, 5, 1], [1, 2, 3, 1, 2]))

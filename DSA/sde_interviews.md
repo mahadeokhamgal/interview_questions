@@ -1083,3 +1083,59 @@ def rob(self, nums: List[int]) -> int:
 R1. Q1. Colourful Knapsack.
 `You are given N stones, labeled from 1 to N. The i-th stone has the weight W[i]. There are M colors, labeled by integers from 1 to M. The i-th stone has the color C[i] (of course, an integer between 1 to M, inclusive). You want to fill a Knapsack with these stones. The Knapsack can hold a total weight of X. You want to select exactly M stones; one of each color. The sum of the weights of the stones must not exceed X. Since you paid a premium for a Knapsack with capacity X (as opposed to a Knapsack with a lower capacity), you want to fill the Knapsack as much as possible.`
 `Write a program that takes all the above values as input and calculates the best way to fill the Knapsack – that is, the way that minimizes the unused capacity. Output this unused capacity.`
+```py
+def colourful_knapsack(m, x, weights, colours): # doesn't work as we need to mimise x-cost and not cost
+    f = defaultdict(int)
+    for idx in range(len(weights)):
+        if f[colors[idx]] > 0:
+            f[colors[idx]] = min(f[colors[idx]], weights[idx])
+        else:
+            f[colors[idx]] = weights[idx]
+    
+    cost = 0
+    heap = [-w for w in f.values()]
+    heapq.heapify(heap)
+    while m > 0:
+        el = -heapq.heappop(heap)
+        cost += el
+        m -= 1
+    
+    return -1 if cost > x else x - cost
+
+"""
+# Test Case 1: Basic Example
+    "M": 3,
+    "X": 10,
+    "W": [3, 4, 2, 5, 1],
+    "C": [1, 2, 3, 1, 2],
+    "expected": 4
+
+# Test Case 2: Exact Fit
+    "M": 3,
+    "X": 9,
+    "W": [3, 3, 3],
+    "C": [1, 2, 3],
+    "expected": 0
+
+# Test Case 3: Impossible to Fit
+    "M": 2,
+    "X": 3,
+    "W": [2, 4, 5, 6],
+    "C": [1, 1, 2, 2],
+    "expected": -1
+
+# Test Case 4: Multiple Options
+    "M": 3,
+    "X": 12,
+    "W": [4, 3, 6, 5, 2, 3],
+    "C": [1, 1, 2, 2, 3, 3],
+    "expected": 1
+
+# Test Case 5: Only One Stone per Color, Overweight
+    "M": 3,
+    "X": 7,
+    "W": [2, 3, 4],
+    "C": [1, 2, 3],
+    "expected": -1
+"""
+```
