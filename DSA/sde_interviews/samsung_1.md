@@ -136,3 +136,69 @@ R.2 Q.1. Longest Increasing Subsequence.
 ```
 
 # lets implement bisect left.
+```py
+def searchInsert(self, nums: List[int], target: int) -> int:
+    # idea is to find number >= target
+    def helper(left, right) -> int:
+        if left >= right:
+            return left
+        
+        mid = left + (right-left)//2
+        if nums[mid] < target:
+            return helper(mid+1, right)
+        else:
+            return helper(left, mid)
+    
+    return helper(0, len(nums))
+```
+Q.2 Find the top view of the tree.
+`Given a binary tree, print the top view of it. The  output nodes can be printed in any order. Expected time complexity is O(n)`
+# https://leetcode.com/problems/binary-tree-vertical-order-traversal/description/
+```py
+def topView(root: TreeNode):
+    """BFS
+    INF = 10 ** 10
+    tops = {}
+    leftMost = INF
+    rightMost = -INF
+
+    q = collections.deque([(0, root)])
+    while q:
+        for i in range(len(q)):
+            idx, node = q.popleft()
+            leftMost = min(leftMost, idx)
+            rightMost = max(rightMost, idx)
+
+            if idx not in tops:
+                tops[idx] = node.val
+            
+            if node.left:
+                q.append((idx-1, node.left))
+            if node.right:
+                q.append((idx+1, node.right))
+    ans = []
+    for i in range(leftMost, rightMost+1):
+        ans.append(tops[i])
+
+    return ans"""
+    """DFS"""
+    INF = 10 ** 10
+    tops = {}
+    leftMost = INF
+    rightMost = -INF
+    def dfs(idx, level, node):
+        if not node:
+            return
+        if idx not in tops or tops[idx][1] < idx:
+            tops[idx] = (node.val, level)
+            leftMost = min(leftMost, idx)
+            rightMost = max(rightMost, idx)
+        
+        dfs(idx-1, level-1, node.left)
+        dfs(idx+1, level-1, node.right)
+    dfs(0, 0, root)
+    return [tops[i][0] for i in range(leftMost, rightMost+1)]
+```
+
+R3. Q.1. Merge Point Of Two Linked Lists
+`To find the merging point of link list(Given pointers to the head nodes of 2 linked lists that merge together at some point, find the Node where the two lists merge. It is guaranteed that the two head Nodes will be different, and neither will be NULL.)`
