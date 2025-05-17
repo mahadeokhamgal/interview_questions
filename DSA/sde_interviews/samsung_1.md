@@ -3,7 +3,38 @@
 R1. Q1. Colourful Knapsack.
 `You are given N stones, labeled from 1 to N. The i-th stone has the weight W[i]. There are M colors, labeled by integers from 1 to M. The i-th stone has the color C[i] (of course, an integer between 1 to M, inclusive). You want to fill a Knapsack with these stones. The Knapsack can hold a total weight of X. You want to select exactly M stones; one of each color. The sum of the weights of the stones must not exceed X. Since you paid a premium for a Knapsack with capacity X (as opposed to a Knapsack with a lower capacity), you want to fill the Knapsack as much as possible.`
 `Write a program that takes all the above values as input and calculates the best way to fill the Knapsack – that is, the way that minimizes the unused capacity. Output this unused capacity.`
+This one is in To do. - bit overhead.
 ```py
+from collections import defaultdict
+from typing import List
+
+def colourful_knapsack(m: int, x: int, weights: List[int], colours: List[int]) -> int: # GPT
+    from collections import defaultdict
+
+    color_to_weights = defaultdict(list)
+    for w, c in zip(weights, colours):
+        color_to_weights[c].append(w)
+
+    colors = list(color_to_weights.keys())
+    n_colors = len(colors)
+
+    dp = [set() for _ in range(m + 1)]
+    dp[0].add(0)  # base case: 0 stones, 0 weight
+
+    for color in colors:
+        current_stones = color_to_weights[color]
+        for k in range(m, 0, -1):
+            for prev_weight in dp[k - 1]:
+                for stone_weight in current_stones:
+                    new_weight = prev_weight + stone_weight
+                    if new_weight <= x:
+                        dp[k].add(new_weight)
+
+    if not dp[m]:
+        return x  # No valid combination
+    best_weight = max(dp[m])
+    return x - best_weight
+
 def colourful_knapsack(m, x, weights, colours): # doesn't work as we need to mimise x-cost and not cost
     
 """ Greedy this gives max difference possible
@@ -60,3 +91,48 @@ def colourful_knapsack(m, x, weights, colours): # doesn't work as we need to mim
     "expected": -1
 """
 ```
+
+R.2 Q.1. Longest Increasing Subsequence.
+`The Longest Increasing Subsequence (LIS) problem is to find the length of the longest subsequence of a given sequence such that all elements of the subsequence are sorted in increasing order.`
+# https://leetcode.com/problems/longest-increasing-subsequence/description/
+```py
+ def lengthOfLIS(self, nums: List[int]) -> int:
+    """Binary Search"""
+    deck = []
+    for num in nums:
+        idxToInsert = bisect.bisect_left(deck, num)
+        if idxToInsert == len(deck):
+            deck.append(num)
+        else:
+            deck[idxToInsert] = num
+            
+    return len(deck)
+        
+    """# bottom up
+    N = len(nums)
+    dp = [1] * N
+    for i in range(N-1, -1, -1):
+        for j in range(i+1, N):
+            if nums[j] > nums[i]:
+                dp[i] = max(dp[i], 1 + dp[j])
+    return max(dp)"""
+    
+    """dp
+    N = len(nums)
+    @cache
+    def dfs(idx) -> int:
+        if idx >= N:
+            return 0
+        runner = idx
+        best = 1
+        for runner in range(idx, N):
+            if nums[runner] > nums[idx]:
+                best = max(best, 1 + dfs(runner))
+        
+        return best
+
+    return max(dfs(idx) for idx in range(N))
+    """
+```
+
+# lets implement bisect left.
