@@ -202,3 +202,50 @@ def topView(root: TreeNode):
 
 R3. Q.1. Merge Point Of Two Linked Lists
 `To find the merging point of link list(Given pointers to the head nodes of 2 linked lists that merge together at some point, find the Node where the two lists merge. It is guaranteed that the two head Nodes will be different, and neither will be NULL.)`
+# https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+```py
+def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+    A = headA
+    B = headB
+    while A != B:
+        A = A.next if A else headB
+        B = B.next if B else headA
+    
+    return A
+
+    """Time = O(M+N), Space  O(M) M  size(a), N = size(b)
+    aSet = set()
+    ptr = headA
+    while ptr:
+        aSet.add(ptr)
+        ptr = ptr.next
+    
+    ptr = headB
+    while ptr:
+        if ptr in aSet:
+            return ptr
+        
+        ptr = ptr.next
+    
+    return None
+```
+
+Q.3 Implement DFS algorithm for the graph.
+```py
+
+"""
+1. [
+    ('A', 'B'),
+    ('A', 'C'),
+    ('B', 'D')
+]
+
+2. [
+    ('1', '2'),
+    ('2', '3'),
+    ('2', '4'),
+    ('3', '1'),
+    ('5', '6')
+]
+"""
+```
