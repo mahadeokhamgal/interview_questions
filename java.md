@@ -90,9 +90,44 @@
   - New String Methods – isBlank(), lines(), repeat(), strip(), stripLeading(), stripTrailing()
   
 10. String pool in java.
+ - The String pool is a special memory area within the Java heap that stores interned String literals.
+ - When a String literal is created, Java checks the pool. If an identical string already exists, the new reference points to the existing object instead of creating a new one.
+ - This sharing is possible because String objects are immutable, meaning their values cannot be changed once created. This ensures the integrity of shared references.
+ - If a String is modified (e.g., via concatenation), a new String object is created in memory, not in the pool unless explicitly interned using intern().
+
 11. Stringbuilder vs StringBuffer.
+ - Both StringBuilder and StringBuffer are mutable classes used to perform operations on strings without creating new objects, unlike String, which is immutable.
+ - StringBuffer was introduced first (in Java 1.0) and is t hread-safe because its methods are synchronized.
+ - StringBuilder was introduced later (in Java 1.5) as a faster alternative for use in single-threaded environments, as it is not thread-safe.
+ - In general, use StringBuilder when thread safety is not required, and StringBuffer when multiple threads might access the same instance concurrently.
+
 12. Explain system.out.println().
+ - System is a final class in the java.lang package.
+ - out is a static final field in the System class, and it refers to a PrintStream object.
+ - println() is a method of the PrintStream class, used to print output to the console, followed by a new line.
+ - So, System.out.println() calls the println() method on the PrintStream object referred to by System.out.
+
 13. Types of inheritance.
+ - Single Inheritance:
+  - A class inherits from only one superclass.
+ - Multilevel Inheritance:
+  - A class inherits from a class, which itself inherits from another class.
+ - Hierarchical Inheritance:
+  - Multiple classes inherit from a single superclass
+ - Multiple Inheritance:
+  - A class implements multiple interfaces.
+
 14. How multiple inheritance achieved in java.
+ - this is acheived via intefaces, where one class can implement multiple interfaces.
+
+15. Diamond Problem in Interfaces.
+ - If a class implements two interfaces that both have the same default method, Java needs to resolve the conflict — this is similar to the Diamond Problem in C++ (which Java avoids with classes).
+
 15. Why Java is platform independent.
-16. 
+ - Java is platform independent because of its bytecode and Java Virtual Machine (JVM).
+ - When a Java program is compiled, it is converted into bytecode, which is a platform-independent intermediate code.
+ - This bytecode can be executed on any platform that has a compatible JVM.
+ - The JVM is platform-specific, but it knows how to run the same bytecode on its own platform.
+ - This "write once, run anywhere" behavior is what makes Java platform independent.
+
+16. How to achieve multi threading in Java?

@@ -334,3 +334,201 @@ root.render(
 1. Create a react app to render a random dog image and change on every click. while image is beling loaded show loading icon.
 2. Create react app for counter. On click of button it should start countdown of user input s and on complete it should show completed. if user clicks reset in between then timer will restart. usetr should be able to see timer clock on UI.
 3. 
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+# React.js One-Liner Questions – Readiness Check
+### 1. What is React?
+→ A JavaScript library for building user interfaces using components.
+
+### 2. What is JSX?
+→ A syntax extension that lets you write HTML-like code inside JavaScript.
+
+### 3. What is a component in React?
+→ A reusable, independent piece of UI that can be a function or class.
+
+### 4. What’s the difference between functional and class components?
+→ Functional components are plain functions; class components use `class` and lifecycle methods.
+
+### 5. What are props in React?
+→ Props are inputs passed to components to make them dynamic.
+
+### 6. What is state in React?
+→ A built-in object used to store data that determines a component’s behavior and rendering.
+
+### 7. What hook is used to manage state in a functional component?
+→ `useState`.
+
+### 8. What hook is used for side effects in React?
+→ `useEffect`.
+
+### 9. What is the virtual DOM?
+→ A lightweight in-memory representation of the real DOM used for efficient updates.
+
+### 10. What is the key prop in React lists used for?
+→ To uniquely identify elements and help React optimize rendering.
+
+### 11. How do you conditionally render JSX in React?
+→ Using ternary operators, logical `&&`, or `if` statements inside the component.
+
+### 12. Can you update props inside a component?
+→ No, props are read-only.
+
+### 13. How to lift state up in React?
+→ Move state to the nearest common parent and pass it down via props.
+
+### 14. What is a controlled component in React?
+→ An input element whose value is controlled by React state.
+
+### 15. What is an uncontrolled component?
+→ An input element that manages its own state internally via the DOM.
+
+### 16. What does `useEffect(() => {}, [])` mean?
+→ It runs once after the component mounts (like `componentDidMount`).
+
+### 17. What is the purpose of React Router?
+→ To enable client-side routing in a React app.
+
+### 18. How to pass data from child to parent in React?
+→ By calling a function passed from parent as a prop.
+
+### 19. What is context in React used for?
+→ To share data globally without passing props through every level.
+
+### 20. What does lifting state up mean?
+→ Sharing state between sibling components by moving it to their common ancestor.
+
+### 21. What does `React.memo` do?
+→ Prevents re-rendering of a component if its props haven’t changed.
+
+### 22. What is the purpose of `useRef` hook?
+→ To persist values across renders or access DOM elements directly.
+
+### 23. What is a higher-order component (HOC)?
+→ A function that takes a component and returns a new enhanced component.
+
+### 24. What’s the difference between `useEffect` and `useLayoutEffect`?
+→ `useLayoutEffect` runs synchronously after DOM changes, `useEffect` runs after paint.
+
+### 25. What are fragments in React used for?
+→ To group multiple elements without adding extra nodes to the DOM.
+
+# More React.js One-Liner Questions (Advanced)
+
+### 26. What is reconciliation in React?
+→ The process by which React updates the DOM by comparing the new virtual DOM with the previous one.
+
+### 27. What is a pure component in React?
+→ A component that renders the same output for the same props and state, with shallow comparison.
+
+### 28. How does `React.StrictMode` help in development?
+→ It highlights potential issues like unsafe lifecycle methods and deprecated APIs in development mode.
+
+### 29. What is prop drilling in React?
+→ Passing data through many nested components that don’t need it, just to reach a deeply nested one.
+
+### 30. How can you avoid prop drilling?
+→ By using React Context or state management libraries like Redux or Zustand.
+
+### 31. What is lazy loading in React?
+→ A technique to load components only when needed, improving initial load time.
+
+### 32. How do you implement code splitting in React?
+→ Using `React.lazy()` and `Suspense` to load components on demand.
+
+### 33. What is a custom hook in React?
+→ A reusable function that uses built-in hooks to encapsulate logic shared across components.
+
+### 34. How do you handle errors in React components?
+→ Using Error Boundaries — components that catch JavaScript errors in their child components.
+
+### 35. What’s the role of keys in React lists?
+→ Keys help React identify which items changed, are added, or removed for efficient re-rendering.
+
+
+---
+
+# Java One-Liner Questions – Readiness Check
+### 1. What is Java?
+→ A high-level, platform-independent, object-oriented programming language.
+
+### 2. What is the JVM?
+→ Java Virtual Machine, which runs Java bytecode on any platform.
+
+### 3. What is the JDK?
+→ Java Development Kit, which includes tools to develop and run Java programs.
+
+### 4. What is the difference between JDK and JRE?
+→ JDK includes development tools; JRE provides runtime environment only.
+
+### 5. What are the main features of Java?
+→ Platform independence, OOP, automatic memory management, multithreading.
+
+### 6. What is bytecode in Java?
+→ Intermediate, platform-independent code generated by the Java compiler.
+
+### 7. What is inheritance?
+→ A mechanism where a new class acquires properties and behaviors of an existing class.
+
+### 8. What is polymorphism?
+→ The ability of an object to take many forms, especially method overriding.
+
+### 9. What is encapsulation?
+→ Wrapping data (variables) and code (methods) together and restricting access.
+
+### 10. What is abstraction?
+→ Hiding complex implementation details and showing only necessary features.
+
+### 11. What are constructors in Java?
+→ Special methods used to initialize new objects.
+
+### 12. What is method overloading?
+→ Defining multiple methods with the same name but different parameters.
+
+### 13. What is method overriding?
+→ Redefining a superclass method in a subclass with the same signature.
+
+### 14. What is the difference between `==` and `.equals()`?
+→ `==` compares references; `.equals()` compares object content.
+
+### 15. What is an interface?
+→ A contract that defines abstract methods a class must implement.
+
+### 16. Can Java support multiple inheritance with classes?
+→ No, Java supports multiple inheritance through interfaces.
+
+### 17. What is a package in Java?
+→ A namespace that organizes classes and interfaces.
+
+### 18. What is the difference between `ArrayList` and `LinkedList`?
+→ `ArrayList` uses dynamic arrays; `LinkedList` uses doubly linked lists.
+
+### 19. What is the purpose of the `final` keyword?
+→ To make variables constant, prevent method overriding, or inheritance.
+
+### 20. What are checked and unchecked exceptions?
+→ Checked exceptions must be handled or declared; unchecked are runtime exceptions.
+
+### 21. What is garbage collection?
+→ Automatic memory management that deletes unused objects.
+
+### 22. What is the difference between `abstract class` and `interface`?
+→ Abstract classes can have implementations and state; interfaces are pure contracts (before Java 8).
+
+### 23. What is the `static` keyword used for?
+→ To define class-level variables or methods shared across all instances.
+
+### 24. How does the `synchronized` keyword work?
+→ It prevents multiple threads from accessing a block or method simultaneously.
+
+### 25. What is the difference between `HashMap` and `Hashtable`?
+→ `HashMap` is unsynchronized and allows null keys/values; `Hashtable` is synchronized and does not allow nulls.
