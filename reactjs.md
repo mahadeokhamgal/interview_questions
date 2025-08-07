@@ -183,13 +183,154 @@ return <div>{content}</div>;
 | **Example**       | `import React from 'react';` to create components                 | `import ReactDOM from 'react-dom';` to render components on the webpage        |
 
 # What are keys in React and why are they important?
+ - resemble trackby in angular.
+ - instead of redrawing complete elements of list it checks for key order if key order is same then only changes in specific keys will be reflected.
+ - this helps acheive performace.
+ - `Uniqueness`  -> Helps React distinguish list items
+ - `Performance` -> Enables efficient DOM updates
+ - `Accuracy`    -> Preserves state and element identity
+```jsx
+{items.map(item => (
+  <div key={item.id}>{item.name}</div>
+))}
+```
+
 # What is reconciliation in React?
+- Reconciliation is the process React uses to compare the current virtual DOM tree with the previous one and figure out what exactly changed.
+- React then efficiently updates only the parts of the real DOM that need to change, rather than re-rendering everything.
+ `Why ?`
+ - Makes React apps fast and efficient.
+ - Avoids full DOM re-renders.
+ - Preserves component state where possible.
+ - Enables smooth UI updates, even in large applications.
+
 # Explain the concept of lifting state up in React.
+Lifting state up means moving a piece of state from a child component to its closest common parent, so that:
+-  The parent can manage the state, and
+- Pass it down to the children via props.
+
 # What are React Fragments and why would you use them?
+- React Fragments let you group multiple JSX elements **without adding extra nodes** to the DOM.
+- This helps keep your DOM clean and avoids unnecessary `<div>` wrappers.
+- Fragments are useful in layouts (like table rows) or anywhere you need to return multiple elements from a component.
+- You can use `<React.Fragment>` or the shorthand `<>...</>`.
+
 # How does React’s rendering process work? When does a component re-render?
+`How does React render?`
+ - Triggering change: When a component’s state or props change, React starts the rendering process.
+ - Re-rendering virtual DOM: React re-renders the component, producing a new virtual DOM tree.
+ - Diffing (Reconciliation): React compares the new virtual DOM with the previous one using a diffing algorithm.
+ - Minimal DOM updates: React then applies only the necessary changes to the real DOM — this is efficient and fast.
+`When ?`
+ - State changes - Using useState() or this.setState()
+ - Props change	- If parent passes new props
+ - Context value changes - If the component consumes a React Context
+ - Force update - Manually triggered (rare) with forceUpdate()
+ - Parent re-renders - Even if the component’s own props/state haven’t changed (unless optimized with React.memo, PureComponent, etc.)
+
 # What is the difference between useEffect and useLayoutEffect hooks?
+| Feature           | `useEffect`                                                    | `useLayoutEffect`                                   |
+| ----------------- | -------------------------------------------------------------- | --------------------------------------------------- |
+| **Timing**        | Runs **after** the browser paints the screen                   | Runs **before** the browser paints the screen       |
+| **Use Case**      | Non-blocking side effects (e.g., data fetching, subscriptions) | DOM reads/writes that must happen before paint      |
+| **Performance**   | Doesn't block rendering → more efficient                       | **Blocks paint** until it finishes (can cause jank) |
+| **Runs after...** | The component is rendered and painted                          | The component is rendered but **before** painting   |
+| **Risk**          | Safe for most UI updates                                       | Can cause **layout shift or flickering** if misused |
+- `useEffect` is asynchronous with respect to painting — it's great for most side effects.
+- `useLayoutEffect` runs synchronously before painting — use it when you need to measure or mutate the DOM before it’s shown to the user.
+- Prefer `useEffect` unless you have a visual/layout reason to block paint.
+
 # What are Pure Components and how do they differ from regular components?
+- Pure Components prevent unnecessary re-renders by using shallow comparison of props and state.
+- In class components, use `React.PureComponent`.
+- In function components, use `React.memo`.
+- They're useful for performance optimization, especially in large or frequently-updating UIs.
+
+# How to acheive ngfor in react?
+```jsx
+<div>
+  {products.map(product => (
+    <Product key={product.id} name={product.name} />
+  ))}
+</div>
+```
+
 # How can you optimize performance in React applications?
+ 1. Use Keys for Lists
+- Provide a unique `key` prop when rendering lists.
+- Helps React identify items that have changed, added, or removed.
+- Avoid using array indexes as keys if the list is dynamic.
+ 2. Memoization with `useMemo` and `useCallback`
+- **`useMemo`**: Memoizes the result of expensive computations to avoid recalculations on every render.
+- **`useCallback`**: Memoizes functions to prevent unnecessary re-creations and child re-renders.
+
+ 3. Use `React.memo` for Functional Components
+- Wrap components in `React.memo` to avoid re-renders when props have not changed.
+
+ 4. Code Splitting and Lazy Loading
+- Use `React.lazy` and `Suspense` to load components only when needed, reducing initial load time.
+
+ 5. Avoid Anonymous Functions and Inline Objects in JSX
+- Inline functions and objects cause props to change on every render, triggering unnecessary updates.
+
+ 6. Optimize Context Usage
+- Avoid passing frequently changing values in React Context to prevent excessive re-renders.
+
+ 7. Avoid Unnecessary State Updates
+- Batch multiple state updates together.
+- Avoid updating state with the same value repeatedly.
+- Keep state minimal and focused.
+
+ 8. Use Production Build of React
+- Production builds are optimized for smaller bundle size and better runtime performance.
+
 # How do you handle error boundaries in React?
+- Error boundaries are React components that catch errors in their children and display fallback UI.
+- Implemented as class components using `getDerivedStateFromError` and `componentDidCatch`.
+- Prevent the entire app from crashing by isolating UI errors.
+
 # How does react application boot?
+1. React starts from `index.js` (or `main.jsx`), rendering `<App />`.
+2. It injects the React app into `<div id="root">` inside `index.html`.
+3. The virtual DOM is built from `<App />` and compared to previous versions.
+4. React efficiently updates the real DOM based on changes.
+5. State, hooks, and effects initialize and react to updates.
+```jsx
+// index.js
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
 # How to create build and deploy on server in react?
+- Use `npm start` for local development with hot-reload.
+- Use `npm run build` to generate a production-ready static build, `react-script build`.
+- The `build/` folder contains all files needed for deployment.
+- You can host this folder on any static server (e.g., Nginx, GitHub Pages, Netlify, Firebase).
+
+# How to create custom elements in reactjs?
+ - inside component file you will register component as native-web element.
+ - customElements.define('my-react-element', MyReactElement);
+
+# What is redux?
+ `Why Use Redux?`
+ - To share state across multiple components
+ - To make state predictable and traceable
+ - To have a single source of truth (the store)
+ - To better debug and log state changes
+ - To simplify data flow in large applications
+| Concept      | Description                                                                 |
+| ------------ | --------------------------------------------------------------------------- |
+| **Store**    | Central location that holds the app's entire state                          |
+| **Action**   | Plain JS object that describes what happened (e.g., `{ type: 'ADD_TODO' }`) |
+| **Reducer**  | Pure function that takes current state and action → returns new state       |
+| **Dispatch** | Sends an action to the reducer                                              |
+| **Selector** | Function to read values from the store                                      |
+
+# implememtations.
+1. Create a react app to render a random dog image and change on every click. while image is beling loaded show loading icon.
+2. Create react app for counter. On click of button it should start countdown of user input s and on complete it should show completed. if user clicks reset in between then timer will restart. usetr should be able to see timer clock on UI.
+3. 
