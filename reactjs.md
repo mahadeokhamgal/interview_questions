@@ -928,3 +928,73 @@ does use effect propogate from parent to child or child to parent (lifecycle hoo
 --------------------
 what is Next js used for
 ------------------
+
+
+# 🧠 10 Medium-Level React.js Interview Questions
+
+## 1. What is the difference between controlled and uncontrolled components in React?
+> ✅ **Follow-up**: When would you choose one over the other?
+
+| Criteria           | Controlled Components                         | Uncontrolled Components                     |
+|--------------------|-----------------------------------------------|---------------------------------------------|
+| **Controlled by**  | React state                                   | The DOM                                     |
+| **Achieved using** | `useState`, `useEffect`, and other hooks      | `useRef`, form refs, etc.                   |
+| **Performance**    | Heavier/slower (due to state updates)         | Faster/lighter (fewer re-renders)           |
+
+**Controlled components** are recommended when you need immediate side effects — e.g., typeahead, form validation, or showing results as the user types.
+
+**Uncontrolled components** are better when you don’t need live updates and only want to access values on actions like form submission (e.g., via `onSubmit`).
+
+---
+
+## 2. Explain how the `useEffect` hook works. What are some common pitfalls when using it?
+> ✅ **Follow-up**: What happens if you forget to add dependencies?
+ - useEffect is the hook that helps hook into the state and whenever there's any update to state the useeffect callback function is called.
+ - this gets called when DOM painting is completed.
+ - useeffect also helps with cleanup activities, using the return function, so whenever there's state update to properies passed, first the cleanup function will be called, we can use this to do cleanup tasks, this may be remove event listeners etc.
+ - `Pitfalls of useEffect.`
+  - can cause infinite loop if used wrongly, to update state in loop to cause application crashing.
+  - when working with objects/arrays, have to return the complete updated array/object as returning only the change will erase everything else.
+  - useEffect gets called twice on initial render which can cause data loss from persistence if not handled properly.
+  
+---
+
+## 3. What’s the difference between `useMemo` and `useCallback`? When should you use each?
+     Criteria     |      useMemo               |        useCallback
+   returns        | return value of function   | returns function referance.
+   when changes   | when the dependancy changes|         same
+   When to use    | When you want to avoid     | when you want to avoid reexecuting/calculating function when  
+                    recalculating function     | function referance doen't change
+                    response for same params
+
+---
+
+## 4. How does React’s reconciliation algorithm work, and what role do keys play in lists?
+> ✅ **Follow-up**: What happens if you use array index as a key?
+
+---
+
+## 5. How can you lift state up in React? What problem does it solve?
+> ✅ **Follow-up**: Give a real example where lifting state was necessary.
+
+---
+
+## 6. How would you implement a debounced search input in React using hooks?
+
+---
+
+## 7. What are React Portals and when would you use them?
+
+---
+
+## 8. Explain the difference between Context API and props drilling. When should you use context?
+> ✅ **Follow-up**: What are the trade-offs of using too much context?
+
+---
+
+## 9. Describe how to implement lazy loading in React using `React.lazy()` and `Suspense`.
+
+---
+
+## 10. How would you manage global state in a React application without Redux or external libraries?
+> ✅ **Follow-up**: How does `useContext` combined with `useReducer` help in this?
