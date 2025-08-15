@@ -971,19 +971,35 @@ what is Next js used for
 
 ## 4. How does React’s reconciliation algorithm work, and what role do keys play in lists?
 > ✅ **Follow-up**: What happens if you use array index as a key?
-
+ - reconciliation is process in react that updates DOM whenver there is change in props/states.
+  - reacts keeps a lightwight copy of DOM, and on the state change the new copy of the Virtual DOM will be created and the updated state is applied to the new copy.
+  - now using diffing algorithm, react detects for only changes in these two copies and only the changes will be applied in actual DOM.
+  - this is to improve perfomance by reducing rerendinring complete DOM everytime.
+ - keys in list add more efficiency to reconsiliation process.
+ - where when applying changes to new copy the relative position of elements in list and nodes deleted/added are easily identified cause of uniq identifier key.
+ - this way it doen't need to recalculate the every element and it's position.
+ 
 ---
 
 ## 5. How can you lift state up in React? What problem does it solve?
 > ✅ **Follow-up**: Give a real example where lifting state was necessary.
+ - Lift up is procecss/techniq of using lowest common anscestor component to hold the state and pass it down to childs as props.
+ - 
 
 ---
 
 ## 6. How would you implement a debounced search input in React using hooks?
+ - this can be achieved using useEffect hook, to do the side effect.
+ - for the debauncing part, can use rxjs's debaunceTime like operator that'll create debaunce for events.
+ - and after the debancetime, we'll have the sideeffect, be it API calling to fetch the updated results.
+ - here useState can be used to keep the state of results.
 
 ---
 
 ## 7. What are React Portals and when would you use them?
+ - react portals is a way of rending an element out of main DOM tree, using reacts native way.
+ - portals are used when you want to implement, tolltips, modals, etc.
+ - You can create a portal using the ReactDOM.createPortal() method
 
 ---
 
