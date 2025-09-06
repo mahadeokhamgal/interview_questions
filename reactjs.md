@@ -1014,3 +1014,74 @@ what is Next js used for
 
 ## 10. How would you manage global state in a React application without Redux or external libraries?
 > ✅ **Follow-up**: How does `useContext` combined with `useReducer` help in this?
+
+## 11. How to achieve content projection in reactjs?
+Follow-up -> can you project content from Grand parent ->  Parent -> child ?
+
+# 🧠 Medium-Level ReactJS Questions
+
+---
+
+## 🔁 1. Component Lifecycle
+**Q:** Explain the difference between `useEffect(() => {...}, [])` and `useEffect(() => {...}, [someVar])`. When would you use each?
+ - `useEffect(() => {...}, [])` is used to handle sideeffects about when a functional component is mounted, this runs one time when the component is mounted.
+ - used when you want to implement one time activity like component setup, data initialisation.
+ - `useEffect(() => {...}, [someVar])` is used to handle sideeffects when the prop/state someVar updates, to create/handle sideeffects for this field update. this will run every time that depandant field/fields update.
+ - used when you want sideeffect like search typeahed.
+ - `useEffect(() => {...})` is used to make sideeffects whenever there's any change in component prop/state or async task updates.
+ - used when any state/prop is updated, oftne unncessory as this is bit overhead, but good when you need a gloabl sideeffect for a component.
+ 
+---
+
+## 🧱 2. Controlled vs Uncontrolled Components
+**Q:** What is the difference between controlled and uncontrolled components in React? Provide an example of each.
+ - controlled components are form elements that are controlled by react states, useEffect etc.
+ - these are often used when you want immediate sideeffect for form interactions.
+ - useState, value, onChange, etc.
+ - uncontrolled components are form elements that are controlled by DOM itself and react doen't interfare.
+ - used when you're not concerned about immediate sideeffects.
+ - values are accesed by `useRef`.
+ 
+---
+
+## ⚛️ 3. State Management
+**Q:** Why is it considered a bad practice to directly modify the state in React? What is the proper way to update nested state?
+
+---
+
+## 🔄 4. useCallback vs useMemo
+**Q:** What are `useCallback` and `useMemo` hooks used for? How do they differ, and when would you use each?
+
+---
+
+## 🧩 5. Lifting State Up
+**Q:** What does “lifting state up” mean in React? When and why would you do it?
+
+---
+
+## 🌐 6. API Calls
+**Q:** How would you make an API call when a component mounts, and how would you handle loading and error states?
+
+---
+
+## 📦 7. Prop Drilling
+**Q:** What is prop drilling, and how can it be avoided? Name a few alternatives.
+
+---
+
+## 🚥 8. Conditional Rendering
+**Q:** What are some different ways to conditionally render elements in React?
+
+---
+
+## 🪝 9. Custom Hooks
+**Q:** What are custom hooks in React? Can you write a simple custom hook that tracks window size?
+
+---
+
+## ⛓️ 10. Key Prop Importance
+**Q:** Why is the `key` prop important in React lists? What happens if keys are not used or are incorrectly used?
+
+---
+1. what is Monkey-patching ?
+2. What is abortController ?
