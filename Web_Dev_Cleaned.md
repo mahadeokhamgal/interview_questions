@@ -28,6 +28,7 @@
 # How do you make a webpage responsive using HTML?
 
 2. CSS
+# https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Test_your_skills/Flexbox
 # What does CSS stand for, and what is its purpose?
 # What is the difference between class selectors and ID selectors in CSS?
 # What are inline, internal, and external CSS? Explain each.

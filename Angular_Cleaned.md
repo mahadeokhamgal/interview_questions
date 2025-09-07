@@ -16,6 +16,20 @@
 # How is Angular better than other frameworks?
 # Challenges migrating AngularJS to Angular.
 # What is a standalone component?
+`TypeScript`
+# Advantages over JavaScript
+# Interface vs type
+# Generics
+# Enums
+# Type checking and inference
+# Tuples
+# Optional parameters
+# any, unknown, never types
+# readonly keyword
+# Type assertion
+# Classes and decorators
+# as keyword
+# Modules
 
 2. Component Communication & View Handling
 # Ways to pass data between related components.
@@ -56,6 +70,7 @@
 # inject vs @Inject vs TestBed.inject vs constructor injection.
 # What is the Inject keyword?
 # When should one use MockServices and when to use Actual services?
+# async/await in Angular services/components
 
 5. Change Detection & Zone.js
 # What is change detection in Angular and how it works?
@@ -65,6 +80,9 @@
 # What is OnPush change detection strategy? When would you use it?
 # What is role of Zone.js in Angular?
 # What is Profiling in Angular?
+# Angular change detection and async operations
+# Event loop impact on Angular execution
+# Zone.js and NgZone usage
 
 6. Forms
 # How do you handle forms in Angular?
@@ -83,6 +101,7 @@
 # What is keyvalue pipe and its optional arguments?
 # Can you use multiple pipes in the same expression? Provide an example.
 # Coding Challenge → Create a custom pipe.
+# async pipe in templates
 
 8. RxJS & Observables
 # What is RxJS, and how is it used in Angular?
@@ -104,9 +123,15 @@
 # Explain the purpose of map, tap, shareReplay.
 # How to create simultaneous/parallel API calls?
 # Explain how to handle multiple HTTP requests using concat, merge, or zip.
+# Debouncing user input (Observables vs Promises)
+# Combining asynchronous data with real-time updates
+# rxjs/ajax usage
+# Key differences: JS Promises vs RxJS Observables
+# then()/catch() vs subscribe() in Observables
 
 9. HTTP & Interceptors
 # How do you make HTTP calls in Angular?
+# Handling race conditions in HTTP calls
 # What is the role of the HttpClientModule in Angular?
 # How can you handle errors in HTTP calls in Angular?
 # What are the benefits of using interceptors in Angular?
@@ -134,6 +159,7 @@
 # Unit testing vs Integration testing.
 
 12. Advanced Angular Topics
+# Microtasks vs macrotasks in Angular
 # What are custom elements in Angular?
 # How are custom elements different in standalone and non-standalone components?
 # Are JS components possible in Angular?
@@ -151,3 +177,8 @@
 # Create Angular app with an Image and Reset button (on reset fetch from https://dog.ceo/api/breeds/image/random).
 # Reactive form with 3 inputs (name, dob, phone).
 # Custom pipe creation.
+# Create Angular  component which will have a progress bar.`
+  1. It will initiate from 0% on page load. 
+  2. It will increment after 1 secs by 10%.
+  3. The progress bar will keep on incrementing till the width of the page is met.
+  4. Create reset button which will start the progress bar from 0 again.

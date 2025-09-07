@@ -1,9 +1,10 @@
 Interview Questions.
-
-# [SDE Interviews](DSA/sde_interviews.md)
-# [1481 to 1681 Grind](DSA/1481_1681_leetcode.md)
-# [leetcode_problem_rating](https://zerotrac.github.io/leetcode_problem_rating/#/)
-
-Angular.
-Java Springboot.
-Javascript.
+# [Javascript Interview Questions](./NodeJS_Cleaned.md)
+# [HTML, CSS Interview Questions](./Web_Dev_Cleaned.md)
+# [Angular Interview Questions](./Angular_Cleaned.md)
+# [ReactJS Interview Questions](./ReactJS_Cleaned.md)
+# [MongoDB Interview Questions](./MongoDB_Cleaned.md)
+# [Core Java Interview Questions](./Core_Java_Cleaned.md)
+# [Java SpringBoot Interview Questions](./Java_SpringBoot_Cleaned.md)
+# [System Design Interview Questions](./System_Design_Cleaned.md)
+# [DSA Interview Questions](./DSA_Cleaned.md)
