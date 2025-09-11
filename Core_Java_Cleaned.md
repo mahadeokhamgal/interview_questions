@@ -76,3 +76,207 @@
 
 9. Coding Challenges
 # Write Java code to find elements that occur only once in an array.
+
+10. Java GTO.
+```java
+//1
+public class Test1 {
+    public static void main(String[] args) {
+        String s1 = "hello";
+        String s2 = new String("hello");
+        System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2));
+    }
+}
+
+//2
+public class Test2 {
+    public static void main(String[] args) {
+        Integer a = 100;
+        Integer b = 100;
+        Integer c = 200;
+        Integer d = 200;
+        System.out.println(a == b);
+        System.out.println(c == d);
+    }
+}
+
+//3
+public class Test3 {
+    public static void main(String[] args) {
+        double d1 = 0.1 + 0.2;
+        System.out.println(d1 == 0.3);
+    }
+}
+
+//4
+public class Test4 {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.print(i);
+            i++;
+        }
+    }
+}
+
+//5
+public class Test5 {
+    public static void main(String[] args) {
+        int x = 5;
+        System.out.println(x++ + ++x);
+    }
+}
+
+//6
+public class Test6 {
+    public static void main(String[] args) {
+        print(null);
+    }
+    static void print(Object o) { System.out.println("Object"); }
+    static void print(String s) { System.out.println("String"); }
+}
+
+//7
+public class Test7 {
+    public static void main(String[] args) {
+        try {
+            throw new RuntimeException("try");
+        } finally {
+            throw new RuntimeException("finally");
+        }
+    }
+}
+
+
+//8
+public class Test8 {
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        System.out.println(arr[0]);
+        System.out.println(arr[5]);
+    }
+}
+
+//9
+public class Test9 {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("abc");
+        System.out.println(sb.reverse().reverse());
+    }
+}
+
+
+//10
+public class Test10 {
+    static { System.out.println("static block"); }
+    public static void main(String[] args) {
+        System.out.println("main");
+    }
+}
+
+
+//11
+class A {
+    static void show() { System.out.println("A"); }
+}
+class B extends A {
+    static void show() { System.out.println("B"); }
+}
+public class Test11 {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.show();
+    }
+}
+
+
+//12
+public class Test12 {
+    public static void main(String[] args) {
+        Integer x = null;
+        int y = x;
+        System.out.println(y);
+    }
+}
+
+
+//13
+public class Test13 {
+    public static void main(String[] args) {
+        System.out.println("Result: " + 1 + 2);
+        System.out.println(1 + 2 + "Result");
+    }
+}
+
+//14
+public class Test14 {
+    public static void main(String[] args) {
+        String s = "ONE";
+        switch (s.toLowerCase()) {
+            case "one": System.out.println("one"); break;
+            case "two": System.out.println("two"); break;
+            default: System.out.println("default");
+        }
+    }
+}
+
+//15
+interface I {
+    static void hello() { System.out.println("Hello from I"); }
+}
+public class Test15 {
+    public static void main(String[] args) {
+        I.hello();
+    }
+}
+
+//16
+public class Test16 {
+    public static void main(String[] args) {
+        String s = null;
+        System.out.println(s + "test");
+        System.out.println(s.concat("test"));
+    }
+}
+
+//17
+public class Test17 {
+    public static void main(String[] args) {
+        print(10);
+    }
+    static void print(int i) { System.out.println("int"); }
+    static void print(Integer i) { System.out.println("Integer"); }
+    static void print(Object o) { System.out.println("Object"); }
+}
+
+//18
+public class Test18 {
+    public static void main(String[] args) {
+        print(null);
+    }
+    static void print(String... s) { System.out.println("varargs"); }
+    static void print(String[] s) { System.out.println("array"); }
+}
+
+//19
+import java.util.*;
+public class Test19 {
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        map.put(null, "first");
+        map.put(null, "second");
+        System.out.println(map.size());
+        System.out.println(map.get(null));
+    }
+}
+
+//20
+public class Test20 {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> System.out.println("running"));
+        t.start();
+        t.start();
+    }
+}
+
+```

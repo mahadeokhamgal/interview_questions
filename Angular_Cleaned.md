@@ -171,6 +171,8 @@
 # Is multithreading possible in Angular?
 # When to use UpgradeModule and DowngradeModule in Angular?
 # Bootstrap vs Angular Material.
+# What is compodoc in angular?
+# How do you manage store/access sensitive data like database password etc in angular.
 
 13. Coding Challenges
 # Create Angular component with progress bar.
