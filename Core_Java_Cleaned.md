@@ -77,7 +77,58 @@
 9. Coding Challenges
 # Write Java code to find elements that occur only once in an array.
 
-10. Java GTO.
+10. `Logical questions.`
+
+# Given a string, return the first character that does not repeat. Use Java Streams in your solution.
+Input: "swiss"
+Output: "w"
+```java
+IP.chars()
+.mapToObj(c -> (char) c)
+.filter(c -> IP.indexOf(c) == IP.lastIndexOf(c))
+.findFirst()
+.orElse('\0');
+```
+
+# Group Words by Their Length. Use Java Streams in your solution.
+Input: ["apple", "bat", "cat", "banana", "dog"]
+Output: {3=[bat, cat, dog], 5=[apple], 6=[banana]}
+```java
+public static Map<Integer, List<String>> groupByLength(String[] IP) {
+  return 
+    Arrays.stream(IP)
+    .collect(Collectors.groupingBy(String::length));
+}
+```
+
+# Find Duplicate Elements in an Array. Use Java Streams in your solution.
+Input: [1,2,3,2,4,5,1,6]
+Output: [1, 2]
+```java
+public static List<Integer> getDuplicates(int[] IP) {
+    return
+        Arrays.stream(IP)
+        .boxed()
+        .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+        .entrySet()
+        .stream()
+        .filter(e -> e.getValue() > 1)
+        .map(Map.Entry::getKey)
+        .collect(Collectors.toList());
+}
+```
+
+# Find the Kth Largest Element in an Array. Use Java Streams in your solution.
+Input: [3,2,1,5,6,4], k=2
+Output: 5
+
+# Employee Salary Problem. Use Java Streams in your solution.
+You have a list of employees (id, name, department, salary). Using Streams:
+ - Find the highest-paid employee in each department.
+ - Sort employees by salary in descending order.
+ - Find the average salary of the company.
+
+11. Java GTO.
 ```java
 //1
 public class Test1 {

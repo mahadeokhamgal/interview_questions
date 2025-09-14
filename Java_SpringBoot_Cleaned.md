@@ -8,6 +8,7 @@
 # How do you launch a Spring Boot application?
 # What happens behind the scenes when the run() method is invoked in Spring Boot?
 # What is the purpose of a CommandLineRunner in Spring Boot?
+# How does spring boot POJO object response get converted to JSON object ?
 
 2. Annotations & Bean Management
 # What is the role of the @SpringBootApplication annotation in a Spring Boot project?
@@ -87,3 +88,25 @@
 # What is the purpose of @Mock and @InjectMocks in JUnit?
 # How do you use Mockito in JUnit?
 # How do you test private methods in JUnit?
+
+11. `Tricky Spring Boot Questions`
+# What is the difference between @SpringBootApplication and @EnableAutoConfiguration? Why is @ComponentScan also included?
+# How does Spring Boot know which beans to auto-configure and which ones to skip? (Hint: Conditions like @ConditionalOnMissingBean, @ConditionalOnProperty)
+# If you define a bean with the same name as an auto-configured bean, which one will Spring Boot pick? How to override auto-configuration safely?
+# What’s the difference between using application.properties vs application.yml? What are the advantages/disadvantages?
+# How does Spring Boot support different profiles (like dev, test, prod)? What if two profiles are active at the same time?
+# What happens internally when you run a Spring Boot application using SpringApplication.run()?
+# Difference between @RestController and @Controller + @ResponseBody? When would you not use @RestController?
+# What’s the difference between spring-boot-starter-parent and spring-boot-starter? Can you use Spring Boot without a parent?
+# If two @Bean methods return the same type, how does Spring Boot decide which one to inject? How can you resolve ambiguity?
+# What’s the role of the spring.factories file in Spring Boot auto-configuration?
+# Explain the difference between embedded servers (Tomcat, Jetty, Undertow) in Spring Boot. Which one would you choose for reactive programming?
+# How do you handle circular dependencies in Spring Boot beans?
+# How do CommandLineRunner and ApplicationRunner differ? In which scenarios would you use one over the other?
+# What’s the difference between @Value and @ConfigurationProperties for injecting configuration values? Which one is better for complex configs?
+# How does Spring Boot enable actuator endpoints? How do you secure them?
+# What’s the difference between blocking and reactive controllers in Spring Boot? How does spring-boot-starter-web differ from spring-boot-starter-webflux?
+# What is the difference between using @Autowired on fields, constructors, and setters? Which is the recommended approach in Spring Boot and why?
+# How do you configure multiple data sources in a Spring Boot application?
+# How does Spring Boot handle exception handling globally? Difference between @ExceptionHandler, @ControllerAdvice, and @RestControllerAdvice?
+# What are Spring Boot’s limitations? Can you think of cases where you would not use Spring Boot?
