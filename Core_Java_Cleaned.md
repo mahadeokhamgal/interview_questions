@@ -128,6 +128,79 @@ You have a list of employees (id, name, department, salary). Using Streams:
  - Sort employees by salary in descending order.
  - Find the average salary of the company.
 
+# Given a list of integers, how would you use streams to count how many numbers are even and greater than 10?
+IP = [5, 12, 18, 7, 20, 3, 10];
+OP = 3;  //[12, 18, 20]
+```java
+public static int getCountEvenAndGT10(int[] IP) {
+  return (int) Arrays
+  .stream(IP)
+  .boxed()
+  .filter(e -> e%2 == 0 && e > 10)
+  .count();
+}
+```
+
+# Given a list of strings, convert all strings to uppercase and collect only those that start with the letter 'A'.
+IP = ["apple", "banana", "avocado", "berry", "apricot"]
+OP = ["APPLE", "AVOCADO", "APRICOT"]
+```java
+public static List<String> getAllACaps(String[] IP) {
+  return
+  Arrays.stream(IP)
+  .filter(w -> w.startsWith("A") || w.startsWith("a"))
+  .map(String::toUpperCase)
+  .collect(Collectors.toCollection(ArrayList::new));
+}
+```
+
+# Given a list of strings, group them by their first character using streams.
+IP = ["Alice", "Arnold", "Bob", "Brian", "Charlie"];
+OP = {
+  A=[Alice, Arnold],
+  B=[Bob, Brian],
+  C=[Charlie]
+}
+```java
+public static Map<Character, List<String>> groupByFirstChar(String[] IP) {
+  return
+  Arrays.stream(IP)
+  .collect(Collectors.groupingBy(s -> s.charAt(0)));
+}
+```
+
+# Given a list of strings, find the first element that is longer than 5 characters and contains the letter 'e'.
+IP = "pen", "notebook", "eraser", "book", "pencil"
+OP = notebook
+```java
+public static String firstLongerThan5nWithE(String[] IP) {
+  return
+    Arrays.stream(IP)
+    .filter(e -> e.length() > 5 && e.toLowerCase().indexOf('e') > -1)
+    .findFirst()
+    .orElse(null);
+}
+```
+# Given a list of names and a corresponding list of ages, use streams to map them into a list of Person objects.
+IP = class Person {
+    String name;
+    int age;
+    // Constructor, getters, setters
+}
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+List<Integer> ages = Arrays.asList(25, 30, 35);
+
+OP = A list of Person objects:
+Alice (25)
+Bob (30)
+Charlie (35)
+```java
+List<Person> personObjList = 
+    IntStream.range(0, Math.min(names.size(), ages.size()))
+      .mapToObj(i -> new Main().new Person(names.get(i), ages.get(i)))
+      .collect(Collectors.toList());
+```
+
 11. Java GTO.
 ```java
 //1

@@ -30,6 +30,7 @@
 # Classes and decorators
 # as keyword
 # Modules
+# Types in typescript.
 
 2. Component Communication & View Handling
 # Ways to pass data between related components.
@@ -45,6 +46,8 @@
 # What is view encapsulation in Angular?
 # What is ::ng-deep in Angular?
 # How styles react if components have different encapsulation (Emulated, ShadowDom, None)?
+# View child content child
+# Content projection and multi-slot content projection
 
 3. Routing & Navigation
 # Routing in Angular?
@@ -83,6 +86,8 @@
 # Angular change detection and async operations
 # Event loop impact on Angular execution
 # Zone.js and NgZone usage
+# How angular knows any change happened.
+# How zoneless change detection works
 
 6. Forms
 # How do you handle forms in Angular?
@@ -150,6 +155,10 @@
 # How can you optimize the performance of an Angular application?
 # How is Lazy loading better for performance?
 # Explain the purpose and usage of the Angular CLI.
+# Angular reactivity and reactive graph.
+# @defer how improve application performance.
+# Bundle analyser
+# Profiler
 
 11. Testing
 # How to perform integration testing in Angular?
@@ -173,6 +182,9 @@
 # Bootstrap vs Angular Material.
 # What is compodoc in angular?
 # How do you manage store/access sensitive data like database password etc in angular.
+# What are Git hooks and Husky in angular.
+# Onpush and impure together behavior.
+# Code quality tools in Angular
 
 13. Coding Challenges
 # Create Angular component with progress bar.
@@ -184,3 +196,5 @@
   2. It will increment after 1 secs by 10%.
   3. The progress bar will keep on incrementing till the width of the page is met.
   4. Create reset button which will start the progress bar from 0 again.
+# Test cases for function that get call on click and have API in it.
+- Follow up - Will this api get called 10 times for other tc execution. How to avoid it.
