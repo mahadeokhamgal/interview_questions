@@ -13,7 +13,6 @@
 # Different types of scopes
 # Event loop
 # Promises and async/await
-# setTimeout vs setInterval
 # null vs undefined vs undeclared
 # Prototypes and prototypal inheritance
 # Synchronous vs asynchronous execution
@@ -28,6 +27,8 @@
 
 `Advanced / ES6 JS`
 # ES6 Classes vs prototypes
+# What is strict mode in js?
+# What is with keyword in js?
 # Promise.all() and Promise.race() usage
 # Destructuring assignment
 # Rest and spread operators

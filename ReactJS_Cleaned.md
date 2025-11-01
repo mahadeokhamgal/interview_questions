@@ -1,7 +1,8 @@
 1. React Core Concepts
 # What are keys in React and why are they important?
 # What is reconciliation in React?
-# How does React’s rendering process work? When does a component re-render?
+# How does React’s rendering process work?
+# When does a component re-render?
 # Explain the concept of lifting state up in React.
 # What are React Fragments and why would you use them?
 # How does React handle reconciliation? What is the role of keys in lists?

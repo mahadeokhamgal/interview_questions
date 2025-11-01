@@ -28,3 +28,5 @@
 6. Integration with Applications
 # How do you connect to a MongoDB database using Node.js?
 # How do you upload large sized file from Angular to NodeJS to MongoDB, give me design for this?
+
+# Discuss strategies for securing sensitive financial data in MongoDB, including encryption at rest, field-level encryption, and compliance with PCI DSS.
