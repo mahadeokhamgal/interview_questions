@@ -1,0 +1,157 @@
+🟢 Level 1: Beginner (Get Comfortable)
+Focus: map, filter, collect, and forEach
+
+Uppercase Names
+Given a list of names, return a list of uppercase names.
+Input: ["ram", "rahul", "sita"]
+Output: ["RAM", "RAHUL", "SITA"]
+
+Filter Even Numbers
+Given a list of integers, return only even numbers.
+Input: [1, 2, 3, 4, 5, 6]
+Output: [2, 4, 6]
+
+Square All Numbers
+Input: [1, 2, 3, 4]
+Output: [1, 4, 9, 16]
+
+Count Strings with Length > 3
+Input: ["a", "ab", "abc", "abcd", "abcde"]
+Output: 2 (i.e., "abcd" and "abcde")
+
+Find the First String Starting with 'A'
+Input: ["Ravi", "Amit", "Ajay", "Ram"]
+Output: "Amit"
+
+🟡 Level 2: Intermediate (Chaining, Grouping)
+Focus: collect, groupingBy, joining, sorted, distinct, limit, skip
+
+Remove Duplicates and Sort Alphabetically
+Input: ["apple", "banana", "apple", "orange"]
+Output: ["apple", "banana", "orange"]
+
+Group Words by Their Length
+Input: ["one", "two", "three", "four", "five"]
+Output: {3=[one, two], 5=[three], 4=[four, five]}
+
+Join All Names into a Single String
+Input: ["Ram", "Rahul", "Sita"]
+Output: "Ram, Rahul, Sita"
+
+Top 3 Highest Numbers
+Input: [9, 2, 4, 12, 7, 10]
+Output: [12, 10, 9]
+
+Get Names of Employees Older Than 30
+Given a list of Employee objects, return a list of names where age > 30.
+
+🔴 Level 3: Advanced (flatMap, Optional, Nested Structures)
+Focus: flatMap, nested mapping, DTO transformation, reduce, Optional, peek debugging
+
+Flatten Nested List of Integers
+Input: [[1, 2], [3, 4], [5]]
+Output: [1, 2, 3, 4, 5]
+
+Extract All Words from Sentences
+Input: ["Hello World", "Java Stream API"]
+Output: ["Hello", "World", "Java", "Stream", "API"]
+
+Sum All Non-Empty Optionals
+Input: List<Optional<Integer>>
+Output: Sum of all present integers.
+
+Convert List of Customers to List of All Orders
+Customer → List<Order>
+Use flatMap to get a flat list of all orders from all customers.
+
+Group Employees by Department with Average Salary
+Return Map<Department, AverageSalary>
+
+1.	Are you using AI in day-to-day activities in Java?
+	2.	Microservices architecture: advantages, disadvantages, and difference with monolithic
+	3.	What are distributed transactions in microservices?
+	4.	I have N microservices reading/writing to the same table — how do you manage that?
+	5.	Can using @Transactional annotation help with that?
+	6.	One microservice reads and another deletes from the same table — how to manage?
+	7.	How would you design scalable microservices in Spring Boot?
+	8.	How do you maintain high availability in microservices?
+	9.	How is security handled in microservices?
+	10.	How would you handle a large dataset in Spring Boot?
+	11.	Where do you write Splunk queries in Spring Boot?
+	12.	How does Spring Boot handle dependency management?
+	13.	What is the difference in pom.xml between a normal application and microservices?
+	14.	Is there any difference in pom.xml between monolithic and microservices apps?
+	15.	How does spring-boot-starter work internally?
+	16.	Can we create a custom Spring Boot starter?
+	17.	What is @Conditional annotation in Spring Boot?
+	18.	How does Spring Boot handle caching?
+	19.	Can normal interfaces (not functional) have default and static methods?
+	20.	What is the difference between functional interface and normal interface?
+	21.	What is method referencing in Java?
+	22.	Is method reference only for shorter code or are there other benefits?
+	23.	Difference between method reference and lambda expression
+	24.	Difference between map() and flatMap() in Stream API
+	25.	What are class loaders in Java?
+	26.	What is the Open/Closed Principle (OCP)?
+	27.	What are SOLID principles in Java?
+	28.	Different design patterns in Java
+	29.	What is immutability in Java?
+	30.	Why is String immutable in Java?
+
+What will be the output of following program:
+Question: 
+
+class Parent {
+ public static void display() {
+ System.out.println("Static method in Parent class");
+ }
+}
+
+class Child extends Parent {
+ public static void display() {
+ System.out.println("Static method in Child class");
+ }
+}
+
+public class Main {
+ public static void main(String[] args) {
+ Parent p = new Child();
+ p.display(); // Output?
+ 
+ Child c = new Child();
+ c.display(); // Output?
+ }
+}
+
+followup Question: If we remove static from display() in both classes, what will be the output? 🤔
+
+
+UST
+
+1. What is function interface
+2. Why functional interface has only one method
+3. What is lambda expression 
+4. What is abstraction and how we have to achieve it
+5. What is AOP
+6. Use of AOP
+7. Which list do you use when you have id 
+8. How will you update object from list of you know id
+9. Difference between truc and drop
+10. One query for group by 
+11. What is cascade type java
+12. How to write native query in spring boot 
+13. How transactions manages in spring 
+14. Difference between put and post
+15. If i dont want to save field from my entiry then what will you use
+16. Can i mark abstarct  method as private
+
+KPMG
+1.how add method works in set
+2.differnce between forign key and primary key
+3.what is normalization 
+4.what is linkedlist in dsa
+5.find unique element from string 
+Eg - java 
+O/p - j and v
+6.difference between binary search and bst
+7.how to implement Singleton design pattern`
