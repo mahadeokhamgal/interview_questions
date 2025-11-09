@@ -1,0 +1,29 @@
+JavaScript (Core & Advanced)
+
+Explain how this binding works in a nested arrow function inside a regular function that’s called with .call(). Provide an example.
+Write a function deepClone that clones nested objects and arrays, handles circular references, and preserves Date, Map, and Set objects.
+Implement a debounce function that works with async functions and returns a promise. How would you test it?
+What’s the output? Explain why:jsconst obj = { a: 1 };
+const arr = [obj];
+obj.b = arr;
+console.log(JSON.stringify(obj));
+Create a custom EventEmitter class with on, off, once, and emit methods. Support wildcard listeners (*).
+How would you implement private class fields using Proxies? Demonstrate with an example.
+Write a generator function that yields promises in sequence and resolves them one by one (like async/await but with generators).
+Explain the difference between Event Loop and Job Queue (microtasks). Show a code snippet where order matters.
+Implement a Promise.allSettled polyfill that returns results in the original order, even if some reject.
+How would you detect and prevent memory leaks in a long-running Node.js or browser script using closures and event listeners?
+
+
+Angular (Deep & Practical)
+
+How does Angular’s change detection work with OnPush strategy when a mutable object is passed via @Input()? How to trigger detection manually?
+Explain the difference between Renderer2 and direct DOM manipulation. When would you use each in a directive?
+Create a structural directive *appUnless that works like *ngIf but shows content when the condition is false.
+How would you implement lazy-loaded feature modules with route-based code splitting and preloading strategy? Show preload logic.
+What happens when you use async pipe with an Observable that errors? How to handle it gracefully in the template?
+Implement an HttpInterceptor that retries failed requests with exponential backoff and cancels duplicates.
+How do you share data between unrelated components without a service (e.g., using BehaviorSubject vs TransferState vs window.postMessage)?
+Explain Ivy’s ɵ namespace. Can you create a custom Ivy compiler plugin? What’s a real-world use case?
+How would you optimize an Angular app with 100+ components for initial load time? List 5 concrete strategies.
+Build a dynamic form using ReactiveFormsModule where form fields are loaded from a JSON config at runtime. Support validation and custom validators.

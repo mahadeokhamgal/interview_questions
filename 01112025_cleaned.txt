@@ -1,0 +1,67 @@
+01-11-2025 Compiled
+
+1. Write js code for below(without converting the number to string).
+IP = 1324506547870
+OP = { '0': 2, '2': 1, '4': 2, '6': 1, '8': 1 }
+
+2. Write js code for below(without converting the number to string).
+IP = 13245065.4787
+OP = { '0': 1, '2': 1, '4': 2, '6': 1, '8': 1 }
+
+3. Write function sum to handle below use case.
+sum(1)(2)(3)....(n)
+
+4. Write mongo query to get below data in a single query.
+ - Two collections users and userImages.
+ - you must get first user for which the input userId matches from mongoDB collection. and all images from userImages collection where current userId matches.
+ - all must be done in single mongodb query.
+
+5. What will be output of below snippet ?
+- follow up: does this code create cosure ?
+function out() {
+    console.log(this);
+    const inSide = () => {
+        console.log(this);
+    }
+    inSide();
+}
+out();
+
+6. How to Manage data in angular for complicated objects array ?
+
+7. How to hide data/api response in network tab from being visible to user ?
+
+8. How to hide URL in network tab from being visible to user ?
+
+9. How to avoid Man in middle attack ?
+
+10. how to handle scenario where for cors, a hacher is pretending to be some valid host ?
+
+11. What is syntax to define indexes in mongoDB ?
+ - follow up: how are indexes stored in mongoDB(B+ trees?) ?
+
+12. How to check sql query performance without actually executing the query ?
+
+13. How to read from 3 files simultaneously(cannot do one after other) in Nodejs.
+
+14. are worker threads in Nodejs actually parallel in execution or just context switching?
+ - do each worker thread get separate cpu and memory ?
+ 
+15. What is the best way to communicate between two services(Kafka is too expensive, cheaper is expected)?
+
+16. What is Symmetric(single) and Assymetric(double) key ?
+
+17. In angular you have stepper form for which you want to save each step in local machine for checkpoint if app refreshesh or computer restarts, the details should be preserved.
+What is best way in angular to achieve this ?
+
+18. What algorithm/logic is used when mongoDB generates uniq ids for documents ?
+
+19. What is clusture in nodejs ? When should it be used ?
+
+20. How do you make sure that NodeJS behaves truly multi-threaded ?
+
+21. Is event loop shared or separate across processes and worker threads.
+
+22. How to make angular break singleton pattern for service?
+
+23. Do pipe and Services provide all lifecycle hooks that component supports?
