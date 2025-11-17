@@ -17,13 +17,90 @@ How would you detect and prevent memory leaks in a long-running Node.js or brows
 
 Angular (Deep & Practical)
 
-How does Angular’s change detection work with OnPush strategy when a mutable object is passed via @Input()? How to trigger detection manually?
-Explain the difference between Renderer2 and direct DOM manipulation. When would you use each in a directive?
-Create a structural directive *appUnless that works like *ngIf but shows content when the condition is false.
-How would you implement lazy-loaded feature modules with route-based code splitting and preloading strategy? Show preload logic.
-What happens when you use async pipe with an Observable that errors? How to handle it gracefully in the template?
-Implement an HttpInterceptor that retries failed requests with exponential backoff and cancels duplicates.
-How do you share data between unrelated components without a service (e.g., using BehaviorSubject vs TransferState vs window.postMessage)?
+1. How does Angular’s change detection work with OnPush strategy when a mutable object is passed via @Input()? How to trigger detection manually?
+2. Explain the difference between Renderer2 and direct DOM manipulation. When would you use each in a directive?
+3. How does hydration lifecycle for SSR work in angular?
+4. Create a structural directive *appUnless that works like *ngIf but shows content when the condition is false.
+5. How would you implement lazy-loaded feature modules with route-based code splitting and preloading strategy? Show preload logic.
+6. What happens when you use async pipe with an Observable that errors? How to handle it gracefully in the template?
+7. Implement an HttpInterceptor that retries failed requests with exponential backoff and cancels duplicates.
+8. How do you share data between unrelated components without a service (e.g., using BehaviorSubject vs TransferState vs window.postMessage)?
 Explain Ivy’s ɵ namespace. Can you create a custom Ivy compiler plugin? What’s a real-world use case?
 How would you optimize an Angular app with 100+ components for initial load time? List 5 concrete strategies.
 Build a dynamic form using ReactiveFormsModule where form fields are loaded from a JSON config at runtime. Support validation and custom validators.
+
+General MEAN Stack Security Questions
+
+What are the OWASP Top 10 risks most relevant to MEAN stack applications?
+How does the attack surface of a MEAN stack app differ from a traditional LAMP stack?
+Explain the concept of "Full-Stack JavaScript" security implications.
+
+MongoDB-Specific Questions
+
+What is NoSQL Injection? How does it differ from classic SQL injection?
+Demonstrate a MongoDB NoSQL injection payload in a Node.js app using mongoose or native driver.
+Why is enabling JavaScript in MongoDB queries (e.g., $where, mapReduce) dangerous?
+How can you prevent excessive data exposure in MongoDB queries (e.g., returning entire documents)?
+What are the security risks of running MongoDB without authentication?
+Explain the difference between --auth and role-based access control (RBAC) in MongoDB.
+How would you exploit or defend against MongoDB default port exposure (27017)?
+
+Express.js / Node.js Questions
+
+What is Server-Side Request Forgery (SSRF) in Node.js? Give an example in Express.
+How can improper error handling in Express leak sensitive information (stack traces, DB errors)?
+Explain Insecure Deserialization in Node.js (e.g., using eval() or new Function()).
+What is Prototype Pollution in JavaScript? Show a real-world exploit in an Express app using lodash merge.
+How do you securely handle file uploads in Express? What are the risks?
+What is the correct way to set security HTTP headers in Express? (Helmet middleware deep dive)
+Explain the risk of using app.use(express.urlencoded({ extended: true })) without validation.
+How would you exploit or prevent Regular Expression Denial of Service (ReDoS) in Express routes?
+
+Angular-Specific Questions
+
+How does Angular protect against XSS by default? When does it fail?
+Explain the difference between DomSanitizer.bypassSecurityTrust*() methods and why they are dangerous.
+What is Angular Template Injection? How can it lead to XSS?
+How can insecure use of [innerHTML], {{ }} interpolation, or eval()-like functions be exploited?
+What are the risks of using Location.href or window.location for redirects without validation (Open Redirect)?
+Explain Angular’s built-in protections against CSRF. Why do MEAN apps often still need CSRF tokens?
+
+Authentication & Session Management
+
+Why is storing JWT in localStorage risky? What’s the better alternative?
+How would you perform JWT algorithm confusion attack (RS256 → HS256)?
+Explain the difference between stateful sessions and stateless JWT in MEAN stack.
+What is "None" algorithm vulnerability in JWT?
+How do you securely implement "Remember Me" functionality in MEAN?
+What are the risks of using MongoDB’s _id (ObjectId) directly as session identifier?
+
+API Security
+
+Explain Broken Object Level Authorization (BOLA/IDOR) in a MEAN REST API with an example.
+How would you exploit mass assignment vulnerability in Express + Mongoose?
+What is Broken Function Level Authorization? Example in Express routes.
+How do you enforce proper rate limiting in a Node.js API (e.g., against brute force)?
+Explain excessive data exposure via GraphQL-like endpoints or poorly designed REST APIs.
+
+Advanced / Pentesting Questions (Senior Level)
+
+Demonstrate a full end-to-end exploit chain: XSS → Steal JWT from localStorage → IDOR → Data Exfiltration in a typical MEAN app.
+How would you perform a Server-Side Template Injection (SSTI) if Express is using EJS or Pug?
+Explain Node.js vm module sandbox escape techniques.
+How can you exploit insecure CORS configuration in Express?
+Demonstrate a practical attack using HTTP Parameter Pollution in Express.
+How would you find and exploit logic flaws in password reset or OTP implementation in MEAN?
+
+Defense & Best Practices
+
+List must-have middleware for a secure Express app (Helmet, csurf/csrf, rate-limiter, cors, etc.).
+How do you implement proper input validation and sanitization across the entire MEAN stack?
+Best practices for securing MongoDB in production (auth, network, TLS, roles).
+How to securely store secrets in a Node.js MEAN application (dotenv vs vault).
+Explain secure Angular deployment settings (ng build --prod, CSP, etc.).
+
+Tools & Methodology
+
+Name tools you use for VAPT of MEAN stack apps (Burp Suite, ZAP, Mongoaudit, NodeJsScan, Retire.js, etc.).
+How do you automate scanning for outdated/vulnerable npm packages?
+How would you write a custom script to detect NoSQL injection in a large codebase?
