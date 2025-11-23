@@ -64,4 +64,10 @@ What is best way in angular to achieve this ?
 
 22. How to make angular break singleton pattern for service?
 
-23. Do pipe and Services provide all lifecycle hooks that component supports?
+23. do, pipes, services, directives provide all lifecycle hooks like angular component?
+
+24. for 3 console statements, make the code sleep for 2 s between each console.
+e.g.
+console.log(1);
+console.log(2); //should wait for 2 sec before printing.
+console.log(3); //should wait for 2 sec after 2 before printing.

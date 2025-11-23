@@ -1,0 +1,90 @@
+Phase 1 – Today (2 hours) – Focus on these 25 questions (the ones asked in 90 % of such interviews)
+Core JavaScript / TypeScript (30-40 min)
+
+1. Difference between let, const, and var. Hoisting and Temporal Dead Zone.
+2. Explain closures with a real-world example (why they are heavily used in Angular services).
+3. Event loop – What happens when you click a button in Angular? (call stack → microtasks → macrotasks)
+4. == vs ===, type coercion examples.
+5. Explain this in JavaScript – how it behaves in arrow functions vs normal functions (very common in Angular templates).
+6. Promises vs Observables – when would you use each in an Angular app?
+7. How does async/await work under the hood?
+8. TypeScript: interface vs type, unknown vs any, utility types (Partial, Pick, Omit, Record).
+9. What are decorators in TypeScript? How are @Component, @Input, @Output implemented?
+10. Generics in TypeScript – write a simple generic pipe or service example.
+
+Angular Deep Dive (60-70 min) – This will be 60-70 % of your interview
+
+11. Angular architecture – modules, components, services, dependency injection.
+12. Change detection – default strategy vs OnPush. When and why to use OnPush, how do enforce onpush as default strategy in angular?
+13. Zone.js – what does it do? Can we run Angular without Zone.js (NgZone)?
+14. Lazy loading modules – syntax and how the router knows which chunk to load, How to customize the chunk name in for lazy loaded module?
+15. RxJS operators you use daily: map, switchMap, mergeMap, concatMap, exhaustMap, take, takeUntil, debounceTime, distinctUntilChanged.
+16. How do you unsubscribe from Observables? (takeUntil, AsyncPipe, manual subscription patterns).
+17. Angular Ivy – what changed compared to ViewEngine?
+18. @Input() + @Output() vs services for communication – when to use what?
+19. Angular forms – Template-driven vs Reactive. When do you prefer Reactive?
+20. Custom pipes, directives – give examples you have written.
+How to optimize Angular bundle size (lazy loading, tree-shaking, differential loading).
+Angular Universal / SSR – have you used it? Why is it important for B2B tools?
+Standalone components (Angular 14+) – are you using them in your project?
+Signals (Angular 16+) – basic idea and when you would use them instead of RxJS.
+How does Angular handle security: XSS, CSRF, HttpClient XSS protection.
+
+Phase 2 – Tomorrow Morning (first 2-3 hours) – High-Probability Questions
+Micro-Frontends & Telekom Scale (they use Single-SPA + Telekom Scale)
+
+What is a micro-frontend? Advantages and challenges.
+Have you worked with Single-SPA or any micro-frontend framework?
+How do you share libraries/state between micro-frontends?
+Telekom Scale – what is it? (It’s DT’s open-source design system + component library built on StencilJS/Web Components).
+How would you build a shell that loads multiple Angular micro-frontends?
+
+API Integration & Authentication (very likely)
+
+How do you call REST APIs in Angular? (HttpClient, interceptors).
+Write an Auth interceptor that adds JWT to every request and refreshes token on 401.
+OIDC flow – what is Authorization Code + PKCE? Why PKCE in SPAs?
+Difference between JWT and SAML (both are mentioned in JD).
+How do you store tokens securely in the browser?
+
+Testing & Quality
+
+Unit testing in Angular – Jasmine vs Jest, Karma vs no browser.
+How do you mock HTTP calls in tests? (HttpClientTestingModule).
+End-to-end testing – Cypress vs Protractor vs Playwright.
+What is WireMock / Mockito / RestAssured? (mentioned in JD – backend testing tools, just know names).
+
+DevOps & Tools (they love GitLab + Kubernetes)
+
+GitLab CI/CD pipeline stages you have defined for frontend.
+How do you build and deploy an Angular app to Kubernetes?
+What is Helm? Have you written a Helm chart for a frontend app?
+What is the purpose of Dynatrace / Prometheus / Grafana / Jaeger in a frontend context?
+
+Phase 3 – Tomorrow Afternoon (last 2-3 hours) – Good to Have + Behavioral
+Architecture & System Design (30-40 min)
+
+Design a responsive dashboard for the FIT Tool (requirements: role-based access, real-time updates, 10+ widgets).
+How would you structure a large Angular application (Nx monorepo vs Angular Workspace vs standalone)?
+State management – when do you use services, NgRx, or Signals?
+
+Behavioral & Process Questions
+
+Explain a complex frontend problem you solved recently.
+How do you ensure WCAG 2.1 accessibility in Angular apps?
+How do you document your components (Storybook vs Compodoc vs Confluence)?
+Experience with Agile – what ceremonies do you participate in? How do you estimate stories?
+
+Bonus (Telekom-specific – nice to know)
+
+What is Tardis platform? (Internal developer portal at DT – just say you read it’s their internal platform for microservices).
+Why do you want to work on B2B telecom products?
+
+Quick Revision Cheat Sheet (15 minutes before interview)
+
+OnPush + ChangeDetectorRef
+RxJS cancellation patterns (takeUntil(this.destroy$))
+Interceptor for JWT + refresh token
+Single-SPA basics + Telekom Scale (web components)
+OIDC + PKCE flow
+Lazy loading + standalone components

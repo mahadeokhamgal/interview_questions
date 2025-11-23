@@ -1,0 +1,31 @@
+A JavaScript - Core Concepts & Output-Based Questions
+1 var vs let vs const (with scope)
+2 Hoisting & how it works internally
+3 Temporal Dead Zone (TDZ)
+4 == VS ===
+5 Closures & lexical scope retention
+6 Callback hell Promises async/await
+7 Event loop & handling async tasks
+8 Sync vs async execution
+9 Output-based puzzles on closures, TDZ, shadowing, hoisting
+
+React - Deep Scenario-Based Questions
+10 Form handling & efficient state management
+11 API integration + loading/error handling
+12 Why fetch calls are placed inside useEffect
+13 Hooks: useState, useEffect, useMemo, useCallback
+14 Context API vs Redux
+15 Prop drilling & solutions
+16 React state management strategies
+17 React Router: relative vs absolute paths
+18 Virtual DOM & reconciliation
+19 Performance optimisations
+20 Reducing a 5-second homepage load
+21 Importance of keys in lists
+22 React lifecycle
+23 Avoiding unnecessary re-renders
+24 Handling API errors & retry logic
+
+Git - Practical, Production-Level Scenarios
+25 Reverting a pushed commit
+26 Safely switching branches & handling merge conflicts
