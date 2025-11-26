@@ -1,0 +1,9 @@
+1. Memory leaks In Angular - What causes them, How to find them, How to fix them ?
+2. How to find out resons for memory leak in nodejs, and how to fix them ?
+3. How to find out MongoDB query perfoamnce issue, and how to optimise it ?
+4. How to handle large file upload in Node JS ?
+5. How to optimise performance in mongodb when working with a. Multiple mongodb instances, b. multi tenant app.
+6. How to handle large number of api requests coming in on Nodejs app?
+7. BehaviorSubject vs ReplaySubject
+8. Onpush vs default strategy
+9. What is cluster in NodeJS ?

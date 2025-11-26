@@ -1,6 +1,7 @@
 A JavaScript - Core Concepts & Output-Based Questions
 1 var vs let vs const (with scope)
 2 Hoisting & how it works internally
+2.2 Compilation phase vs Execution phase, VariableEnvironment, LexicalEnvironment, creation of scope chain during "creation phase".
 3 Temporal Dead Zone (TDZ)
 4 == VS ===
 5 Closures & lexical scope retention
