@@ -9,7 +9,7 @@ IP = 13245065.4787
 OP = { '0': 1, '2': 1, '4': 2, '6': 1, '8': 1 }
 
 3. Write function sum to handle below use case.
-sum(1)(2)(3)....(n)
+sum(10)(32)(3)(9)()
 
 4. Write mongo query to get below data in a single query.
  - Two collections users and userImages.
@@ -17,7 +17,7 @@ sum(1)(2)(3)....(n)
  - all must be done in single mongodb query.
 
 5. What will be output of below snippet ?
-- follow up: does this code create cosure ?
+- follow up: does this code create closure ?
 function out() {
     console.log(this);
     const inSide = () => {
@@ -35,7 +35,7 @@ out();
 
 9. How to avoid Man in middle attack ?
 
-10. how to handle scenario where for cors, a hacher is pretending to be some valid host ?
+10. how to handle scenario where for cors, a hacker is pretending to be some valid host ?
 
 11. What is syntax to define indexes in mongoDB ?
  - follow up: how are indexes stored in mongoDB(B+ trees?) ?

@@ -1,0 +1,10 @@
+1. Given a sorted Number array and target Number, return the index of target element in array, if not exist in array return -1;
+IP = [1, 7, 14, 23, 52, 79, 86, 99, 121], 99 . OP=7
+
+
+2. Given an array of numbers, and a target number, find two indexes(indexes has to be uniq in anwsere) at which values sum up to target.
+IP = [11, 27, 36, 50, 10], 86 . OP=[2,3]
+
+3. Given table employee which has columns, Id and Salary, find the employee who's salary is second highest.
+
+..

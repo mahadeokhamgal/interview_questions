@@ -1,0 +1,108 @@
+
+Here’s a focused 2–3 day preparation plan tailored exactly to this JD (Angular-focused Full-Stack/Front-End role at ~20+3.4 LPA, 5–6 YOE). I’ve split the questions into categories that almost always come up for this exact profile at product companies and good banks/fintechs in India.
+Day 1: Core Angular + TypeScript + JavaScript (Expect 60-70% of questions from here)
+Angular Fundamentals & Intermediate (Very High Probability)
+
+1. Explain the Angular architecture (Modules, Components, Templates, Metadata, Services, DI).
+ - Angular is component based framework to build Front end application, which provids out of the box solutions like DI, Two way Data binding, Reactive forms, Rxjs and so many more.
+ - angular uses hierarchical model, where core module will have bootstrap component and that component will have all other components through hierarchy.
+ - Modules,
+  - Modules are way how application is seggregated, defined by @ngModule decorator, every angular aaplication will have core/main module and supporting modules.
+  - Modules contain metadata suh as declarations, imports, providers, bootstrap (only for core/main module), exports.
+ - Components,
+  - Components have view/template, stylesheet, and component. it has it's state and states get updated based on change detection strategy used and changes happening in app/events/async pipe responses.
+  - have metadata such as , templateUrl, styles, name, ChangeDetectionStrategy, standalone(angular 14+), imports(angular 14+), providers(angular 14+).
+ - Templates,
+  - These are html files that have binding to component state and will react to changes in component state. 
+  - in html file, one can use normal html syntax, bindings, angular directives, pipes, ng-template for placeholders.
+ - Metadata.
+  - Metadata are properties of a class being defined in angular, this is provided inside decorator, and based on metadata angular will initialise the relevant component/service/pipe/directive/module.
+  - this is powerful way because of which developers don't need to manually customise the behavior but use the ready meta properties.
+ - Services.
+  - Services are Injectable classes in angular, used to have business logic or to have shared states.
+  - for providedIn root services only one instance is created for complete app and is shared across.
+  - for providedIn any services, one instance for eager loaded modules and new child instance for each lazy loaded module is created.
+ - DI.
+  - DI is design pattern in angular. that removes need of a developer to manually maintain and provide access of service instance.
+  - using constructor injection, service becomes accessible to consumer class.
+  - Angular handles DI for providedIn root and any as per design i.e. for any the new child instance will be created.
+
+Difference between Angular and AngularJS (or older frameworks you’ve used).
+What are the different types of NgModules? When do you create a feature module vs shared module vs core module?
+Component lifecycle hooks – exact order and when would you use ngOnChanges vs ngOnInit vs ngDoCheck vs ngAfterViewInit?
+ChangeDetectionStrategy.OnPush – when and why to use it? How does it work internally?
+What is Zone.js? Can Angular run without it?
+Explain @Input, @Output, @ViewChild, @ViewChildren, @ContentChild with real examples.
+Difference between constructor injection and injector.get() in services.
+How do you share data between unrelated components? (Multiple ways – explain pros/cons).
+What are Angular Reactive Forms vs Template-driven forms? When do you prefer one over the other?
+Custom form validators (sync and async) – write one example.
+What is the difference between declarations, providers, and imports in NgModule?
+Lazy loading in Angular – how do you implement it today (Angular 18+ standalone way also)?
+What are standalone components, pipes, directives? How is routing different now?
+How do you handle HTTP Interceptors (Auth, logging, retry, caching)?
+RxJS: Explain Observable vs Promise. Key operators you use daily (map, switchMap, mergeMap, concatMap, exhaustMap, tap, catchError, finalize, debounceTime, distinctUntilChanged).
+Subject vs BehaviorSubject vs ReplaySubject vs AsyncSubject – when to use which?
+How do you unsubscribe from observables to avoid memory leaks (multiple approaches)?
+Angular Universal / SSR – why and basic idea.
+What’s new in Angular 17/18 that you have used (signals, deferrable views, standalone by default, new control flow @if/@for)?
+
+TypeScript & JavaScript (Medium–Hard)
+
+Explain “this” binding in JS and how Arrow functions change it.
+Closures – real use case in Angular.
+Event loop, call stack, microtask queue – explain with setTimeout vs Promise.
+TypeScript: Generics, Utility types (Partial, Pick, Omit, Record), keyof, typeof, decorators.
+Difference between interface and type alias.
+What are declaration files (.d.ts)?
+
+Day 2: Testing, Micro-Frontends, System Design, CI/CD & Tools
+Testing (They explicitly mention Jest & WDIO)
+
+How do you write unit tests in Angular with Jasmine + Karma or Jest?
+Difference between Jasmine and Jest? Have you migrated?
+Testing components with dependencies (HttpClientTestingModule, RouterTestingModule).
+How to test async code (fakeAsync/tick, waitForAsync)?
+What is WebdriverIO (WDIO)? How is it different from Cypress/Protractor? Have you written E2E tests using it?
+Mocking services in tests – TestBed vs manual mock.
+Code coverage expectations in your current project.
+
+Micro-Frontend Architecture (Preferred skill – high chance)
+
+What is Micro-Frontend? Why do companies adopt it?
+Different ways to implement Micro-Frontends (iframe, Web Components, Module Federation in Webpack 5, Single-SPA).
+Have you used Module Federation? How do you share dependencies (Angular, RxJS) between shells and remotes?
+How do you handle versioning and independent deployment in Micro-FE?
+
+Git & CI/CD
+
+Git rebase vs merge – when do you use which?
+GitHub Actions or Jenkins pipelines you have set up for Angular builds.
+What steps run in your CI/CD pipeline (lint, unit tests, e2e, build, deploy to S3/ECS etc.)?
+
+System Design / Architecture (5–6 YOE level)
+
+Design a large-scale Angular application folder structure (for 50+ developers).
+How do you enforce scalability and maintainability (Nx monorepo vs multi-repo)?
+State management – when do you prefer Services vs NgRx vs Signals + BehaviorSubject?
+NgRx basics – Store, Actions, Reducers, Effects, Selectors (they may ask if you mention it).
+Caching strategies in Angular (HTTP interceptor cache, NgRx, service-level cache).
+
+Day 3: Cloud (AWS preferred), .NET/Web API (good to have), Behavioral & Past Experience
+AWS (Preferred)
+
+Basic services you have used (S3, CloudFront, CodePipeline, ECS/Fargate, Lambda, Amplify).
+How do you deploy an Angular app to AWS (Amplify vs S3 + CloudFront vs CodePipeline).
+
+.NET / Web API (Good to have – low probability but prepare basics)
+
+REST API design principles you follow.
+Difference between PUT vs PATCH.
+Authentication mechanisms you have integrated from Angular (JWT, OAuth2, Azure AD).
+
+Behavioral & Project Deep Dive (Almost guaranteed)
+
+Tell me about the most complex Angular project you have worked on (architecture, team size, challenges).
+A time when you improved performance of an Angular app (AOT, lazy loading, OnPush, trackBy, etc.).
+A bug that was very hard to debug – how did you find it?
+Conflict with teammate on code quality / architecture – how did you resolve?

@@ -1,0 +1,58 @@
+Here are 20 sharp, senior-level Angular brainteasers (5–8 YOE, 25+ LPA caliber) that top companies (FAANG-tier, fintech, product unicorns) actually ask in System Design + Deep Angular rounds. These separate 25 LPA from 40+ LPA candidates.
+
+Change Detection Deep Dive
+Explain how Angular’s change detection works under the hood (Zone.js → monkey-patched async APIs → ApplicationRef.tick). When does Angular skip checking a component even if OnPush is not used?
+
+OnPush vs Default Strategy Performance
+You have a dashboard with 10,000 rows in an ngFor. The data never mutates, only replaces. Explain exactly why OnPush + immutable objects is 50–100x faster than Default strategy here.
+
+Memory Leak Scenario
+You see a massive memory leak in production. DevTools shows thousands of detached DOM trees with your component.
+What’s the most common Angular-specific cause and how do you fix it without takeUntil?
+
+RxJS Backpressure
+An API emits 10,000 events/sec, you subscribe with subscribe(). The app freezes.
+Name 5 different RxJS operators/combinations to handle this without losing data or freezing UI.
+
+Ivy Rendering Engine
+Explain the difference between View Engine and Ivy at the compiler and runtime level. How does Ivy enable tree-shakable providers and locality?
+Dynamic Component Loading Gone Wrong
+You lazy-load 50 feature modules. Bundle size is still 5 MB. What Angular-specific mistake did you likely make?
+Angular Universal + TransferState Bug
+After adding SSR, some API calls happen twice (once on server, once on client). How do you fix it properly using TransferState without breaking SEO?
+Signal vs RxJS in Angular 17+
+When would you choose Signals over RxJS in a real-world large app (e.g., trading dashboard)? When would you still pick RxJS?
+Custom Async Pipe
+Implement a) Why can’t you use multiple async pipes on the same observable in template without performance issues?
+b) Write a reusable PureAsyncPipe that subscribes only once.
+NgZone Nightmare
+You run a heavy computation inside NgZone.runOutsideAngular(). UI stops updating. Explain why and give three correct ways to update UI from outside zone.
+Dependency Injection Tree Shaking
+Explain why providedIn: 'root' + Ivy makes almost all services tree-shakable, but providedIn: 'any' breaks it in large apps.
+Standalone Components Migration
+You migrate a 200-module app to standalone. What breaks with Angular Material, Router lazy loading with loadComponent, and default exports?
+Angular Elements
+You publish your component as a Web Component. Consumers complain styles leak globally. How do you fix it at build time (not ViewEncapsulation.ShadowDom)?
+Interceptor Ordering & Auth Refresh
+Auth token is expired → 401 → refresh token call → retry original request. Write the correct interceptor order and logic so that parallel requests don’t trigger 50 refresh calls.
+Performance: ngTemplateOutlet vs Component
+You have a table with 5000 rows, each with 3 different cell templates. When is ngTemplateOutlet dramatically faster than creating 15,000 components?
+AOT vs JIT in Production
+Name three things that fail only in AOT but work in JIT (common in interviews).
+Control Flow Syntax (@if, @for) Internals
+Explain how Angular compiles the new @for syntax differently from *ngFor and why the new one is 30–90% faster with OnPush.
+Hydration in Angular 17+
+Explain non-destructive hydration vs full SSR re-render. What breaks hydration in real apps and how do you debug it?
+Micro-frontends with Module Federation
+You expose an Angular shell + 5 remote Angular apps using Module Federation. Shell takes 8 seconds to load. Most common mistake?
+The Ultimate Gotcha
+This code runs without error in dev but crashes only in production AOT:TypeScriptconstructor(private injector: Injector) {}
+ngOnInit() {
+  setTimeout(() => {
+    this.http.get('/api/data').subscribe();
+  });
+}Explain exactly why and the correct fix.
+
+Bonus (asked at Google/Uber):
+21. Design an Angular architecture for a real-time trading dashboard handling 1000+ price updates/sec with <16ms UI latency. Draw the data flow (WebSocket → NgRx/Signals → components) and justify every choice.
+These questions consistently filter out 25 LPA developers from 40–70 LPA ones. Good luck — nail these and you’re golden! 🚀

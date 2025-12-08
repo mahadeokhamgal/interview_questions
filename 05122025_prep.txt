@@ -1,0 +1,108 @@
+Here are the most probable interview questions you should prepare in the next 2 hours
+ for this PurpleTalk MEAN Stack role (3–8 YOE, expecting 20 LPA).
+ I’ve prioritized based on the JD and what companies like xCube LABS / PurpleTalk typically ask at this level.
+
+1. Angular (They will definitely go deep – 25-30 mins)
+
+Explain the Angular architecture (modules, components, services, dependency injection).
+ - Angular is a framework, which uses typescript as base language for it's oop features.
+ - angular uses modular approach with modules, modules are single unit in angular which can comprise of components, services, pipes, directives etc.
+ - one can lazy load modules to reduce initial bundle load size. and with latest methods even routes can be lazy loaded.
+ - component are reusable units in angular that have view, controller and styles (with angular 16+, components can be standalone like their own independant unit).
+ - services are typescript classes in angular, these are singleton in nature by default and you can change this by providing this service in component providers.
+ - services are used for code splitting, then Single responsibility principal from SOLID.
+ - services can provide global states and shared states for application. when working with services need to make sure that no memory leakage as service are long lived in application lifecyccle
+  and can cause leakage so need to make sure to keep memory clean.
+  - DI, it is a design pattern where all dependancies are centrally managed and any unit can use the service by injecting it in contructor and angulars IOC will make sure that
+   - the service instance as per use will be available.(this is responsible to keep the service singleton)
+ - with latest angular versions singleton components and providedIn root services, lazy loaded routes are more recommended. 
+
+Difference between Angular and React (they love this).
+ - Angular -
+  - A component based framework.
+  - Supports only typescript and leverages the OOP features of ts.
+  - components are purely class based and need to follow class definitions.
+  - all lifecycle hooks are inbuilt and one needs to use those for the side effects.
+  - angular follows change ChangeDetectionStrategy default by default for components, and can be switched to onPush for performance but need to take care of immutable objects not triggering cd in child component.
+  - for complex state management angular uses ngrx like library.
+  - angular is developed and maintened by google and open source contributors.
+  - angular is recommended when working with heavy applications as it helps modularising bit natural.
+  - angular is more opiniated and hence depends on design choice.
+ - React -
+  - A javascript library to build a web application.
+  - supports both js and ts. and can be versatile on what to use.
+  - components can be class based or functional as per design choice. with recent trends functional components are more practical in nature with fact that functional components have their lifecycle hooks.
+  - lifecycle hooks can be inbuilt or can use custom hooks as well as per need.
+  - in react as well by default components will rerender on every change, and to make it more performant one needs to use useMemo and pass stable props and stable callbacks to child components.
+  - for complex state management react uses redux like packages.
+  - react is developed and maintened by facebook/meta and open source contributors. this has string community support compared to angular.
+  - react is recommended when working with lighwight perfoamant applications.
+  - with recent trends one can use both angular and react using MFE architecture to leverage advantages of both in his single app.
+  - react is less opiniated and gives developer and archetect more freedom on design and solution choices.
+
+What are Lazy Loading modules? How do you implement them?
+ - Lazy loading modules are modules that are loaded at runtime when user navigates to the specified lazy route.
+ - these help with reducing initial bundle load size.
+ - and build time angular will create separate chunk file for lazy loaded module and will create a hashed name for it and will insert that name referrance in main bundle, using this referrance app knows which bundle to load for specific route.
+ - to implement the lazy modules one has to put them in routes as { path: '<route on which module to load>', loadChildren: () => import('moduleFolderName/modulefileName').then(res => res.moduleClassName)
+ - Services - by DI. depending on providedIn if it is any then child injector will be created for that module, if root then existing instance will be provided.
+
+RxJS: Explain Observables vs Promises. What are operators like map, switchMap, mergeMap, debounceTime? Real use case?
+State management: When do you use NgRx or services vs component state?
+ChangeDetectionStrategy.OnPush – when and why?
+How do you handle forms? Template-driven vs Reactive forms differences?
+Angular Interceptors – real use case (auth token, logging, retry).
+How do you optimize Angular app performance (AOT, lazy load, trackBy, OnPush)?
+What’s new in Angular 17/18 that you have used? (standalone components, signals)
+
+2. Node.js + Express (20-25 mins)
+
+Event Loop in Node.js – explain with diagram (call stack, callback queue, microtask).
+ - to do
+How do you handle errors in async/await vs callbacks in Node?
+How to handle global errors in Node.js
+Error handling patterns in Express.js
+Clustering in Node.js – why and how?
+Difference between process.nextTick() and setImmediate()?
+How to scale a Node.js application?
+Middleware in Express – write a custom middleware for authentication.
+Rate limiting implementation in Express.
+How do you secure Node.js/Express app (helmet, cors, rate-limit, input validation)?
+Difference between fork() and spawn() in child_process?
+
+3. SQL / Database (Very important – they mentioned stored procedures)
+
+Write a query to find 2nd highest salary.
+ - select salary from employee order by salary desc offset 1 limit 1;
+Difference between INNER JOIN, LEFT JOIN, FULL OUTER JOIN.
+What are Indexes? Clustered vs Non-clustered? When does index hurt performance?
+Explain Normalization vs Denormalization with example.
+Write a stored procedure to transfer money between two accounts (handle concurrency).
+How do you optimize slow-running queries?
+Difference between DELETE and TRUNCATE.
+What are window functions? Example with ROW_NUMBER(), RANK(), DENSE_RANK().
+How do you prevent SQL injection in Node.js?
+
+4. System Design / Architecture (High chance at 20 LPA level)
+
+Design a real-time chat application (use RabbitMQ + MQTT if possible).
+Design a URL shortener (end-to-end: API, DB schema, caching).
+How will you design scalable REST APIs for an e-commerce platform?
+How do you implement JWT authentication + refresh token flow?
+Microservices vs Monolith – when do you choose what?
+
+5. RabbitMQ & MQTT (Good to have – but prepare 2-3 questions)
+
+Explain RabbitMQ concepts: Exchange types (direct, topic, fanout), queues, binding.
+Difference between RabbitMQ and Kafka.
+When to use MQTT vs WebSockets vs RabbitMQ?
+Explain MQTT QoS levels (0, 1, 2).
+How would you implement notification system using RabbitMQ?
+
+6. Miscellaneous (Quick fire)
+
+Git rebase vs merge.
+CI/CD pipeline you have set up.
+Docker basics – Dockerfile vs docker-compose.
+How do you deploy Node.js app on AWS (EC2 vs ECS vs Lambda)?
+Caching strategies (Redis vs in-memory).
