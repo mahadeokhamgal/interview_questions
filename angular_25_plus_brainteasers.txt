@@ -16,15 +16,20 @@ Name 5 different RxJS operators/combinations to handle this without losing data 
 
 Ivy Rendering Engine
 Explain the difference between View Engine and Ivy at the compiler and runtime level. How does Ivy enable tree-shakable providers and locality?
+
 Dynamic Component Loading Gone Wrong
 You lazy-load 50 feature modules. Bundle size is still 5 MB. What Angular-specific mistake did you likely make?
+
 Angular Universal + TransferState Bug
 After adding SSR, some API calls happen twice (once on server, once on client). How do you fix it properly using TransferState without breaking SEO?
+
 Signal vs RxJS in Angular 17+
 When would you choose Signals over RxJS in a real-world large app (e.g., trading dashboard)? When would you still pick RxJS?
+
 Custom Async Pipe
 Implement a) Why can’t you use multiple async pipes on the same observable in template without performance issues?
 b) Write a reusable PureAsyncPipe that subscribes only once.
+
 NgZone Nightmare
 You run a heavy computation inside NgZone.runOutsideAngular(). UI stops updating. Explain why and give three correct ways to update UI from outside zone.
 Dependency Injection Tree Shaking

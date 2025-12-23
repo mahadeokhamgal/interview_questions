@@ -1,0 +1,19 @@
+1. What is jwt.
+2. In login api does app send id password object as it is?
+3. Where is jwt stored in angular.
+4. How to make sure that jwt cannot be stolen for another angular app?
+5. How to avoid sql injection attack in angular.
+6. What are different ways to avoid attack in angular app.
+7. What is Http intercepter, not what is does but what it is ?
+8. How to handle large file upload in angular ?
+9. What is Streaming ?
+10. Existing app that works using arx, now need to be used using jwt.
+11. What is Signal.
+12. What is Ngrx.
+13. Debauncing, real life problem and debauncing solution for it.
+14. List all guards in angular.
+15. What are standalone components.
+16. In which scenario behavior subject is not recommended.
+17. What is can mount guard.
+18. How to run test case only for specific component?
+19. how many dimentions are there in flex and grid?
